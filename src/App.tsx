@@ -20,7 +20,7 @@ function Layout() {
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/portfolio">
             <Routes>
                 <Route element={<Layout />}>
                     {pages.map(({ path, component: Component }) => (
