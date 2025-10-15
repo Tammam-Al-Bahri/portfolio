@@ -1,14 +1,14 @@
-import Home from "./Home";
+import AboutMe from "./AboutMe";
+import Projects from "./Projects";
 import Portfolio from "./Portfolio";
 import Test from "./Test";
-import Projects from "./Projects";
 
 const pages = [
     // about me
     {
         path: "/",
-        title: "Home",
-        component: Home,
+        title: "About Me",
+        component: AboutMe,
     },
     {
         path: "/projects",

@@ -2,16 +2,19 @@ import { AppSidebar } from "./components/app-sidebar";
 import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import pages from "./pages";
+import Footer from "./components/Footer";
 
 function Layout() {
     return (
         <SidebarProvider>
             <div className="flex w-full overflow-x-hidden">
                 <AppSidebar />
-                <main className="flex-1 overflow-y-auto">
+                <main className="flex-1 flex flex-col min-h-screen overflow-y-auto">
                     <SidebarTrigger />
-                    <Outlet />
-                    {/* FOOTER */}
+                    <div className="flex-1">
+                        <Outlet />
+                    </div>
+                    <Footer />
                 </main>
             </div>
         </SidebarProvider>

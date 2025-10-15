@@ -28,7 +28,7 @@ type MenuItem = {
 
 const aboutMeItems: MenuItem[] = [
     {
-        title: "Home",
+        title: "About Me",
         path: "/",
         icon: PersonStanding,
     },
