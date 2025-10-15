@@ -10,7 +10,7 @@ function Layout() {
             <div className="flex w-full overflow-x-hidden">
                 <AppSidebar />
                 <main className="flex-1 flex flex-col min-h-screen overflow-y-auto">
-                    <SidebarTrigger />
+                    <SidebarTrigger className="fixed z-50" />
                     <div className="flex-1">
                         <Outlet />
                     </div>
