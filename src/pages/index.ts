@@ -2,6 +2,7 @@ import AboutMe from "./AboutMe";
 import Projects from "./Projects";
 import Portfolio from "./Portfolio";
 import Test from "./Test";
+import Skills from "./Skills";
 
 const pages = [
     // about me
@@ -9,6 +10,11 @@ const pages = [
         path: "/",
         title: "About Me",
         component: AboutMe,
+    },
+    {
+        path: "/skills",
+        title: "Skills",
+        component: Skills,
     },
     {
         path: "/projects",
