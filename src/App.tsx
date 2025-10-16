@@ -14,8 +14,8 @@ function Layout() {
                         <SidebarTrigger />
                     </div>
                 </div>
-                <main className="flex-1 flex flex-col min-h-screen overflow-y-auto">
-                    <div className="flex-1">
+                <main>
+                    <div>
                         <Outlet />
                     </div>
                     <Footer />
