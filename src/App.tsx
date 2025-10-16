@@ -7,10 +7,14 @@ import Footer from "./components/Footer";
 function Layout() {
     return (
         <SidebarProvider>
-            <div className="flex w-full overflow-x-hidden">
-                <AppSidebar />
+            <div>
+                <div className="flex fixed z-50">
+                    <AppSidebar />
+                    <div className="pt-2 pl-1">
+                        <SidebarTrigger />
+                    </div>
+                </div>
                 <main className="flex-1 flex flex-col min-h-screen overflow-y-auto">
-                    <SidebarTrigger className="fixed z-50" />
                     <div className="flex-1">
                         <Outlet />
                     </div>

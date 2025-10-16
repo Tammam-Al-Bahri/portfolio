@@ -1,4 +1,11 @@
-import { Folders, Paperclip, PersonStanding, TestTube, type LucideProps } from "lucide-react";
+import {
+    Brain,
+    Folders,
+    Paperclip,
+    PersonStanding,
+    TestTube,
+    type LucideProps,
+} from "lucide-react";
 import {
     Sidebar,
     SidebarContent,
@@ -33,6 +40,11 @@ const aboutMeItems: MenuItem[] = [
         icon: PersonStanding,
     },
     {
+        title: "Skills",
+        path: "/skills",
+        icon: Brain,
+    },
+    {
         title: "Projects",
         path: "/projects",
         icon: Folders,
@@ -51,9 +63,9 @@ export function AppSidebar() {
     const navigate = useNavigate();
     const sidebar = useSidebar();
     return (
-        <Sidebar>
-            <SidebarHeader>Tammam Al Bahri</SidebarHeader>
-            <SidebarContent>
+        <Sidebar variant="floating" className="z-50">
+            <SidebarHeader>Tammam Al Bahri {/* improve this later*/}</SidebarHeader>
+            <SidebarContent className="shadow-2xl">
                 <SidebarGroup>
                     <SidebarGroupLabel>About Me</SidebarGroupLabel>
                     <SidebarGroupContent>
@@ -114,10 +126,10 @@ export function AppSidebar() {
                         </div>
                     </SidebarMenuButton>
                 </SidebarMenuItem>
+                <SidebarFooter className="fixed bottom-2">
+                    <ThemeToggle />
+                </SidebarFooter>
             </SidebarContent>
-            <SidebarFooter>
-                <ThemeToggle />
-            </SidebarFooter>
         </Sidebar>
     );
 }
