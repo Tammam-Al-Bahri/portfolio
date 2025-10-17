@@ -1,3 +1,3 @@
 export default function Projects() {
-    return <div></div>;
+    return <div>will display overview of all projects here</div>;
 }

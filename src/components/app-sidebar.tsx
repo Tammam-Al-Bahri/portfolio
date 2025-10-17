@@ -1,9 +1,12 @@
 import {
+    Bot,
     Brain,
+    BriefcaseBusiness,
     Folders,
     Paperclip,
     PersonStanding,
     TestTube,
+    University,
     type LucideProps,
 } from "lucide-react";
 import {
@@ -53,9 +56,24 @@ const aboutMeItems: MenuItem[] = [
 
 const projectItems: MenuItem[] = [
     {
+        title: "Granada",
+        path: "/projects/granada",
+        icon: BriefcaseBusiness,
+    },
+    {
         title: "Portfolio",
         path: "/projects/portfolio",
         icon: Paperclip,
+    },
+    {
+        path: "/projects/university-projects",
+        title: "University Projects",
+        icon: University,
+    },
+    {
+        path: "/projects/frank",
+        title: "Frank",
+        icon: Bot,
     },
 ];
 
