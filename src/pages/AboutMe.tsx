@@ -1,9 +1,12 @@
 import CircularText from "@/components/CircularText";
+import FaultyTerminal from "@/components/FaultyTerminal";
 import GlassSurface from "@/components/GlassSurface";
 import GradientText from "@/components/GradientText";
 import LightRays from "@/components/LightRays";
 import ShinyText from "@/components/ShinyText";
 import TextType from "@/components/TextType";
+import { useTheme } from "@/components/theme-provider";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 export default function AboutMe() {
     const text = [
@@ -23,27 +26,58 @@ export default function AboutMe() {
         "does typing tests for fun",
         "pushes to main at 3 am",
     ];
+    const { theme } = useTheme();
     return (
         <div className="relative overflow-auto w-screen h-screen">
-            <LightRays
-                raysOrigin="top-center"
-                raysColor="#f4e99b"
-                raysSpeed={0.4}
-                lightSpread={0.2}
-                rayLength={1.2}
-                followMouse={true}
-                mouseInfluence={0.025}
-                noiseAmount={0.1}
-                distortion={0.05}
-                className="custom-rays invert dark:invert-0"
-            />
+            {theme == "light" ? (
+                <div className="relative overflow-auto w-screen h-screen invert">
+                    <FaultyTerminal
+                        scale={1.5}
+                        gridMul={[1, 1]}
+                        digitSize={1.2}
+                        timeScale={0.1}
+                        pause={false}
+                        scanlineIntensity={0.5}
+                        glitchAmount={2}
+                        flickerAmount={0.1}
+                        noiseAmp={1}
+                        chromaticAberration={0}
+                        dither={0}
+                        curvature={10}
+                        tint="#ffc2f5"
+                        mouseReact={true}
+                        mouseStrength={0.5}
+                        pageLoadAnimation={false}
+                        brightness={1}
+                    />
+                </div>
+            ) : (
+                <LightRays
+                    raysOrigin="top-center"
+                    raysColor="#f4e99b"
+                    raysSpeed={0.4}
+                    lightSpread={0.2}
+                    rayLength={1.2}
+                    followMouse={true}
+                    mouseInfluence={0.025}
+                    noiseAmount={0.1}
+                    distortion={0.05}
+                    className="invert dark:invert-0"
+                />
+            )}
             <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center gap-6">
-                <GlassSurface width={250} height={250} borderRadius={360}>
+                <GlassSurface
+                    width={250}
+                    height={250}
+                    borderRadius={360}
+                    displace={0.8}
+                    saturation={1}
+                >
                     <div className="relative flex items-center justify-center text-muted-foreground">
                         <CircularText
                             text="<> </> <> </> <> </> <> </> "
                             onHover="slowDown"
-                            spinDuration={100}
+                            spinDuration={300}
                             className="font-mono scale-125"
                         />
                         <img
@@ -52,8 +86,8 @@ export default function AboutMe() {
                         />
                     </div>
                 </GlassSurface>
-                <div>
-                    <div>
+                <Card className="m-4 shadow-2xl">
+                    <CardHeader>
                         <div>
                             <GradientText
                                 colors={["#0dff00", "#40ffaa", "#40ffb6", "#0dff00"]}
@@ -64,18 +98,19 @@ export default function AboutMe() {
                                 Tammam Al Bahri
                             </GradientText>
                         </div>
-                        <div className="text-left ml-32">
+                        <div className="text-left text-muted-foreground font-mono ml-8 lg:ml-20 lg:text-2xl">
+                            <span>{"> "}</span>
                             <TextType
                                 text={text}
                                 typingSpeed={60}
                                 pauseDuration={2000}
                                 showCursor={true}
                                 cursorCharacter="|"
-                                className="text-muted-foreground font-mono lg:text-2xl"
+                                className=""
                             />
                         </div>
-                    </div>
-                    <div className="max-w-lg mt-6 px-16 text-sm text-muted-foreground leading-relaxed lg:text-2xl">
+                    </CardHeader>
+                    <CardContent className="max-w-lg mt-6 px-16 text-sm text-muted-foreground leading-relaxed lg:text-2xl">
                         <div>
                             <ShinyText
                                 text="Software Engineering"
@@ -85,8 +120,8 @@ export default function AboutMe() {
                             />{" "}
                             student at Sheffield Hallam University.
                         </div>
-                    </div>
-                </div>
+                    </CardContent>
+                </Card>
             </div>
         </div>
     );
