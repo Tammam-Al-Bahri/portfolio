@@ -43,7 +43,7 @@ export default function AboutMe() {
                         className="invert dark:invert-0"
                     />
                     <img
-                        src="portfolio/images/me.jpg"
+                        src={"/portfolio/images/me.jpg"}
                         className="absolute w-32 h-32 rounded-full"
                     />
                 </div>
