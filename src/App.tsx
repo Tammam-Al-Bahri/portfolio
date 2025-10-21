@@ -10,8 +10,8 @@ function Layout() {
             <div>
                 <div className="flex fixed z-50">
                     <AppSidebar />
-                    <div className="pt-2 pl-1">
-                        <SidebarTrigger />
+                    <div className="pt-2 pl-1 lg:pl-2">
+                        <SidebarTrigger className="lg:scale-150" />
                     </div>
                 </div>
                 <main>

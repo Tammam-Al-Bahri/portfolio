@@ -25,6 +25,7 @@ import { type Pages } from "@/pages";
 import { ThemeToggle } from "./theme-toggle";
 import { useNavigate } from "react-router-dom";
 import { useSidebar } from "@/components/ui/sidebar";
+import GradientText from "./GradientText";
 
 type MenuItem = {
     [P in Pages as P["title"]]: {
@@ -82,7 +83,16 @@ export function AppSidebar() {
     const sidebar = useSidebar();
     return (
         <Sidebar variant="floating" className="z-50">
-            <SidebarHeader>Tammam Al Bahri {/* improve this later*/}</SidebarHeader>
+            <SidebarHeader>
+                <GradientText
+                    colors={["#078000", "#259463", "#269693", "#078000"]}
+                    animationSpeed={10}
+                    showBorder={false}
+                    className="px-2"
+                >
+                    Tammam Al Bahri
+                </GradientText>
+            </SidebarHeader>
             <SidebarContent className="shadow-2xl">
                 <SidebarGroup>
                     <SidebarGroupLabel>About Me</SidebarGroupLabel>
