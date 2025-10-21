@@ -65,7 +65,7 @@ export default function AboutMe() {
                     className="invert dark:invert-0"
                 />
             )}
-            <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center gap-6">
+            <div className="absolute inset-0 flex flex-col items-center justify-center z-10 gap-6">
                 <GlassSurface
                     width={250}
                     height={250}
@@ -98,7 +98,7 @@ export default function AboutMe() {
                                 Tammam Al Bahri
                             </GradientText>
                         </div>
-                        <div className="text-left text-muted-foreground font-mono ml-8 lg:ml-20 lg:text-2xl">
+                        <div className="text-left ml-8 text-muted-foreground font-mono lg:text-2xl">
                             <span>{"> "}</span>
                             <TextType
                                 text={text}
@@ -110,7 +110,7 @@ export default function AboutMe() {
                             />
                         </div>
                     </CardHeader>
-                    <CardContent className="max-w-lg mt-6 px-16 text-sm text-muted-foreground leading-relaxed lg:text-2xl">
+                    <CardContent className="max-w-lg mt-6 px-16 text-center text-sm text-muted-foreground leading-relaxed lg:text-2xl">
                         <div>
                             <ShinyText
                                 text="Software Engineering"
