@@ -71,11 +71,12 @@ export default function AboutMe() {
                     height={250}
                     borderRadius={360}
                     displace={0.8}
-                    saturation={1}
+                    saturation={0.8}
+                    borderWidth={0.3}
                 >
                     <div className="relative flex items-center justify-center text-muted-foreground">
                         <CircularText
-                            text="<> </> <> </> <> </> <> </> "
+                            text={theme == "light" ? "" : "<> </> <> </> <> </> <> </> "}
                             onHover="slowDown"
                             spinDuration={300}
                             className="font-mono scale-125"
@@ -93,12 +94,12 @@ export default function AboutMe() {
                                 colors={["#0dff00", "#40ffaa", "#40ffb6", "#0dff00"]}
                                 animationSpeed={10}
                                 showBorder={false}
-                                className="text-3xl lg:text-5xl p-2"
+                                className="text-3xl lg:text-5xl px-2"
                             >
                                 Tammam Al Bahri
                             </GradientText>
                         </div>
-                        <div className="text-left ml-8 text-muted-foreground font-mono lg:text-2xl">
+                        <div className="text-left ml-12 text-muted-foreground font-mono text-sm lg:text-2xl">
                             <span>{"> "}</span>
                             <TextType
                                 text={text}
@@ -106,7 +107,6 @@ export default function AboutMe() {
                                 pauseDuration={2000}
                                 showCursor={true}
                                 cursorCharacter="|"
-                                className=""
                             />
                         </div>
                     </CardHeader>
