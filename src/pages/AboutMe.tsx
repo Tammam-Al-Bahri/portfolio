@@ -30,20 +30,20 @@ export default function AboutMe() {
     return (
         <div className="relative overflow-auto w-screen h-screen">
             {theme == "light" ? (
-                <div className="relative overflow-auto w-screen h-screen invert">
+                <div className="relative overflow-auto w-screen h-screen invert blur-sm">
                     <FaultyTerminal
                         scale={1.5}
                         gridMul={[1, 1]}
                         digitSize={1.2}
-                        timeScale={0.1}
+                        timeScale={0.05}
                         pause={false}
                         scanlineIntensity={0.5}
                         glitchAmount={2}
-                        flickerAmount={0.1}
+                        flickerAmount={1}
                         noiseAmp={1}
                         chromaticAberration={0}
-                        dither={0}
-                        curvature={10}
+                        dither={1}
+                        curvature={7}
                         tint="#ffc2f5"
                         mouseReact={true}
                         mouseStrength={0.5}
@@ -76,7 +76,7 @@ export default function AboutMe() {
                 >
                     <div className="relative flex items-center justify-center text-muted-foreground">
                         <CircularText
-                            text={theme == "light" ? "" : "<> </> <> </> <> </> <> </> "}
+                            text={"<> </> <> </> <> </> <> </> "}
                             onHover="slowDown"
                             spinDuration={300}
                             className="font-mono scale-125"
@@ -91,7 +91,11 @@ export default function AboutMe() {
                     <CardHeader>
                         <div>
                             <GradientText
-                                colors={["#0dff00", "#40ffaa", "#40ffb6", "#0dff00"]}
+                                colors={
+                                    theme == "light"
+                                        ? ["#06a600", "#03999c", "#00782c", "#03999c", "#06a600"]
+                                        : ["#0dff00", "#40ffaa", "#40ffb6", "#0dff00"]
+                                }
                                 animationSpeed={10}
                                 showBorder={false}
                                 className="text-3xl lg:text-5xl px-2"
@@ -110,7 +114,7 @@ export default function AboutMe() {
                             />
                         </div>
                     </CardHeader>
-                    <CardContent className="max-w-lg mt-6 px-16 text-center text-sm text-muted-foreground leading-relaxed lg:text-2xl">
+                    <CardContent className="max-w-lg mt-4 px-16 text-center text-sm text-muted-foreground leading-relaxed lg:text-2xl">
                         <div>
                             <ShinyText
                                 text="Software Engineering"
