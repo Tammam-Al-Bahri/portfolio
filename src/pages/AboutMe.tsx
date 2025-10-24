@@ -11,6 +11,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import pages from ".";
 import { useNavigate } from "react-router-dom";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function AboutMe() {
     const text = [
@@ -92,56 +93,64 @@ export default function AboutMe() {
                         />
                     </div>
                 </GlassSurface>
-                <Card className="m-4 shadow-2xl">
-                    <CardHeader>
-                        <div>
-                            <GradientText
-                                colors={
-                                    theme == "light"
-                                        ? ["#06a600", "#03999c", "#00782c", "#03999c", "#06a600"]
-                                        : ["#0dff00", "#40ffaa", "#40ffb6", "#0dff00"]
-                                }
-                                animationSpeed={10}
-                                showBorder={false}
-                                className="text-3xl lg:text-5xl px-2"
-                            >
-                                Tammam Al Bahri
-                            </GradientText>
-                        </div>
-                        <div className="text-left ml-12 text-muted-foreground font-mono text-sm lg:text-2xl">
-                            <span>{"> "}</span>
-                            <TextType
-                                text={text}
-                                typingSpeed={60}
-                                pauseDuration={2000}
-                                showCursor={true}
-                                cursorCharacter="|"
-                            />
-                        </div>
-                    </CardHeader>
-                    <CardContent className="max-w-lg mt-4 px-16 text-center text-sm text-muted-foreground leading-relaxed lg:text-2xl">
-                        <div>
-                            <ShinyText
-                                text="Software Engineering"
-                                disabled={false}
-                                speed={4}
-                                className="invert dark:invert-0 font-bold"
-                            />{" "}
-                            student at Sheffield Hallam University.
-                        </div>
-                    </CardContent>
-                </Card>
-                <div className="flex justify-between w-full max-w-lg px-8 pb-8">
-                    <div />
+                <div>
+                    <Card className="m-4 shadow-2xl">
+                        <CardHeader>
+                            <div>
+                                <GradientText
+                                    colors={
+                                        theme == "light"
+                                            ? [
+                                                  "#06a600",
+                                                  "#03999c",
+                                                  "#00782c",
+                                                  "#03999c",
+                                                  "#06a600",
+                                              ]
+                                            : ["#0dff00", "#40ffaa", "#40ffb6", "#0dff00"]
+                                    }
+                                    animationSpeed={10}
+                                    showBorder={false}
+                                    className="text-3xl lg:text-5xl px-2"
+                                >
+                                    Tammam Al Bahri
+                                </GradientText>
+                            </div>
+                            <div className="text-left ml-12 text-muted-foreground font-mono text-sm lg:text-2xl">
+                                <span>{"> "}</span>
+                                <TextType
+                                    text={text}
+                                    typingSpeed={60}
+                                    pauseDuration={2000}
+                                    showCursor={true}
+                                    cursorCharacter="|"
+                                />
+                            </div>
+                        </CardHeader>
+                        <CardContent className="max-w-lg mt-4 px-16 text-center text-sm text-muted-foreground leading-relaxed lg:text-2xl">
+                            <div>
+                                <ShinyText
+                                    text="Software Engineering"
+                                    disabled={false}
+                                    speed={4}
+                                    className="invert dark:invert-0 font-bold"
+                                />{" "}
+                                student at Sheffield Hallam University.
+                            </div>
+                        </CardContent>
+                    </Card>
+                    <div className="flex justify-between w-full max-w-lg px-4 lg:px-0 mx-auto mt-4 pb-8">
+                        <ThemeToggle />
 
-                    <Button
-                        variant="outline"
-                        onClick={() => navigate(pages[1].path, { replace: true })}
-                        className="flex items-center gap-2"
-                    >
-                        {pages[1].title}
-                        <ArrowRight />
-                    </Button>
+                        <Button
+                            variant="outline"
+                            onClick={() => navigate(pages[1].path, { replace: true })}
+                            className="flex items-center gap-2"
+                        >
+                            {pages[1].title}
+                            <ArrowRight />
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div>
