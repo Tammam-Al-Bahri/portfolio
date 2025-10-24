@@ -24,7 +24,7 @@ export default function AboutMe() {
         "hashes with bcrypt",
         "doesn't reinvent buttons",
         "does typing tests for fun",
-        "pushes to main at 3 am",
+        "avoids merge conflicts",
     ];
     const { theme } = useTheme();
     return (
