@@ -6,7 +6,11 @@ import LightRays from "@/components/LightRays";
 import ShinyText from "@/components/ShinyText";
 import TextType from "@/components/TextType";
 import { useTheme } from "@/components/theme-provider";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
+import pages from ".";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutMe() {
     const text = [
@@ -27,6 +31,7 @@ export default function AboutMe() {
         "avoids merge conflicts",
     ];
     const { theme } = useTheme();
+    const navigate = useNavigate();
     return (
         <div className="relative overflow-auto w-screen h-screen">
             {theme == "light" ? (
@@ -126,6 +131,18 @@ export default function AboutMe() {
                         </div>
                     </CardContent>
                 </Card>
+                <div className="flex justify-between w-full max-w-lg px-8 pb-8">
+                    <div />
+
+                    <Button
+                        variant="outline"
+                        onClick={() => navigate(pages[1].path, { replace: true })}
+                        className="flex items-center gap-2"
+                    >
+                        {pages[1].title}
+                        <ArrowRight />
+                    </Button>
+                </div>
             </div>
         </div>
     );
