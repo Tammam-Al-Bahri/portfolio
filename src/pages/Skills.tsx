@@ -1,13 +1,6 @@
 import LogoLoop from "@/components/LogoLoop";
 import { Button } from "@/components/ui/button";
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import {
     SiDocker,
@@ -51,11 +44,41 @@ export default function Skills() {
         { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
         { node: <SiShadcnui />, title: "Shadcn", href: "https://ui.shadcn.com" },
     ];
+    const skills = [
+        "Attention to Detail",
+        "Intuition",
+        "Problem Solving",
+        "Active Listening",
+        "Competitive Mindset",
+        "Analytical Thinking",
+        "Perseverance",
+        "Teamwork",
+        "Leadership",
+    ];
+    const interests = [
+        "English (fluent)",
+        "Arabic (native)",
+        "Violin",
+        "Gym",
+        "Calisthenics",
+        "Crypto and Blockchain",
+        "Music Production",
+        "Maths",
+        "Chemistry",
+    ];
     const navigate = useNavigate();
     return (
         <div className="relative overflow-auto w-screen h-screen">
             <div className="flex flex-col gap-6 p-6 max-w-4xl mx-auto mb-16">
-                <div className="text-center">*ADD SOMETHING HERE*</div>
+                <div className="text-center">
+                    I'm passionate about building practical, scalable, and useful apps. I'm
+                    currently focused on mastering TypeScript and its ecosystem as I'm drawn by its
+                    versatility and developer experience. My current stack for web apps is Next.js +
+                    Prisma + Shadcn, and for desktop apps I work with Vite + React + React Router +
+                    Prisma + Express + Electron. I thrive with clear goals and structure, and I love
+                    solving real-world problems. I enjoy hyper-focusing on specific challenges and
+                    bringing ideas to life.
+                </div>
                 <Card className="shadow-xl">
                     <CardHeader>
                         <CardTitle>Technical Skills</CardTitle>
@@ -63,10 +86,7 @@ export default function Skills() {
                             Tools, languages, and frameworks I have experience with.
                         </CardDescription>
                     </CardHeader>
-                    <CardContent className="text-muted-foreground">
-                        *ADD MORE CONTEXT AND STUFF*
-                    </CardContent>
-                    <CardFooter>
+                    <CardContent>
                         <LogoLoop
                             logos={techLogos}
                             speed={10}
@@ -76,29 +96,21 @@ export default function Skills() {
                             pauseOnHover
                             scaleOnHover
                             ariaLabel="Technology Stack"
-                            className=""
+                            className="border-x-1 border-dashed"
                         />
-                    </CardFooter>
+                    </CardContent>
                 </Card>
 
                 <Card className="shadow-xl">
                     <CardHeader>
                         <CardTitle>Personal Skills</CardTitle>
-                        <CardDescription>How I approach work and problem solving.</CardDescription>
+                        <CardDescription>Skills that define me.</CardDescription>
                     </CardHeader>
                     <CardContent className="flex flex-wrap gap-2">
-                        {[
-                            "Clean code mindset",
-                            "Problem solving",
-                            "Self-directed learning",
-                            "Attention to detail",
-                            "Good communication",
-                            "Adaptability",
-                            "*ADD MORE*",
-                        ].map((skill) => (
+                        {skills.map((skill) => (
                             <span
                                 key={skill}
-                                className="px-3 py-1 border rounded-lg text-sm bg-background/50"
+                                className="px-3 py-1 border rounded-lg text-sm bg-secondary"
                             >
                                 {skill}
                             </span>
@@ -109,21 +121,13 @@ export default function Skills() {
                 <Card className="shadow-xl">
                     <CardHeader>
                         <CardTitle>Languages & Interests</CardTitle>
-                        <CardDescription>*DESCRIPTION*</CardDescription>
+                        <CardDescription>What I speak and what I love.</CardDescription>
                     </CardHeader>
                     <CardContent className="flex flex-wrap gap-2">
-                        {[
-                            "English (fluent)",
-                            "Arabic (native)",
-                            "Violin",
-                            "Gym",
-                            "Calisthenics",
-                            "Music production",
-                            "*ADD MORE*",
-                        ].map((item) => (
+                        {interests.map((item) => (
                             <span
                                 key={item}
-                                className="px-3 py-1 border rounded-lg text-sm bg-background/50"
+                                className="px-3 py-1 border rounded-lg text-sm bg-secondary"
                             >
                                 {item}
                             </span>
