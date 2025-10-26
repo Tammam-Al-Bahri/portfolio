@@ -75,6 +75,9 @@ export default function Skills() {
         "Music Production",
         "Maths",
         "Chemistry",
+        "Blitz Chess",
+        "Rowing",
+        "Cooking",
     ];
     const navigate = useNavigate();
     const [rerender, setRerender] = useState(false);
