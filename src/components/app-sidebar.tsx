@@ -5,6 +5,7 @@ import {
     Folders,
     Paperclip,
     PersonStanding,
+    SearchCode,
     TestTube,
     University,
     type LucideProps,
@@ -70,6 +71,11 @@ const projectItems: MenuItem[] = [
         path: "/projects/university-projects",
         title: "University Projects",
         icon: University,
+    },
+    {
+        path: "/projects/nft-scanner",
+        title: "NFT Scanner",
+        icon: SearchCode,
     },
     {
         path: "/projects/frank",

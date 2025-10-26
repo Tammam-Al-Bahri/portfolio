@@ -6,6 +6,7 @@ import Skills from "./Skills";
 import Granada from "./projects/Granada";
 import UniversityProjects from "./projects/UniversityProjects";
 import Frank from "./projects/Frank";
+import NFTScanner from "./projects/NFTScanner";
 
 const pages = [
     // about me
@@ -44,6 +45,11 @@ const pages = [
         path: "/projects/frank",
         title: "Frank",
         component: Frank,
+    },
+    {
+        path: "/projects/nft-scanner",
+        title: "NFT Scanner",
+        component: NFTScanner,
     },
     // temporary page to test stuff
     {

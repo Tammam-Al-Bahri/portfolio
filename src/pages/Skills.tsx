@@ -22,6 +22,7 @@ import {
     SiExpress,
     SiVite,
     SiElectron,
+    SiJavascript,
 } from "react-icons/si";
 import pages from ".";
 import { useNavigate } from "react-router-dom";
@@ -33,6 +34,11 @@ export default function Skills() {
             title: "C#",
             href: "https://dotnet.microsoft.com/en-us/languages/csharp",
         },
+        {
+            node: <SiJavascript />,
+            title: "JavaScript",
+            href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        },
         { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
         { node: <SiReact />, title: "React", href: "https://react.dev" },
         { node: <SiReactrouter />, title: "React Router", href: "https://reactrouter.com" },
@@ -43,7 +49,7 @@ export default function Skills() {
         { node: <SiExpress />, title: "Express", href: "https://expressjs.com/" },
         { node: <SiDocker />, title: "Docker", href: "https://www.docker.com" },
         { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
-        { node: <SiShadcnui />, title: "shadcn", href: "https://ui.shadcn.com" },
+        { node: <SiShadcnui />, title: "Shadcn", href: "https://ui.shadcn.com" },
     ];
     const navigate = useNavigate();
     return (
