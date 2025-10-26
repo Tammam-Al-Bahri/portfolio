@@ -148,7 +148,7 @@ export default function Skills() {
                             <p className="pb-4 text-muted-foreground text-center">
                                 My current stack for web apps is{" "}
                                 <ShinyText
-                                    text="Next.js + Shadcn + Prisma"
+                                    text="Next.js + Prisma"
                                     disabled={false}
                                     speed={4}
                                     className="invert dark:invert-0 font-bold"
