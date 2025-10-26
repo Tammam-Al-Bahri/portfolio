@@ -19,6 +19,7 @@ import {
 } from "react-icons/si";
 import pages from ".";
 import { useNavigate } from "react-router-dom";
+import ASCIIText from "@/components/ASCIIText";
 
 export default function Skills() {
     const techLogos = [
@@ -69,17 +70,20 @@ export default function Skills() {
     const navigate = useNavigate();
     return (
         <div className="relative overflow-auto w-screen h-screen">
-            <div className="flex flex-col gap-6 p-6 max-w-4xl mx-auto mb-16">
-                <div className="text-center">
+            <div className="flex flex-col gap-6 p-6 max-w-4xl mx-auto mb-12 lg:border-x-2 border-dashed bg-accent/10">
+                <div className="relative w-full h-64 md:h-96 lg:h-[300px] border-accent-foreground invert dark:invert-0">
+                    <ASCIIText text="Skills" enableWaves={false} asciiFontSize={8} />
+                </div>
+                <p className="text-center">
                     I'm passionate about building practical, scalable, and useful apps. I'm
                     currently focused on mastering TypeScript and its ecosystem as I'm drawn by its
                     versatility and developer experience. My current stack for web apps is Next.js +
-                    Prisma + Shadcn, and for desktop apps I work with Vite + React + React Router +
+                    Shadcn + Prisma, and for desktop apps I work with Vite + React + React Router +
                     Prisma + Express + Electron. I thrive with clear goals and structure, and I love
                     solving real-world problems. I enjoy hyper-focusing on specific challenges and
                     bringing ideas to life.
-                </div>
-                <Card className="shadow-xl">
+                </p>
+                <Card className="shadow-md">
                     <CardHeader>
                         <CardTitle>Technical Skills</CardTitle>
                         <CardDescription>
@@ -101,7 +105,7 @@ export default function Skills() {
                     </CardContent>
                 </Card>
 
-                <Card className="shadow-xl">
+                <Card className="shadow-md">
                     <CardHeader>
                         <CardTitle>Personal Skills</CardTitle>
                         <CardDescription>Skills that define me.</CardDescription>
@@ -118,7 +122,7 @@ export default function Skills() {
                     </CardContent>
                 </Card>
 
-                <Card className="shadow-xl">
+                <Card className="shadow-md">
                     <CardHeader>
                         <CardTitle>Languages & Interests</CardTitle>
                         <CardDescription>What I speak and what I love.</CardDescription>
