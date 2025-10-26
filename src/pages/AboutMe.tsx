@@ -68,7 +68,6 @@ export default function AboutMe() {
                     mouseInfluence={0.025}
                     noiseAmount={0.1}
                     distortion={0.05}
-                    className="invert dark:invert-0"
                 />
             )}
             <div className="absolute inset-0 flex flex-col items-center justify-center z-10 gap-6">

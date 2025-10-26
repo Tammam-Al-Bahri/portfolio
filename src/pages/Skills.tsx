@@ -16,10 +16,12 @@ import {
     SiVite,
     SiElectron,
     SiJavascript,
+    SiClerk,
 } from "react-icons/si";
 import pages from ".";
 import { useNavigate } from "react-router-dom";
 import ASCIIText from "@/components/ASCIIText";
+import ShinyText from "@/components/ShinyText";
 
 export default function Skills() {
     const techLogos = [
@@ -44,6 +46,7 @@ export default function Skills() {
         { node: <SiDocker />, title: "Docker", href: "https://www.docker.com" },
         { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
         { node: <SiShadcnui />, title: "Shadcn", href: "https://ui.shadcn.com" },
+        { node: <SiClerk />, title: "Clerk", href: "https://clerk.com/" },
     ];
     const skills = [
         "Attention to Detail",
@@ -74,15 +77,55 @@ export default function Skills() {
                 <div className="relative w-full h-64 md:h-96 lg:h-[300px] border-accent-foreground invert dark:invert-0">
                     <ASCIIText text="Skills" enableWaves={false} asciiFontSize={8} />
                 </div>
-                <p className="text-center">
-                    I'm passionate about building practical, scalable, and useful apps. I'm
-                    currently focused on mastering TypeScript and its ecosystem as I'm drawn by its
-                    versatility and developer experience. My current stack for web apps is Next.js +
-                    Shadcn + Prisma, and for desktop apps I work with Vite + React + React Router +
-                    Prisma + Express + Electron. I thrive with clear goals and structure, and I love
-                    solving real-world problems. I enjoy hyper-focusing on specific challenges and
-                    bringing ideas to life.
-                </p>
+                <div className="px-4 pb-4 lg:px-8 text-center max-w-3xl mx-auto space-y-6">
+                    <section>
+                        <p className="text-lg md:text-xl lg:text-2xl">
+                            I'm passionate about building practical, scalable, and useful apps.
+                        </p>
+                    </section>
+
+                    <section>
+                        <p className="text-lg md:text-xl lg:text-2xl">
+                            I'm diving deep into{" "}
+                            <ShinyText
+                                text="TypeScript"
+                                disabled={false}
+                                speed={4}
+                                className="invert dark:invert-0 font-bold"
+                            />{" "}
+                            and its ecosystem because it's a powerful foundation for creating robust
+                            applications and a valuable skill for modern development.
+                        </p>
+                    </section>
+
+                    <section>
+                        <p className="text-lg md:text-xl lg:text-2xl">
+                            My current stack for web apps is{" "}
+                            <ShinyText
+                                text="Next.js + Shadcn + Prisma"
+                                disabled={false}
+                                speed={4}
+                                className="invert dark:invert-0 font-bold"
+                            />{" "}
+                            , and for desktop apps I'm working with{" "}
+                            <ShinyText
+                                text="Electron + Vite + React + React Router + Prisma + Express."
+                                disabled={false}
+                                speed={4}
+                                className="invert dark:invert-0 font-bold"
+                            />
+                        </p>
+                    </section>
+
+                    <section>
+                        <p className="text-lg md:text-xl lg:text-2xl">
+                            I enjoy hyper-focusing on specific challenges and bringing ideas to life
+                            - I thrive with clear goals and structure, and love solving real-world
+                            problems.
+                        </p>
+                    </section>
+                </div>
+
                 <Card className="shadow-md">
                     <CardHeader>
                         <CardTitle>Technical Skills</CardTitle>
