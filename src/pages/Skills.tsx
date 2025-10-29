@@ -29,6 +29,7 @@ import ASCIIText from "@/components/ASCIIText";
 import ShinyText from "@/components/ShinyText";
 import { useState, useEffect } from "react";
 import ElectricBorder from "@/components/ElectricBorder";
+import { useTheme } from "@/components/theme-provider";
 
 export default function Skills() {
     const techLogos = [
@@ -91,6 +92,8 @@ export default function Skills() {
         const timer = setTimeout(() => setRerender(true), 200);
         return () => clearTimeout(timer);
     }, []);
+
+    const { theme } = useTheme();
     return (
         <div className="relative overflow-auto w-screen h-screen">
             <div className="max-w-4xl mx-auto mb-12 lg:border-x-2 border-dashed bg-accent/10">
@@ -106,7 +109,7 @@ export default function Skills() {
 
                 <div className="flex flex-col gap-6 px-6">
                     <ElectricBorder
-                        color="#27e676"
+                        color={theme == "light" ? "#7dffdc" : "#27e676"}
                         speed={0.2}
                         chaos={0.5}
                         thickness={2}
