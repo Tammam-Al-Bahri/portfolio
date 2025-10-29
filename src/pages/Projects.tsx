@@ -22,7 +22,7 @@ export default function Projects() {
     const { toggleSidebar } = useSidebar();
 
     useEffect(() => {
-        const timer = setTimeout(() => setRerender(true), 200);
+        const timer = setTimeout(() => setRerender(true), 100);
         return () => clearTimeout(timer);
     }, []);
 

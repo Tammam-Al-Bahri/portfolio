@@ -89,8 +89,35 @@ export default function Skills() {
     const [rerender, setRerender] = useState(false);
 
     useEffect(() => {
-        const timer = setTimeout(() => setRerender(true), 200);
+        const timer = setTimeout(() => setRerender(true), 100);
         return () => clearTimeout(timer);
+    }, []);
+
+    const [scaleTextClass, setScaleTextClass] = useState("scale-115");
+    const [scaleCardClass, setScaleCardClass] = useState("scale-100");
+
+    const animationDelay = 100;
+    const textFallDuration = 200;
+    const cardScaleDuration = 150;
+
+    useEffect(() => {
+        const textTimer = setTimeout(() => {
+            setScaleTextClass("scale-100");
+        }, animationDelay);
+
+        const cardUpTimer = setTimeout(() => {
+            setScaleCardClass("scale-101");
+        }, animationDelay + textFallDuration);
+
+        const cardDownTimer = setTimeout(() => {
+            setScaleCardClass("scale-100");
+        }, animationDelay + textFallDuration + cardScaleDuration);
+
+        return () => {
+            clearTimeout(textTimer);
+            clearTimeout(cardUpTimer);
+            clearTimeout(cardDownTimer);
+        };
     }, []);
 
     const { theme } = useTheme();
@@ -113,10 +140,14 @@ export default function Skills() {
                         speed={0.2}
                         chaos={0.5}
                         thickness={2}
-                        style={{ borderRadius: 16 }}
+                        className="rounded-xl"
                     >
-                        <Card className="m-1 shadow-md">
-                            <div className="p-4 lg:px-8 text-center max-w-3xl mx-auto space-y-6">
+                        <Card
+                            className={`m-1 shadow-md transition-transform duration-100 ease-in ${scaleCardClass}`}
+                        >
+                            <div
+                                className={`p-4 lg:px-8 text-center max-w-3xl mx-auto space-y-6 ${scaleTextClass} transition-transform duration-${textFallDuration} ease-in`}
+                            >
                                 <section>
                                     <p className="font-semibold text-xl">
                                         I'm passionate about building practical, scalable, and
