@@ -12,6 +12,7 @@ import { ArrowRight } from "lucide-react";
 import pages from ".";
 import { useNavigate } from "react-router-dom";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { useState, useEffect } from "react";
 
 export default function AboutMe() {
     const text = [
@@ -33,6 +34,13 @@ export default function AboutMe() {
     ];
     const { theme } = useTheme();
     const navigate = useNavigate();
+    const [scaleClass, setScaleClass] = useState("scale-0");
+
+    useEffect(() => {
+        setTimeout(() => {
+            setScaleClass("scale-100");
+        }, 100);
+    }, []);
     return (
         <div className="relative overflow-hidden w-screen h-screen">
             {theme == "light" ? (
@@ -77,7 +85,9 @@ export default function AboutMe() {
                     distortion={0.05}
                 />
             )}
-            <div className="absolute inset-0 flex flex-col items-center justify-center z-20 gap-6 pointer-events-none">
+            <div
+                className={`absolute inset-0 flex flex-col items-center justify-center z-20 gap-6 pointer-events-none ${scaleClass} transition-transform duration-500 ease-in-out`}
+            >
                 <GlassSurface
                     width={250}
                     height={250}
