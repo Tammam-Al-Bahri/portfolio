@@ -1,20 +1,31 @@
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, PanelLeftIcon } from "lucide-react";
+import {
+    ArrowLeft,
+    Bot,
+    BriefcaseBusiness,
+    PanelLeftIcon,
+    Paperclip,
+    SearchCode,
+    University,
+} from "lucide-react";
 import pages from ".";
 import { useNavigate } from "react-router-dom";
 import ASCIIText from "@/components/ASCIIText";
 import { useState, useEffect } from "react";
 import PixelCard from "@/components/PixelCard";
 import { useSidebar } from "@/components/ui/sidebar";
+import Stack from "@/components/Stack";
+import me from "/images/me.jpg";
 
 export default function Projects() {
+    const variants = ["default", "blue", "yellow", "pink"] as const;
     const projects = [
-        { page: pages[3], variant: "default" },
-        { page: pages[4], variant: "blue" },
-        { page: pages[7], variant: "pink" },
-        { page: pages[5], variant: "yellow" },
-        { page: pages[6], variant: "default" },
-    ] as const;
+        { page: pages[3], variant: 0, icon: BriefcaseBusiness, images: [{ id: 1, img: me }] },
+        { page: pages[4], variant: 1, icon: Paperclip, images: [{ id: 1, img: me }] },
+        { page: pages[7], variant: 3, icon: SearchCode, images: [{ id: 1, img: me }] },
+        { page: pages[5], variant: 2, icon: University, images: [{ id: 1, img: me }] },
+        { page: pages[6], variant: 0, icon: Bot, images: [{ id: 1, img: me }] },
+    ];
 
     const navigate = useNavigate();
     const [rerender, setRerender] = useState(false);
@@ -22,7 +33,7 @@ export default function Projects() {
     const { toggleSidebar } = useSidebar();
 
     useEffect(() => {
-        const timer = setTimeout(() => setRerender(true), 100);
+        const timer = setTimeout(() => setRerender(true), 200);
         return () => clearTimeout(timer);
     }, []);
 
@@ -49,13 +60,21 @@ export default function Projects() {
                 <div className="flex flex-wrap justify-center gap-6 px-6">
                     {projects.map((project) => (
                         <PixelCard
-                            variant={project.variant}
+                            variant={variants[project.variant]}
                             className="bg-card border-border shadow-xl"
                         >
                             <div
                                 className={`absolute ${scaleClass} transition-transform duration-500 ease-in-out`}
                             >
+                                <project.icon />
                                 <div>{project.page.title}</div>
+                                <Stack
+                                    randomRotation={true}
+                                    sensitivity={180}
+                                    sendToBackOnClick={true}
+                                    cardDimensions={{ width: 200, height: 200 }}
+                                    cardsData={project.images}
+                                />
                                 <Button
                                     onClick={() => navigate(project.page.path, { replace: true })}
                                 >

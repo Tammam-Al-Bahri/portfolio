@@ -89,7 +89,7 @@ export default function Skills() {
     const [rerender, setRerender] = useState(false);
 
     useEffect(() => {
-        const timer = setTimeout(() => setRerender(true), 100);
+        const timer = setTimeout(() => setRerender(true), 200);
         return () => clearTimeout(timer);
     }, []);
 
