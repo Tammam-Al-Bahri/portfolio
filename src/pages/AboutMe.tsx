@@ -36,25 +36,32 @@ export default function AboutMe() {
     return (
         <div className="relative overflow-auto w-screen h-screen">
             {theme == "light" ? (
-                <div className="relative overflow-auto w-screen h-screen invert blur-sm">
-                    <FaultyTerminal
-                        scale={1.5}
-                        gridMul={[1, 1]}
-                        digitSize={1.2}
-                        timeScale={0.05}
-                        pause={false}
-                        scanlineIntensity={0.5}
-                        glitchAmount={2}
-                        flickerAmount={1}
-                        noiseAmp={1}
-                        chromaticAberration={0}
-                        dither={1}
-                        curvature={7}
-                        tint="#ffc2f5"
-                        mouseReact={true}
-                        mouseStrength={0.5}
-                        pageLoadAnimation={false}
-                        brightness={1}
+                <div className="relative overflow-auto w-screen h-screen">
+                    <div className="absolute inset-0 invert blur-sm">
+                        <FaultyTerminal
+                            scale={1.5}
+                            gridMul={[1, 1]}
+                            digitSize={1.2}
+                            timeScale={0.05}
+                            pause={false}
+                            scanlineIntensity={0.5}
+                            glitchAmount={2}
+                            flickerAmount={1}
+                            noiseAmp={1}
+                            chromaticAberration={0}
+                            dither={1}
+                            curvature={7}
+                            tint="#ffc2f5"
+                            mouseReact={true}
+                            mouseStrength={0.5}
+                            pageLoadAnimation={false}
+                            brightness={1}
+                        />
+                    </div>
+                    <div
+                        className="absolute w-[35rem] h-[30rem] lg:w-[50rem] lg:h-[50rem] bg-green-950
+                rounded-full blur-[100px] opacity-40 top-3/5 left-1/2 
+                -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
                     />
                 </div>
             ) : (
@@ -70,7 +77,7 @@ export default function AboutMe() {
                     distortion={0.05}
                 />
             )}
-            <div className="absolute inset-0 flex flex-col items-center justify-center z-10 gap-6">
+            <div className="absolute inset-0 flex flex-col items-center justify-center z-20 gap-6 pointer-events-none">
                 <GlassSurface
                     width={250}
                     height={250}
@@ -138,7 +145,7 @@ export default function AboutMe() {
                             </div>
                         </CardContent>
                     </Card>
-                    <div className="flex justify-between w-full max-w-lg px-4 lg:px-0 mx-auto mt-4 pb-8">
+                    <div className="flex justify-between w-full max-w-lg px-4 lg:px-0 mx-auto mt-4 pb-8 pointer-events-auto">
                         <ThemeToggle />
 
                         <Button
