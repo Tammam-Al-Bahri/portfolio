@@ -19,13 +19,16 @@ import {
     SiClerk,
     SiGit,
     SiGithub,
+    SiPostgresql,
+    SiMysql,
+    SiSqlite,
 } from "react-icons/si";
 import pages from ".";
 import { useNavigate } from "react-router-dom";
 import ASCIIText from "@/components/ASCIIText";
 import ShinyText from "@/components/ShinyText";
-import GlassSurface from "@/components/GlassSurface";
 import { useState, useEffect } from "react";
+import ElectricBorder from "@/components/ElectricBorder";
 
 export default function Skills() {
     const techLogos = [
@@ -46,6 +49,9 @@ export default function Skills() {
         { node: <SiVite />, title: "Vite", href: "https://vite.dev/" },
         { node: <SiElectron />, title: "Electron", href: "https://www.electronjs.org/" },
         { node: <SiPrisma />, title: "Prisma", href: "https://www.prisma.io" },
+        { node: <SiPostgresql />, title: "PostgreSQL", href: "https://www.postgresql.org/" },
+        { node: <SiMysql />, title: "MySQL", href: "https://www.mysql.com/" },
+        { node: <SiSqlite />, title: "SQLite", href: "https://sqlite.org/" },
         { node: <SiExpress />, title: "Express", href: "https://expressjs.com/" },
         { node: <SiDocker />, title: "Docker", href: "https://www.docker.com" },
         { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
@@ -62,8 +68,8 @@ export default function Skills() {
         "Competitive Mindset",
         "Analytical Thinking",
         "Perseverance",
-        "Teamwork",
         "Leadership",
+        "Teamwork",
     ];
     const interests = [
         "English (fluent)",
@@ -77,7 +83,6 @@ export default function Skills() {
         "Chemistry",
         "Blitz Chess",
         "Rowing",
-        "Cooking",
     ];
     const navigate = useNavigate();
     const [rerender, setRerender] = useState(false);
@@ -100,44 +105,46 @@ export default function Skills() {
                 </div>
 
                 <div className="flex flex-col gap-6 px-6">
-                    <GlassSurface
-                        width={"full"}
-                        height={"full"}
-                        displace={0.8}
-                        saturation={0.8}
-                        borderWidth={0.3}
+                    <ElectricBorder
+                        color="#27e676"
+                        speed={0.2}
+                        chaos={0.5}
+                        thickness={2}
+                        style={{ borderRadius: 16 }}
                     >
-                        <div className="p-4 lg:px-8 text-center max-w-3xl mx-auto space-y-6">
-                            <section>
-                                <p className="">
-                                    I'm passionate about building practical, scalable, and useful
-                                    apps.
-                                </p>
-                            </section>
-                            <section>
-                                <p className="">
-                                    I'm diving deep into{" "}
-                                    <ShinyText
-                                        text="TypeScript"
-                                        disabled={false}
-                                        speed={4}
-                                        className="invert dark:invert-0 font-bold"
-                                    />{" "}
-                                    and its ecosystem because it's a powerful foundation for
-                                    creating robust applications and a valuable skill for modern
-                                    development.
-                                </p>
-                            </section>
-                            <section>
-                                <p className="">
-                                    I enjoy hyper-focusing on specific challenges and bringing ideas
-                                    to life - I thrive with clear goals and structure, and love
-                                    solving real world problems.
-                                </p>
-                            </section>
-                        </div>
-                    </GlassSurface>
-                    <Card className="shadow-md">
+                        <Card className="m-1 shadow-md">
+                            <div className="p-4 lg:px-8 text-center max-w-3xl mx-auto space-y-6">
+                                <section>
+                                    <p className="font-semibold text-xl">
+                                        I'm passionate about building practical, scalable, and
+                                        useful apps.
+                                    </p>
+                                </section>
+                                <section>
+                                    <p>
+                                        I'm diving deep into{" "}
+                                        <ShinyText
+                                            text="TypeScript"
+                                            disabled={false}
+                                            speed={4}
+                                            className="invert dark:invert-0 font-bold"
+                                        />{" "}
+                                        and its ecosystem because it's a powerful foundation for
+                                        creating robust applications and a valuable skill for modern
+                                        development.
+                                    </p>
+                                </section>
+                                <section>
+                                    <p>
+                                        I enjoy hyper-focusing on specific challenges and bringing
+                                        ideas to life - I thrive with clear goals and structure, and
+                                        love solving real world problems.
+                                    </p>
+                                </section>
+                            </div>
+                        </Card>
+                    </ElectricBorder>
+                    <Card className="shadow-md mt-32">
                         <CardHeader>
                             <CardTitle>Technical Skills</CardTitle>
                             <CardDescription>
@@ -145,22 +152,6 @@ export default function Skills() {
                             </CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <p className="pb-4 text-muted-foreground text-center">
-                                My current stack for web apps is{" "}
-                                <ShinyText
-                                    text="Next.js + Prisma"
-                                    disabled={false}
-                                    speed={4}
-                                    className="invert dark:invert-0 font-bold"
-                                />
-                                , and for desktop apps I'm working with{" "}
-                                <ShinyText
-                                    text="Electron + Vite + React + React Router + Express + Prisma."
-                                    disabled={false}
-                                    speed={4}
-                                    className="invert dark:invert-0 font-bold"
-                                />
-                            </p>
                             <LogoLoop
                                 logos={techLogos}
                                 speed={25}
@@ -172,9 +163,44 @@ export default function Skills() {
                                 ariaLabel="Technology Stack"
                                 className="border-x-1 border-dashed"
                             />
+                            <p className="py-4 text-muted-foreground text-center">
+                                My current stack for web apps is{" "}
+                                <ShinyText
+                                    text="Next.js + Prisma"
+                                    disabled={false}
+                                    speed={4}
+                                    className="invert dark:invert-0 font-bold"
+                                />
+                                , and for desktop apps I'm working with{" "}
+                                <ShinyText
+                                    text="Electron + Vite + React + React Router"
+                                    disabled={false}
+                                    speed={4}
+                                    className="invert dark:invert-0 font-bold"
+                                />{" "}
+                                with an{" "}
+                                <ShinyText
+                                    text="Express + Prisma + PostgreSQL"
+                                    disabled={false}
+                                    speed={4}
+                                    className="invert dark:invert-0 font-bold"
+                                />{" "}
+                                backend.
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                                {techLogos.map((item) => (
+                                    <a
+                                        key={item.title}
+                                        href={item.href}
+                                        className="px-3 py-1 border rounded-lg text-xs bg-secondary hover:scale-105 select-none"
+                                    >
+                                        {item.title}
+                                    </a>
+                                ))}
+                            </div>
                         </CardContent>
                     </Card>
-                    <Card className="shadow-md">
+                    <Card className="shadow-md mt-16">
                         <CardHeader>
                             <CardTitle>Personal Skills</CardTitle>
                             <CardDescription>Skills that define me.</CardDescription>
@@ -206,7 +232,7 @@ export default function Skills() {
                             ))}
                         </CardContent>
                     </Card>
-                    <div className="flex justify-between w-full max-w-4xl mx-auto mt-4 pb-8">
+                    <div className="flex justify-between w-full max-w-4xl mx-auto mt-4 pt-4 pb-8">
                         <Button
                             variant="outline"
                             onClick={() => navigate(pages[0].path, { replace: true })}
