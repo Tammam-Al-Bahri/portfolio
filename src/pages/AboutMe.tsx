@@ -34,10 +34,10 @@ export default function AboutMe() {
     const { theme } = useTheme();
     const navigate = useNavigate();
     return (
-        <div className="relative overflow-auto w-screen h-screen">
+        <div className="relative overflow-hidden w-screen h-screen">
             {theme == "light" ? (
-                <div className="relative overflow-auto w-screen h-screen">
-                    <div className="absolute inset-0 invert blur-sm">
+                <div className="relative overflow-hidden w-screen h-screen">
+                    <div className="fixed inset-0 invert blur-sm">
                         <FaultyTerminal
                             scale={1.5}
                             gridMul={[1, 1]}
