@@ -212,9 +212,9 @@ export default function Skills() {
                                     speed={4}
                                     className="invert dark:invert-0 font-bold"
                                 />{" "}
-                                with an{" "}
+                                with a{" "}
                                 <ShinyText
-                                    text="Express + Prisma + PostgreSQL"
+                                    text="Dockerised Express + Prisma + PostgreSQL"
                                     disabled={false}
                                     speed={4}
                                     className="invert dark:invert-0 font-bold"
