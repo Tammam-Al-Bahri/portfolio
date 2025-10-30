@@ -47,7 +47,7 @@ export default function Projects() {
 
     return (
         <div className="relative overflow-auto w-screen h-screen dark:invert">
-            <div className="max-w-4xl mx-auto mb-12 lg:border-x-2 border-dashed bg-accent/10 dark:invert">
+            <div className="max-w-5xl mx-auto mb-12 lg:border-x-2 border-dashed bg-accent/10 dark:invert">
                 <div className="relative w-full h-64 md:h-96 lg:h-[300px] flex items-center justify-center overflow-hidden invert dark:invert-0">
                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[150px] bg-white/20 dark:bg-white/10 blur-3xl rounded-full" />
                     <ASCIIText
@@ -83,8 +83,9 @@ export default function Projects() {
                             </div>
                         </PixelCard>
                     ))}
+                    <div className="flex-grow basis-[300px] max-w-[300px]"></div>
                 </div>
-                <div className="flex justify-between w-full max-w-4xl mx-auto mt-4 px-6 pt-4 pb-8">
+                <div className="flex justify-between w-full max-w-5xl mx-auto mt-4 px-6 pt-4 pb-8">
                     <Button
                         variant="outline"
                         onClick={() => navigate(pages[1].path, { replace: true })}
