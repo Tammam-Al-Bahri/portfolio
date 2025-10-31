@@ -232,6 +232,7 @@ export default function Skills() {
                                     <a
                                         key={item.title}
                                         href={item.href}
+                                        target="_blank"
                                         className="px-3 py-1 border rounded-lg text-xs bg-accent hover:scale-105 select-none"
                                     >
                                         {item.title}
