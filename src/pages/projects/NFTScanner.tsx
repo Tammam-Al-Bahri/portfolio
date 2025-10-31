@@ -16,7 +16,7 @@ export default function NFTScanner() {
                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[150px] bg-white/20 dark:bg-white/10 blur-3xl rounded-full" />
                     <ASCIIText
                         key={rerender ? "rerendered" : "initial"}
-                        text="Granada"
+                        text="NFT Scanner"
                         enableWaves={false}
                         asciiFontSize={8}
                     />
