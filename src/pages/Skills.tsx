@@ -22,6 +22,8 @@ import {
     SiPostgresql,
     SiMysql,
     SiSqlite,
+    SiCss3,
+    SiGithubpages,
 } from "react-icons/si";
 import pages from ".";
 import { useNavigate } from "react-router-dom";
@@ -55,11 +57,17 @@ export default function Skills() {
         { node: <SiSqlite />, title: "SQLite", href: "https://sqlite.org/" },
         { node: <SiExpress />, title: "Express", href: "https://expressjs.com/" },
         { node: <SiDocker />, title: "Docker", href: "https://www.docker.com" },
+        { node: <SiCss3 />, title: "CSS", href: "https://en.wikipedia.org/wiki/CSS" },
         { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
         { node: <SiShadcnui />, title: "Shadcn", href: "https://ui.shadcn.com" },
         { node: <SiClerk />, title: "Clerk", href: "https://clerk.com/" },
         { node: <SiGit />, title: "Git", href: "https://git-scm.com/" },
         { node: <SiGithub />, title: "Github", href: "https://github.com/" },
+        {
+            node: <SiGithubpages />,
+            title: "Github Pages",
+            href: "https://docs.github.com/en/pages/",
+        },
     ];
     const skills = [
         "Attention to Detail",

@@ -15,23 +15,70 @@ import { useState, useEffect } from "react";
 import PixelCard from "@/components/PixelCard";
 import { useSidebar } from "@/components/ui/sidebar";
 import Stack from "@/components/Stack";
-import me from "/images/me.jpg";
 import nftScanner1 from "/images/projects/nft-scanner/lootboxes-with-weapon-data-json-screenshot.jpg";
 import nftScanner2 from "/images/projects/nft-scanner/console-get-all-mint-addresses-js.jpg";
 import nftScanner3 from "/images/projects/nft-scanner/console-scanner-js.jpg";
 import nftScanner4 from "/images/projects/nft-scanner/wallet-confirm-lootbox-open.jpg";
+import portfolio1 from "/images/projects/portfolio/projects.jpg";
 import granada1 from "/images/projects/granada/app-and-docker.jpg";
 import frank1 from "/images/projects/frank/pcb.jpg";
 import frank2 from "/images/projects/frank/login-screen.jpg";
 import uniTsk1 from "/images/projects/university-projects/tsk-collaborator-editing-subtask.jpg";
 import uniTsk2 from "/images/projects/university-projects/tsk-home.jpg";
 import uniTsk3 from "/images/projects/university-projects/tsk-managing-invites.jpg";
+import {
+    SiDotnet,
+    SiJavascript,
+    SiTypescript,
+    SiReact,
+    SiReactrouter,
+    SiNextdotjs,
+    SiVite,
+    SiElectron,
+    SiPrisma,
+    SiPostgresql,
+    SiMysql,
+    SiSqlite,
+    SiExpress,
+    SiDocker,
+    SiTailwindcss,
+    SiShadcnui,
+    SiClerk,
+    SiLinuxmint,
+    SiCss3,
+    SiGithubpages,
+} from "react-icons/si";
+import FallingIcons from "@/components/FallingIcons";
 
 export default function Projects() {
     const variants = ["default", "blue", "yellow", "pink"] as const;
     const projects = [
-        { page: pages[3], variant: 0, icon: BriefcaseBusiness, images: [{ id: 1, img: granada1 }] },
-        { page: pages[4], variant: 1, icon: Paperclip, images: [{ id: 1, img: me }] },
+        {
+            page: pages[3],
+            variant: 0,
+            icon: BriefcaseBusiness,
+            images: [{ id: 1, img: granada1 }],
+            logos: [
+                SiTypescript,
+                SiElectron,
+                SiVite,
+                SiReact,
+                SiReactrouter,
+                SiTailwindcss,
+                SiShadcnui,
+                SiDocker,
+                SiExpress,
+                SiPrisma,
+                SiPostgresql,
+            ],
+        },
+        {
+            page: pages[4],
+            variant: 1,
+            icon: Paperclip,
+            images: [{ id: 1, img: portfolio1 }],
+            logos: [SiTypescript, SiVite, SiReact, SiReactrouter, SiShadcnui, SiGithubpages],
+        },
         {
             page: pages[7],
             variant: 3,
@@ -42,6 +89,7 @@ export default function Projects() {
                 { id: 2, img: nftScanner2 },
                 { id: 1, img: nftScanner1 },
             ],
+            logos: [SiJavascript],
         },
         {
             page: pages[5],
@@ -52,6 +100,18 @@ export default function Projects() {
                 { id: 1, img: uniTsk1 },
                 { id: 3, img: uniTsk3 },
             ],
+            logos: [
+                SiDotnet,
+                SiJavascript,
+                SiTypescript,
+                SiNextdotjs,
+                SiReact,
+                SiCss3,
+                SiTailwindcss,
+                SiSqlite,
+                SiMysql,
+                SiClerk,
+            ],
         },
         {
             page: pages[6],
@@ -61,6 +121,7 @@ export default function Projects() {
                 { id: 2, img: frank2 },
                 { id: 1, img: frank1 },
             ],
+            logos: [SiLinuxmint],
         },
     ];
 
@@ -107,7 +168,17 @@ export default function Projects() {
                                 <div className="text-2xl text-center font-bold">
                                     {project.page.title}
                                 </div>
-                                <div className="flex justify-center my-4">
+                                <div className="absolute inset-0">
+                                    <FallingIcons
+                                        icons={project.logos}
+                                        trigger="hover"
+                                        gravity={0.8}
+                                        iconSize={32}
+                                        wireframes={false}
+                                        mouseConstraintStiffness={0.9}
+                                    />
+                                </div>
+                                <div className="flex justify-center my-4 z-10">
                                     <Stack
                                         randomRotation={true}
                                         sensitivity={180}
@@ -118,7 +189,7 @@ export default function Projects() {
                                 </div>
                                 <div className="flex justify-end mx-[50px]">
                                     <Button
-                                        className="w-full"
+                                        className="w-full z-10"
                                         onClick={() =>
                                             navigate(project.page.path, { replace: true })
                                         }

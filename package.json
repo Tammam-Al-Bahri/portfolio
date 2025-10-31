@@ -23,6 +23,7 @@
         "gh-pages": "^6.3.0",
         "gsap": "^3.13.0",
         "lucide-react": "^0.545.0",
+        "matter-js": "^0.20.0",
         "motion": "^12.23.24",
         "ogl": "^1.0.11",
         "react": "^19.1.1",
@@ -35,6 +36,7 @@
     },
     "devDependencies": {
         "@eslint/js": "^9.36.0",
+        "@types/matter-js": "^0.20.2",
         "@types/node": "^24.6.0",
         "@types/react": "^19.1.16",
         "@types/react-dom": "^19.1.9",
