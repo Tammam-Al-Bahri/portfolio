@@ -128,7 +128,7 @@ export default function Projects() {
     const navigate = useNavigate();
     const [rerender, setRerender] = useState(false);
 
-    const { toggleSidebar } = useSidebar();
+    const { toggleSidebar, setOpen } = useSidebar();
 
     useEffect(() => {
         const timer = setTimeout(() => setRerender(true), 200);
@@ -162,13 +162,13 @@ export default function Projects() {
                             className="bg-card border-border shadow-xl hover:scale-101"
                         >
                             <div
-                                className={`absolute w-full h-full ${scaleClass} transition-transform duration-500 ease-in-out`}
+                                className={`absolute w-full h-full ${scaleClass} transition-transform duration-500 ease-in-out group`}
                             >
-                                <project.icon className="scale-150 m-4" />
+                                <project.icon className="scale-150 m-4 z-10" />
                                 <div className="text-2xl text-center font-bold">
                                     {project.page.title}
                                 </div>
-                                <div className="absolute inset-0 opacity-20 md:opacity-0 hover:opacity-100 transition-opacity duration-200">
+                                <div className="absolute inset-0 opacity-50 md:opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                                     <FallingIcons
                                         icons={project.logos}
                                         trigger="hover"
@@ -190,9 +190,10 @@ export default function Projects() {
                                 <div className="flex justify-end mx-[50px]">
                                     <Button
                                         className="w-full z-10"
-                                        onClick={() =>
-                                            navigate(project.page.path, { replace: true })
-                                        }
+                                        onClick={() => {
+                                            setOpen(true);
+                                            navigate(project.page.path, { replace: true });
+                                        }}
                                     >
                                         View
                                     </Button>
