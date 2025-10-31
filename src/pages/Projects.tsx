@@ -16,15 +16,52 @@ import PixelCard from "@/components/PixelCard";
 import { useSidebar } from "@/components/ui/sidebar";
 import Stack from "@/components/Stack";
 import me from "/images/me.jpg";
+import nftScanner1 from "/images/projects/nft-scanner/lootboxes-with-weapon-data-json-screenshot.jpg";
+import nftScanner2 from "/images/projects/nft-scanner/console-get-all-mint-addresses-js.jpg";
+import nftScanner3 from "/images/projects/nft-scanner/console-scanner-js.jpg";
+import nftScanner4 from "/images/projects/nft-scanner/wallet-confirm-lootbox-open.jpg";
+import granada1 from "/images/projects/granada/app-and-docker.jpg";
+import frank1 from "/images/projects/frank/pcb.jpg";
+import frank2 from "/images/projects/frank/login-screen.jpg";
+import uniTsk1 from "/images/projects/university-projects/tsk-collaborator-editing-subtask.jpg";
+import uniTsk2 from "/images/projects/university-projects/tsk-home.jpg";
+import uniTsk3 from "/images/projects/university-projects/tsk-managing-invites.jpg";
 
 export default function Projects() {
     const variants = ["default", "blue", "yellow", "pink"] as const;
     const projects = [
-        { page: pages[3], variant: 0, icon: BriefcaseBusiness, images: [{ id: 1, img: me }] },
+        { page: pages[3], variant: 0, icon: BriefcaseBusiness, images: [{ id: 1, img: granada1 }] },
         { page: pages[4], variant: 1, icon: Paperclip, images: [{ id: 1, img: me }] },
-        { page: pages[7], variant: 3, icon: SearchCode, images: [{ id: 1, img: me }] },
-        { page: pages[5], variant: 2, icon: University, images: [{ id: 1, img: me }] },
-        { page: pages[6], variant: 0, icon: Bot, images: [{ id: 1, img: me }] },
+        {
+            page: pages[7],
+            variant: 3,
+            icon: SearchCode,
+            images: [
+                { id: 4, img: nftScanner4 },
+                { id: 3, img: nftScanner3 },
+                { id: 2, img: nftScanner2 },
+                { id: 1, img: nftScanner1 },
+            ],
+        },
+        {
+            page: pages[5],
+            variant: 2,
+            icon: University,
+            images: [
+                { id: 2, img: uniTsk2 },
+                { id: 1, img: uniTsk1 },
+                { id: 3, img: uniTsk3 },
+            ],
+        },
+        {
+            page: pages[6],
+            variant: 0,
+            icon: Bot,
+            images: [
+                { id: 2, img: frank2 },
+                { id: 1, img: frank1 },
+            ],
+        },
     ];
 
     const navigate = useNavigate();
@@ -61,25 +98,34 @@ export default function Projects() {
                     {projects.map((project) => (
                         <PixelCard
                             variant={variants[project.variant]}
-                            className="bg-card border-border shadow-xl"
+                            className="bg-card border-border shadow-xl hover:scale-101"
                         >
                             <div
-                                className={`absolute ${scaleClass} transition-transform duration-500 ease-in-out`}
+                                className={`absolute w-full h-full ${scaleClass} transition-transform duration-500 ease-in-out`}
                             >
-                                <project.icon />
-                                <div>{project.page.title}</div>
-                                <Stack
-                                    randomRotation={true}
-                                    sensitivity={180}
-                                    sendToBackOnClick={true}
-                                    cardDimensions={{ width: 200, height: 200 }}
-                                    cardsData={project.images}
-                                />
-                                <Button
-                                    onClick={() => navigate(project.page.path, { replace: true })}
-                                >
-                                    View
-                                </Button>
+                                <project.icon className="scale-150 m-4" />
+                                <div className="text-2xl text-center font-bold">
+                                    {project.page.title}
+                                </div>
+                                <div className="flex justify-center my-4">
+                                    <Stack
+                                        randomRotation={true}
+                                        sensitivity={180}
+                                        sendToBackOnClick={true}
+                                        cardDimensions={{ width: 200, height: 200 }}
+                                        cardsData={project.images}
+                                    />
+                                </div>
+                                <div className="flex justify-end mx-[50px]">
+                                    <Button
+                                        className="w-full"
+                                        onClick={() =>
+                                            navigate(project.page.path, { replace: true })
+                                        }
+                                    >
+                                        View
+                                    </Button>
+                                </div>
                             </div>
                         </PixelCard>
                     ))}
