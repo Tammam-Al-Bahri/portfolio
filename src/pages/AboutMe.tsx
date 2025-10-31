@@ -101,7 +101,7 @@ export default function AboutMe() {
                             text={"<> </> <> </> <> </> <> </> "}
                             onHover="slowDown"
                             spinDuration={300}
-                            className="font-mono scale-125"
+                            className="font-mono scale-125 text-zinc-500 opacity-50"
                         />
                         <img
                             src={"/portfolio/images/me.jpg"}

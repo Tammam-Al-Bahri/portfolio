@@ -212,11 +212,7 @@ export default function Projects() {
                         <ArrowLeft />
                         {pages[1].title}
                     </Button>
-                    <Button
-                        variant="outline"
-                        onClick={toggleSidebar}
-                        className="flex items-center gap-2"
-                    >
+                    <Button variant="outline" onClick={toggleSidebar}>
                         <PanelLeftIcon />
                     </Button>
                 </div>

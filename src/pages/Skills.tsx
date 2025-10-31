@@ -31,7 +31,6 @@ import ASCIIText from "@/components/ASCIIText";
 import ShinyText from "@/components/ShinyText";
 import { useState, useEffect } from "react";
 import ElectricBorder from "@/components/ElectricBorder";
-import { useTheme } from "@/components/theme-provider";
 
 export default function Skills() {
     const techLogos = [
@@ -128,7 +127,6 @@ export default function Skills() {
         };
     }, []);
 
-    const { theme } = useTheme();
     return (
         <div className="relative overflow-auto w-screen h-screen dark:invert">
             <div className="max-w-5xl mx-auto mb-12 lg:border-x-2 border-dashed bg-accent/10 dark:invert">
@@ -144,11 +142,11 @@ export default function Skills() {
 
                 <div className="flex flex-col gap-6 px-12">
                     <ElectricBorder
-                        color={theme == "light" ? "#7dffdc" : "#27e676"}
+                        color="#27e676"
                         speed={0.2}
                         chaos={0.5}
                         thickness={2}
-                        className="rounded-xl"
+                        className="rounded-xl hover:scale-101"
                     >
                         <Card
                             className={`m-1 shadow-md transition-transform duration-100 ease-in ${scaleCardClass}`}
@@ -186,7 +184,7 @@ export default function Skills() {
                             </div>
                         </Card>
                     </ElectricBorder>
-                    <Card className="shadow-md mt-16">
+                    <Card className="shadow-md mt-16 hover:scale-101">
                         <CardHeader>
                             <CardTitle>Technical Skills</CardTitle>
                             <CardDescription>
@@ -234,7 +232,7 @@ export default function Skills() {
                                     <a
                                         key={item.title}
                                         href={item.href}
-                                        className="px-3 py-1 border rounded-lg text-xs bg-secondary hover:scale-105 select-none"
+                                        className="px-3 py-1 border rounded-lg text-xs bg-accent hover:scale-105 select-none"
                                     >
                                         {item.title}
                                     </a>
@@ -242,7 +240,7 @@ export default function Skills() {
                             </div>
                         </CardContent>
                     </Card>
-                    <Card className="shadow-md mt-16">
+                    <Card className="shadow-md mt-16 hover:scale-101">
                         <CardHeader>
                             <CardTitle>Personal Skills</CardTitle>
                             <CardDescription>Skills that define me.</CardDescription>
@@ -251,14 +249,14 @@ export default function Skills() {
                             {skills.map((skill) => (
                                 <span
                                     key={skill}
-                                    className="px-3 py-1 border rounded-lg text-sm bg-secondary hover:scale-105 select-none"
+                                    className="px-3 py-1 border rounded-lg text-sm bg-accent hover:scale-105 select-none"
                                 >
                                     {skill}
                                 </span>
                             ))}
                         </CardContent>
                     </Card>
-                    <Card className="shadow-md">
+                    <Card className="shadow-md hover:scale-101">
                         <CardHeader>
                             <CardTitle>Languages & Interests</CardTitle>
                             <CardDescription>What I speak and what I love.</CardDescription>
@@ -267,7 +265,7 @@ export default function Skills() {
                             {interests.map((item) => (
                                 <span
                                     key={item}
-                                    className="px-3 py-1 border rounded-lg text-sm bg-secondary hover:scale-105 select-none"
+                                    className="px-3 py-1 border rounded-lg text-sm bg-accent hover:scale-105 select-none"
                                 >
                                     {item}
                                 </span>
