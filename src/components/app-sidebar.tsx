@@ -145,15 +145,6 @@ export function AppSidebar() {
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
-                <SidebarMenuItem>
-                    <SidebarMenuButton
-                        asChild
-                        onClick={() => (
-                            navigate("/test", { replace: true }),
-                            sidebar.isMobile ? sidebar.toggleSidebar() : null
-                        )}
-                    ></SidebarMenuButton>
-                </SidebarMenuItem>
                 <SidebarFooter className="fixed bottom-2">
                     <ThemeToggle />
                 </SidebarFooter>
