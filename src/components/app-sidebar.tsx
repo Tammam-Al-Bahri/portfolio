@@ -112,10 +112,10 @@ export function AppSidebar() {
                                             sidebar.isMobile ? sidebar.toggleSidebar() : null
                                         )}
                                     >
-                                        <div className="select-none">
+                                        <button className="select-none">
                                             <item.icon />
                                             <span>{item.title}</span>
-                                        </div>
+                                        </button>
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
                             ))}
@@ -135,10 +135,10 @@ export function AppSidebar() {
                                             sidebar.isMobile ? sidebar.toggleSidebar() : null
                                         )}
                                     >
-                                        <div className="select-none">
+                                        <button className="select-none">
                                             <item.icon />
                                             <span>{item.title}</span>
-                                        </div>
+                                        </button>
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
                             ))}
