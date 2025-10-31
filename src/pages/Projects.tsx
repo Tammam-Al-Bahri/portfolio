@@ -168,7 +168,7 @@ export default function Projects() {
                                 <div className="text-2xl text-center font-bold">
                                     {project.page.title}
                                 </div>
-                                <div className="absolute inset-0">
+                                <div className="absolute inset-0 opacity-20 md:opacity-0 hover:opacity-100 transition-opacity duration-200">
                                     <FallingIcons
                                         icons={project.logos}
                                         trigger="hover"

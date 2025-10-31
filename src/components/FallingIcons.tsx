@@ -113,6 +113,13 @@ const FallingIcons: React.FC<FallingIconsProps> = ({
         const runner = Runner.create();
         Runner.run(runner, engine);
         Render.run(render);
+        canvasContainerRef.current?.addEventListener(
+            "wheel",
+            (e) => {
+                e.stopPropagation();
+            },
+            { passive: true }
+        );
 
         const updateLoop = () => {
             iconBodies.forEach(({ elem, body }) => {

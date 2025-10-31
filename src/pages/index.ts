@@ -1,7 +1,6 @@
 import AboutMe from "./AboutMe";
 import Projects from "./Projects";
 import Portfolio from "./projects/Portfolio";
-import Test from "./Test";
 import Skills from "./Skills";
 import Granada from "./projects/Granada";
 import UniversityProjects from "./projects/UniversityProjects";
@@ -50,12 +49,6 @@ const pages = [
         path: "/projects/nft-scanner",
         title: "NFT Scanner",
         component: NFTScanner,
-    },
-    // temporary page to test stuff
-    {
-        path: "/test",
-        title: "Test",
-        component: Test,
     },
 ] as const;
 

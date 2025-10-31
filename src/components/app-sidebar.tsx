@@ -6,7 +6,6 @@ import {
     Paperclip,
     PersonStanding,
     SearchCode,
-    TestTube,
     University,
     type LucideProps,
 } from "lucide-react";
@@ -153,12 +152,7 @@ export function AppSidebar() {
                             navigate("/test", { replace: true }),
                             sidebar.isMobile ? sidebar.toggleSidebar() : null
                         )}
-                    >
-                        <div className="select-none">
-                            <TestTube />
-                            <span>{"Test"}</span>
-                        </div>
-                    </SidebarMenuButton>
+                    ></SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarFooter className="fixed bottom-2">
                     <ThemeToggle />
