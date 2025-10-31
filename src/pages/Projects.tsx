@@ -156,51 +156,62 @@ export default function Projects() {
                     />
                 </div>
                 <div className="flex flex-wrap justify-center gap-6 px-6">
-                    {projects.map((project) => (
-                        <PixelCard
-                            variant={variants[project.variant]}
-                            className="bg-card border-border shadow-xl hover:scale-101"
-                        >
-                            <div
-                                className={`absolute w-full h-full ${scaleClass} transition-transform duration-500 ease-in-out group`}
+                    {projects.map((project) => {
+                        const [iconsVisible, setIconsVisible] = useState(false);
+                        return (
+                            <PixelCard
+                                key={project.page.path}
+                                variant={variants[project.variant]}
+                                className="bg-card border-border shadow-xl hover:scale-101"
                             >
-                                <project.icon className="scale-150 m-4 z-10" />
-                                <div className="text-2xl text-center font-bold">
-                                    {project.page.title}
-                                </div>
-                                <div className="absolute inset-0 opacity-50 md:opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                                    <FallingIcons
-                                        icons={project.logos}
-                                        trigger="hover"
-                                        gravity={0.8}
-                                        iconSize={32}
-                                        wireframes={false}
-                                        mouseConstraintStiffness={0.9}
-                                    />
-                                </div>
-                                <div className="flex justify-center my-4 z-10">
-                                    <Stack
-                                        randomRotation={true}
-                                        sensitivity={180}
-                                        sendToBackOnClick={true}
-                                        cardDimensions={{ width: 200, height: 200 }}
-                                        cardsData={project.images}
-                                    />
-                                </div>
-                                <div className="flex justify-end mx-[50px]">
-                                    <Button
-                                        className="w-full z-10"
+                                <div
+                                    className={`absolute w-full h-full ${scaleClass} transition-transform duration-500 ease-in-out group`}
+                                >
+                                    <project.icon className="scale-150 m-4 z-10" />
+                                    <div className="text-2xl text-center font-bold">
+                                        {project.page.title}
+                                    </div>
+                                    <div
+                                        className={`absolute inset-0 md:opacity-0 ${
+                                            iconsVisible ? "md:opacity-100" : "opacity-0"
+                                        } group-hover:opacity-100 transition-opacity duration-200`}
                                         onClick={() => {
-                                            setOpen(true);
-                                            navigate(project.page.path, { replace: true });
+                                            setIconsVisible(true);
                                         }}
                                     >
-                                        View
-                                    </Button>
+                                        <FallingIcons
+                                            icons={project.logos}
+                                            trigger="hover"
+                                            gravity={0.8}
+                                            iconSize={32}
+                                            wireframes={false}
+                                            mouseConstraintStiffness={0.9}
+                                        />
+                                    </div>
+                                    <div className="flex justify-center my-4 z-10">
+                                        <Stack
+                                            randomRotation={true}
+                                            sensitivity={180}
+                                            sendToBackOnClick={true}
+                                            cardDimensions={{ width: 200, height: 200 }}
+                                            cardsData={project.images}
+                                        />
+                                    </div>
+                                    <div className="flex justify-end mx-[50px]">
+                                        <Button
+                                            className="w-full z-10"
+                                            onClick={() => {
+                                                setOpen(true);
+                                                navigate(project.page.path, { replace: true });
+                                            }}
+                                        >
+                                            View
+                                        </Button>
+                                    </div>
                                 </div>
-                            </div>
-                        </PixelCard>
-                    ))}
+                            </PixelCard>
+                        );
+                    })}
                     <div className="flex-grow basis-[300px] max-w-[300px]"></div>
                 </div>
                 <div className="flex justify-between w-full max-w-5xl mx-auto mt-4 px-6 pt-4 pb-8">
