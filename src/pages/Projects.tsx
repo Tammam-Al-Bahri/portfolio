@@ -58,7 +58,16 @@ export default function Projects() {
             variant: 1,
             icon: Paperclip,
             images: [{ id: 1, img: portfolio1 }],
-            logos: [SiTypescript, SiVite, SiReact, SiReactrouter, SiShadcnui, SiGithubpages],
+            logos: [
+                SiTypescript,
+                SiVite,
+                SiReact,
+                SiReactrouter,
+                SiShadcnui,
+                SiTailwindcss,
+                SiCss3,
+                SiGithubpages,
+            ],
         },
         {
             page: pages[7],
@@ -223,7 +232,7 @@ export default function Projects() {
                         <ArrowLeft />
                         {pages[1].title}
                     </Button>
-                    <Button variant="outline" onClick={toggleSidebar}>
+                    <Button variant="outline" size="icon" onClick={toggleSidebar}>
                         <PanelLeftIcon />
                     </Button>
                 </div>
