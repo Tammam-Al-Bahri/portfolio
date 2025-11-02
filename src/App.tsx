@@ -3,7 +3,6 @@ import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import pages from "./pages";
 import Footer from "./components/Footer";
-import ClickSpark from "./components/ClickSpark";
 
 function Layout() {
     return (
@@ -16,19 +15,7 @@ function Layout() {
                     </div>
                 </div>
                 <main>
-                    <div>
-                        <ClickSpark
-                            sparkColor="#00ff00"
-                            sparkSize={100}
-                            sparkRadius={150}
-                            sparkCount={1}
-                            duration={400}
-                            easing="ease-out"
-                            extraScale={10}
-                        >
-                            <Outlet />
-                        </ClickSpark>
-                    </div>
+                    <Outlet />
                     <Footer />
                 </main>
             </div>

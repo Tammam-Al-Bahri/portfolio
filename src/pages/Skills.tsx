@@ -100,32 +100,30 @@ export default function Skills() {
         return () => clearTimeout(timer);
     }, []);
 
-    const [scaleTextClass, setScaleTextClass] = useState("scale-115");
+    const [scaleTextClass, setScaleTextClass] = useState("scale-100");
     const [scaleCardClass, setScaleCardClass] = useState("scale-100");
 
-    const animationDelay = 100;
     const textFallDuration = 200;
     const cardScaleDuration = 150;
 
-    useEffect(() => {
-        const textTimer = setTimeout(() => {
+    const handleMouseLeave = () => {
+        setTimeout(() => {
             setScaleTextClass("scale-100");
-        }, animationDelay);
+        });
 
-        const cardUpTimer = setTimeout(() => {
-            setScaleCardClass("scale-101");
-        }, animationDelay + textFallDuration);
+        setTimeout(() => {
+            setScaleCardClass("scale-99");
+        }, textFallDuration);
 
-        const cardDownTimer = setTimeout(() => {
+        setTimeout(() => {
             setScaleCardClass("scale-100");
-        }, animationDelay + textFallDuration + cardScaleDuration);
+        }, textFallDuration + cardScaleDuration);
+    };
 
-        return () => {
-            clearTimeout(textTimer);
-            clearTimeout(cardUpTimer);
-            clearTimeout(cardDownTimer);
-        };
-    }, []);
+    const handleMouseEnter = () => {
+        setScaleTextClass("scale-105");
+        setScaleCardClass("scale-100");
+    };
 
     return (
         <div className="relative overflow-auto w-screen h-screen dark:invert">
@@ -146,10 +144,12 @@ export default function Skills() {
                         speed={0.2}
                         chaos={0.5}
                         thickness={2}
-                        className="rounded-xl hover:scale-101"
+                        className={`rounded-xl transition-transform duration-200 ${scaleCardClass}`}
                     >
                         <Card
-                            className={`m-1 shadow-md transition-transform duration-100 ease-in ${scaleCardClass}`}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                            className="m-1 shadow-md"
                         >
                             <div
                                 className={`p-4 lg:px-8 text-center max-w-3xl mx-auto space-y-6 ${scaleTextClass} transition-transform duration-${textFallDuration} ease-in`}
