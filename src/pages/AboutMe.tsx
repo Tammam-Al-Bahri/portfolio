@@ -95,6 +95,7 @@ export default function AboutMe() {
                     displace={0.8}
                     saturation={0.8}
                     borderWidth={0.3}
+                    mixBlendMode="difference"
                 >
                     <div className="relative flex items-center justify-center text-muted-foreground">
                         <CircularText

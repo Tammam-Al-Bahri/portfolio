@@ -54,25 +54,6 @@ export default function Projects() {
     const variants = ["default", "blue", "yellow", "pink"] as const;
     const projects = [
         {
-            page: pages[3],
-            variant: 0,
-            icon: BriefcaseBusiness,
-            images: [{ id: 1, img: granada1 }],
-            logos: [
-                SiTypescript,
-                SiElectron,
-                SiVite,
-                SiReact,
-                SiReactrouter,
-                SiTailwindcss,
-                SiShadcnui,
-                SiDocker,
-                SiExpress,
-                SiPrisma,
-                SiPostgresql,
-            ],
-        },
-        {
             page: pages[4],
             variant: 1,
             icon: Paperclip,
@@ -90,6 +71,25 @@ export default function Projects() {
                 { id: 1, img: nftScanner1 },
             ],
             logos: [SiJavascript],
+        },
+        {
+            page: pages[3],
+            variant: 0,
+            icon: BriefcaseBusiness,
+            images: [{ id: 1, img: granada1 }],
+            logos: [
+                SiTypescript,
+                SiElectron,
+                SiVite,
+                SiReact,
+                SiReactrouter,
+                SiTailwindcss,
+                SiShadcnui,
+                SiDocker,
+                SiExpress,
+                SiPrisma,
+                SiPostgresql,
+            ],
         },
         {
             page: pages[5],

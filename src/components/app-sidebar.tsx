@@ -57,11 +57,6 @@ const aboutMeItems: MenuItem[] = [
 
 const projectItems: MenuItem[] = [
     {
-        title: "Granada",
-        path: "/projects/granada",
-        icon: BriefcaseBusiness,
-    },
-    {
         title: "Portfolio",
         path: "/projects/portfolio",
         icon: Paperclip,
@@ -70,6 +65,11 @@ const projectItems: MenuItem[] = [
         path: "/projects/nft-scanner",
         title: "NFT Scanner",
         icon: SearchCode,
+    },
+    {
+        title: "Granada",
+        path: "/projects/granada",
+        icon: BriefcaseBusiness,
     },
     {
         path: "/projects/university-projects",
