@@ -137,7 +137,7 @@ export default function Projects() {
     const navigate = useNavigate();
     const [rerender, setRerender] = useState(false);
 
-    const { toggleSidebar, setOpen } = useSidebar();
+    const { toggleSidebar } = useSidebar();
 
     useEffect(() => {
         const timer = setTimeout(() => setRerender(true), 200);
@@ -210,7 +210,6 @@ export default function Projects() {
                                         <Button
                                             className="w-full z-10"
                                             onClick={() => {
-                                                setOpen(true);
                                                 navigate(project.page.path, { replace: true });
                                             }}
                                         >
@@ -221,7 +220,7 @@ export default function Projects() {
                             </PixelCard>
                         );
                     })}
-                    <div className="flex-grow basis-[300px] max-w-[300px]"></div>
+                    <div className="flex-grow basis-[300px] max-w-[300px]" />
                 </div>
                 <div className="flex justify-between w-full max-w-5xl mx-auto mt-4 px-6 pt-4 pb-8">
                     <Button

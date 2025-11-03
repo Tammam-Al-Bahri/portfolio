@@ -59,60 +59,93 @@ export default function Portfolio() {
                         asciiFontSize={8}
                     />
                 </div>
-
-                <div className="flex flex-col gap-6">
-                    <Accordion type="multiple">
-                        <AccordionItem value="item-1" className="px-8 border-dashed">
-                            <AccordionTrigger>
-                                <div className="flex gap-2 items-center">
-                                    <FileText size={16} />
-                                    Overview
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent>*PUT STUFF HERE*</AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="item-2" className="px-8 border-dashed">
-                            <AccordionTrigger>
-                                <div className="flex gap-2 items-center">
-                                    <Flag size={16} />
-                                    Challenges and Takeaways
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent>
-                                To be honest the reason why this website is kind of crazy is because
-                                I kept messing around with cool components rather than making a
-                                wireframe. I'm happy though, how was I meant to make a wireframe
-                                when I didn't really know what I was doing?
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="item-3" className="px-8 border-dashed">
-                            <AccordionTrigger>
-                                <div className="flex gap-2 items-center">
-                                    <Cpu size={16} />
-                                    Technology Used
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent>
-                                <LogoLoop
-                                    logos={techLogos}
-                                    speed={25}
-                                    direction="right"
-                                    logoHeight={24}
-                                    gap={100}
-                                    pauseOnHover
-                                    scaleOnHover
-                                    ariaLabel="Technology Stack"
-                                    className="border-x-1 border-dashed"
-                                />
-                            </AccordionContent>
-                        </AccordionItem>
-                    </Accordion>
+                <div className="flex flex-col">
+                    <div className="flex flex-col gap-6">
+                        <Accordion type="multiple">
+                            <AccordionItem value="item-1" className="px-8 border-dashed">
+                                <AccordionTrigger>
+                                    <div className="flex gap-2 items-center font-bold">
+                                        <FileText size={16} />
+                                        Overview
+                                    </div>
+                                </AccordionTrigger>
+                                <AccordionContent>*PUT STUFF HERE*</AccordionContent>
+                            </AccordionItem>
+                            <AccordionItem value="item-2" className="px-8 border-dashed">
+                                <AccordionTrigger>
+                                    <div className="flex gap-2 items-center font-bold">
+                                        <Flag size={16} />
+                                        Challenges and Takeaways
+                                    </div>
+                                </AccordionTrigger>
+                                <AccordionContent className="px-6 text-card-foreground">
+                                    <p className="py-4">
+                                        Working on this project has been fantastic for my frontend
+                                        proficiency. It has helped me solidify my Tailwind and React
+                                        skills in particular, and get more confident in problem
+                                        solving and experimenting with component architecture.
+                                    </p>
+                                    <p className="py-4">
+                                        I've gotten especially comfortable with Shadcn and React
+                                        Bits components, and that has motivated me to level up my
+                                        workflow even further. As I begin to master these skills, I
+                                        plan to start integrating tools like MCP and Cursor to cut
+                                        down on repetitive tasks, so I can focus mainly on the
+                                        backend logic and product goals.
+                                    </p>
+                                    <p className="py-4">
+                                        This is also my first deployed project - a small but
+                                        important milestone.
+                                    </p>
+                                    <p className="py-4">
+                                        The design ended up being quite experimental since I let
+                                        myself play with ideas instead of sticking to a wireframe.
+                                        Honestly, that helped me explore UI/UX with real freedom.
+                                    </p>
+                                    <p className="py-4">
+                                        Something I've realized is that my biggest bottleneck isn't
+                                        my programming ability - it's knowing the specifics of what
+                                        should be built, and all the small but important decisions
+                                        early on, all with scalability in mind.
+                                    </p>
+                                    <p className="py-4">
+                                        That's why I'm excited to work with experienced engineers
+                                        and designers who can guide me in all software engineering
+                                        aspects.
+                                    </p>
+                                </AccordionContent>
+                            </AccordionItem>
+                            <AccordionItem value="item-3" className="px-8 border-dashed">
+                                <AccordionTrigger>
+                                    <div className="flex gap-2 items-center font-bold">
+                                        <Cpu size={16} />
+                                        Technologies Used
+                                    </div>
+                                </AccordionTrigger>
+                                <AccordionContent>
+                                    <LogoLoop
+                                        logos={techLogos}
+                                        speed={25}
+                                        direction="right"
+                                        logoHeight={32}
+                                        gap={75}
+                                        pauseOnHover
+                                        scaleOnHover
+                                        ariaLabel="Technology Stack"
+                                        className="border-x-1 border-dashed"
+                                    />
+                                </AccordionContent>
+                            </AccordionItem>
+                        </Accordion>
+                    </div>
+                    <div className="flex justify-center mt-4 px-6 pt-4 pb-16">
+                        <Button variant={"link"}>
+                            <a href="https://github.com/Tammam-Al-Bahri/portfolio" target="_blank">
+                                view code
+                            </a>
+                        </Button>
+                    </div>
                 </div>
-                <Button variant={"link"} className="fixed bottom-16 left-0 right-0">
-                    <a href="https://github.com/Tammam-Al-Bahri/portfolio" target="_blank">
-                        view code
-                    </a>
-                </Button>
             </div>
         </div>
     );
