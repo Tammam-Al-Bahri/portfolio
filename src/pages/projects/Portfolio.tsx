@@ -72,8 +72,8 @@ export default function Portfolio() {
                     />
                 </div>
                 <div className="flex flex-col">
-                    <div className="text-center italic">Live View:</div>
-                    <div className="relative flex justify-center group">
+                    <div className="text-center italic select-none">Live View:</div>
+                    <div className="relative flex justify-center group select-none">
                         <div className="text-center text-sm text-muted-foreground font-mono group-hover:underline">
                             Inception Level: {level}
                         </div>

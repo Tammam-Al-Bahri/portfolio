@@ -20,6 +20,7 @@ import nftScanner2 from "/images/projects/nft-scanner/console-get-all-mint-addre
 import nftScanner3 from "/images/projects/nft-scanner/console-scanner-js.jpg";
 import nftScanner4 from "/images/projects/nft-scanner/wallet-confirm-lootbox-open.jpg";
 import portfolio1 from "/images/projects/portfolio/projects.jpg";
+import portfolio2 from "/images/projects/portfolio/portfolio-recursion.jpg";
 import granada1 from "/images/projects/granada/app-and-docker.jpg";
 import frank1 from "/images/projects/frank/pcb.jpg";
 import frank2 from "/images/projects/frank/login-screen.jpg";
@@ -57,7 +58,10 @@ export default function Projects() {
             page: pages[4],
             variant: 1,
             icon: Paperclip,
-            images: [{ id: 1, img: portfolio1 }],
+            images: [
+                { id: 1, img: portfolio1 },
+                { id: 2, img: portfolio2 },
+            ],
             logos: [
                 SiTypescript,
                 SiVite,
