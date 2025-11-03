@@ -98,7 +98,7 @@ export default function AboutMe() {
                     </div>
                 )}
                 <div
-                    className={`absolute inset-0 flex flex-col items-center justify-center z-20 gap-6 pointer-events-none ${scaleClass} transition-transform duration-500 ease-in-out`}
+                    className={`absolute inset-0 flex flex-col items-center justify-center z-20 gap-6 pointer-events-none select-none ${scaleClass} transition-transform duration-500 ease-in-out`}
                 >
                     <GlassSurface
                         width={250}
