@@ -65,7 +65,6 @@ export default function Projects() {
                 SiReactrouter,
                 SiShadcnui,
                 SiTailwindcss,
-                SiCss3,
                 SiGithubpages,
             ],
         },

@@ -1,5 +1,7 @@
 import ASCIIText from "@/components/ASCIIText";
+import GradientText from "@/components/GradientText";
 import LogoLoop from "@/components/LogoLoop";
+import ShinyText from "@/components/ShinyText";
 import {
     Accordion,
     AccordionContent,
@@ -7,7 +9,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Cpu, FileText, Flag } from "lucide-react";
+import { Cpu, ExternalLink, FileText, Flag } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
     SiTypescript,
@@ -32,10 +34,10 @@ export default function Portfolio() {
         { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
         { node: <SiShadcnui />, title: "Shadcn", href: "https://ui.shadcn.com" },
         { node: <SiGit />, title: "Git", href: "https://git-scm.com/" },
-        { node: <SiGithub />, title: "Github", href: "https://github.com/" },
+        { node: <SiGithub />, title: "GitHub", href: "https://github.com/" },
         {
             node: <SiGithubpages />,
-            title: "Github Pages",
+            title: "GitHub Pages",
             href: "https://docs.github.com/en/pages/",
         },
     ];
@@ -69,9 +71,18 @@ export default function Portfolio() {
                         asciiFontSize={8}
                     />
                 </div>
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col">
+                    <div className="text-center italic">Live View:</div>
+                    <div className="relative flex justify-center group">
+                        <div className="text-center text-sm text-muted-foreground font-mono group-hover:underline">
+                            Inception Level: {level}
+                        </div>
+                        <div className="absolute top-full z-10 mt-1 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
+                            navigate to this page on the phone
+                        </div>
+                    </div>
                     <div className="flex justify-center">
-                        <div className="relative w-[350px] h-[700px] rounded-[3rem] border-8 border-neutral-800 bg-black shadow-2xl overflow-hidden">
+                        <div className="relative w-[400px] h-[750px] scale-100 rounded-[3rem] border-8 border-neutral-800 bg-black shadow-2xl overflow-hidden">
                             <div className="absolute top-1 left-1/2 -translate-x-1/2 w-24 h-5 bg-neutral-900 rounded-full z-10 opacity-80"></div>
 
                             <iframe
@@ -81,7 +92,6 @@ export default function Portfolio() {
                             ></iframe>
                         </div>
                     </div>
-                    <div className="text-center">Inception Level: {level}</div>
 
                     <Accordion type="multiple">
                         <AccordionItem value="item-1" className="px-8 border-dashed">
@@ -91,7 +101,13 @@ export default function Portfolio() {
                                     Overview
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>*PUT STUFF HERE*</AccordionContent>
+                            <AccordionContent className="px-6 text-card-foreground">
+                                <p>
+                                    A personal portfolio website built with React to showcase my
+                                    projects, skills, and background. It has a clean, interactive,
+                                    and mobile-first UI, and is deployed with GitHub Pages.
+                                </p>
+                            </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2" className="px-8 border-dashed">
                             <AccordionTrigger>
@@ -101,7 +117,7 @@ export default function Portfolio() {
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent className="px-6 text-card-foreground">
-                                <p className="py-4">
+                                <p>
                                     Working on this project has been fantastic for my frontend
                                     proficiency. It has helped me solidify my Tailwind and React
                                     skills in particular, and get more confident in problem solving
@@ -111,9 +127,9 @@ export default function Portfolio() {
                                     I've gotten especially comfortable with Shadcn and React Bits
                                     components, and that has motivated me to level up my workflow
                                     even further. As I begin to master these skills, I plan to start
-                                    integrating tools like MCP and Cursor to cut down on repetitive
-                                    tasks, so I can focus mainly on the backend logic and product
-                                    goals.
+                                    integrating tools like MCP and Claude Code to cut down on
+                                    repetitive tasks, so I can focus mainly on the backend logic and
+                                    product goals.
                                 </p>
                                 <p className="py-4">
                                     This is also my first deployed project - a small but important
@@ -128,11 +144,9 @@ export default function Portfolio() {
                                     Something I've realized is that my biggest bottleneck isn't my
                                     programming ability - it's knowing the specifics of what should
                                     be built, and all the small but important decisions early on,
-                                    all with scalability in mind.
-                                </p>
-                                <p className="py-4">
-                                    That's why I'm excited to work with experienced engineers and
-                                    designers who can guide me in all software engineering aspects.
+                                    all with scalability in mind. That's why I'm excited to work
+                                    with experienced engineers and designers who can guide me in all
+                                    software engineering aspects.
                                 </p>
                             </AccordionContent>
                         </AccordionItem>
@@ -143,26 +157,123 @@ export default function Portfolio() {
                                     Technologies Used
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent className="flex items-center">
-                                <LogoLoop
-                                    logos={techLogos}
-                                    speed={25}
-                                    direction="right"
-                                    logoHeight={32}
-                                    gap={75}
-                                    pauseOnHover
-                                    scaleOnHover
-                                    ariaLabel="Technology Stack"
-                                    className="border-x-1 border-dashed mx-2"
-                                />
+                            <AccordionContent className="px-6 text-card-foreground">
+                                <div className="flex items-center">
+                                    <LogoLoop
+                                        logos={techLogos}
+                                        speed={25}
+                                        direction="right"
+                                        logoHeight={32}
+                                        gap={75}
+                                        pauseOnHover
+                                        scaleOnHover
+                                        ariaLabel="Technology Stack"
+                                        className="border-x-1 border-dashed"
+                                    />
+                                </div>
+                                <ul className="py-4 px-4 text-lg list-disc">
+                                    <li className="pt-2">
+                                        <ShinyText
+                                            text="React"
+                                            disabled={false}
+                                            speed={4}
+                                            className="invert dark:invert-0 font-bold text-xl"
+                                        />{" "}
+                                        - component based UI and hooks for clean, reusable front-end
+                                        structure
+                                    </li>
+
+                                    <li className="pt-2">
+                                        <ShinyText
+                                            text="Vite"
+                                            disabled={false}
+                                            speed={4}
+                                            className="invert dark:invert-0 font-bold text-xl"
+                                        />{" "}
+                                        - fast dev environment with instant HMR and optimized builds
+                                    </li>
+
+                                    <li className="pt-2">
+                                        <ShinyText
+                                            text="TypeScript"
+                                            disabled={false}
+                                            speed={4}
+                                            className="invert dark:invert-0 font-bold text-xl"
+                                        />{" "}
+                                        - strong typing for safer, more maintainable code
+                                    </li>
+
+                                    <li className="pt-2">
+                                        <ShinyText
+                                            text="React Router"
+                                            disabled={false}
+                                            speed={4}
+                                            className="invert dark:invert-0 font-bold text-xl"
+                                        />{" "}
+                                        - client side routing for a smooth SPA experience
+                                    </li>
+
+                                    <li className="pt-2">
+                                        <ShinyText
+                                            text="Tailwind CSS"
+                                            disabled={false}
+                                            speed={4}
+                                            className="invert dark:invert-0 font-bold text-xl"
+                                        />{" "}
+                                        - utility first styling for fast iteration
+                                    </li>
+
+                                    <li className="pt-2">
+                                        <ShinyText
+                                            text="Shadcn"
+                                            disabled={false}
+                                            speed={4}
+                                            className="invert dark:invert-0 font-bold text-xl"
+                                        />{" "}
+                                        - accessible, customisable components to speed up
+                                        development
+                                    </li>
+
+                                    <li className="pt-2">
+                                        <ShinyText
+                                            text="React Bits"
+                                            disabled={false}
+                                            speed={4}
+                                            className="invert dark:invert-0 font-bold text-xl"
+                                        />{" "}
+                                        - fun and interactive UI effects
+                                    </li>
+
+                                    <li className="pt-2">
+                                        <ShinyText
+                                            text="GitHub Pages"
+                                            disabled={false}
+                                            speed={4}
+                                            className="invert dark:invert-0 font-bold text-xl"
+                                        />{" "}
+                                        - simple and reliable deployment for static hosting
+                                    </li>
+                                </ul>
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
                 </div>
-                <div className="flex justify-center mt-4 px-6 pt-4 pb-16">
-                    <Button variant={"link"}>
-                        <a href="https://github.com/Tammam-Al-Bahri/portfolio" target="_blank">
-                            view code
+                <div className="flex justify-center mt-4 px-6 pt-4 pb-24">
+                    <Button variant={"outline"}>
+                        <a
+                            href="https://github.com/Tammam-Al-Bahri/portfolio"
+                            target="_blank"
+                            className="text-xl flex items-center"
+                        >
+                            <GradientText
+                                colors={["#078000", "#259463", "#269693", "#078000"]}
+                                animationSpeed={10}
+                                showBorder={false}
+                                className="px-2"
+                            >
+                                code
+                            </GradientText>
+                            <ExternalLink />
                         </a>
                     </Button>
                 </div>

@@ -61,10 +61,10 @@ export default function Skills() {
         { node: <SiShadcnui />, title: "Shadcn", href: "https://ui.shadcn.com" },
         { node: <SiClerk />, title: "Clerk", href: "https://clerk.com/" },
         { node: <SiGit />, title: "Git", href: "https://git-scm.com/" },
-        { node: <SiGithub />, title: "Github", href: "https://github.com/" },
+        { node: <SiGithub />, title: "GitHub", href: "https://github.com/" },
         {
             node: <SiGithubpages />,
-            title: "Github Pages",
+            title: "GitHub Pages",
             href: "https://docs.github.com/en/pages/",
         },
     ];
