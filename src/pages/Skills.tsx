@@ -276,7 +276,7 @@ export default function Skills() {
                     <div className="flex justify-between w-full max-w-5xl mx-auto mt-4 pt-4 pb-8">
                         <Button
                             variant="outline"
-                            onClick={() => navigate(pages[0].path, { replace: true })}
+                            onClick={() => navigate(pages[0].path, { replace: false })}
                             className="flex items-center gap-2"
                         >
                             <ArrowLeft />
@@ -284,7 +284,7 @@ export default function Skills() {
                         </Button>
                         <Button
                             variant="outline"
-                            onClick={() => navigate(pages[2].path, { replace: true })}
+                            onClick={() => navigate(pages[2].path, { replace: false })}
                             className="flex items-center gap-2"
                         >
                             {pages[2].title}

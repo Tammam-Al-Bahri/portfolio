@@ -210,7 +210,7 @@ export default function Projects() {
                                         <Button
                                             className="w-full z-10"
                                             onClick={() => {
-                                                navigate(project.page.path, { replace: true });
+                                                navigate(project.page.path, { replace: false });
                                             }}
                                         >
                                             View
@@ -225,7 +225,7 @@ export default function Projects() {
                 <div className="flex justify-between w-full max-w-5xl mx-auto mt-4 px-6 pt-4 pb-8">
                     <Button
                         variant="outline"
-                        onClick={() => navigate(pages[1].path, { replace: true })}
+                        onClick={() => navigate(pages[1].path, { replace: false })}
                         className="flex items-center gap-2"
                     >
                         <ArrowLeft />

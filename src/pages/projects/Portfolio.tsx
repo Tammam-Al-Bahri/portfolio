@@ -40,6 +40,16 @@ export default function Portfolio() {
         },
     ];
 
+    const [level, setLevel] = useState(0);
+
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        const lvl = parseInt(params.get("level") || "0");
+        setLevel(lvl);
+    }, []);
+
+    const nextLevel = level + 1;
+
     const [rerender, setRerender] = useState(false);
 
     useEffect(() => {
@@ -65,12 +75,13 @@ export default function Portfolio() {
                             <div className="absolute top-1 left-1/2 -translate-x-1/2 w-24 h-5 bg-neutral-900 rounded-full z-10 opacity-80"></div>
 
                             <iframe
-                                src="https://tammam-al-bahri.github.io/portfolio/"
+                                src={`https://tammam-al-bahri.github.io/portfolio/?level=${nextLevel}&rnd=${Math.random()}`}
                                 title="Portfolio Inception"
                                 className="w-full h-full rounded-[2.5rem] overflow-hidden"
                             ></iframe>
                         </div>
                     </div>
+                    <div className="text-center">Inception Level: {level}</div>
 
                     <Accordion type="multiple">
                         <AccordionItem value="item-1" className="px-8 border-dashed">

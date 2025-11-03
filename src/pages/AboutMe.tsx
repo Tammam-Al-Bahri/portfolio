@@ -173,7 +173,7 @@ export default function AboutMe() {
 
                             <Button
                                 variant="outline"
-                                onClick={() => navigate(pages[1].path, { replace: true })}
+                                onClick={() => navigate(pages[1].path, { replace: false })}
                                 className="flex items-center gap-2"
                             >
                                 {pages[1].title}
