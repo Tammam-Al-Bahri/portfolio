@@ -1,4 +1,5 @@
 import ASCIIText from "@/components/ASCIIText";
+import ElectricBorder from "@/components/ElectricBorder";
 import GradientText from "@/components/GradientText";
 import LogoLoop from "@/components/LogoLoop";
 import ShinyText from "@/components/ShinyText";
@@ -259,23 +260,31 @@ export default function Portfolio() {
                     </Accordion>
                 </div>
                 <div className="flex justify-center mt-4 px-6 pt-4 pb-24">
-                    <Button variant={"outline"}>
-                        <a
-                            href="https://github.com/Tammam-Al-Bahri/portfolio"
-                            target="_blank"
-                            className="text-xl flex items-center"
-                        >
-                            <GradientText
-                                colors={["#078000", "#259463", "#269693", "#078000"]}
-                                animationSpeed={10}
-                                showBorder={false}
-                                className="px-2"
+                    <ElectricBorder
+                        color="#27e676"
+                        speed={2}
+                        chaos={0.5}
+                        thickness={2}
+                        className="rounded-xl p-1"
+                    >
+                        <Button variant={"outline"}>
+                            <a
+                                href="https://github.com/Tammam-Al-Bahri/portfolio"
+                                target="_blank"
+                                className="text-xl flex items-center"
                             >
-                                code
-                            </GradientText>
-                            <ExternalLink />
-                        </a>
-                    </Button>
+                                <GradientText
+                                    colors={["#078000", "#259463", "#269693", "#078000"]}
+                                    animationSpeed={10}
+                                    showBorder={false}
+                                    className="px-2"
+                                >
+                                    code
+                                </GradientText>
+                                <ExternalLink />
+                            </a>
+                        </Button>
+                    </ElectricBorder>
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import ASCIIText from "@/components/ASCIIText";
 import GradientText from "@/components/GradientText";
 import ShinyText from "@/components/ShinyText";
+import Stack from "@/components/Stack";
 import {
     Accordion,
     AccordionContent,
@@ -10,8 +11,20 @@ import {
 import { Button } from "@/components/ui/button";
 import { FileText, Flag, Cpu, ExternalLink } from "lucide-react";
 import { useState, useEffect } from "react";
+import nftScanner1 from "/images/projects/nft-scanner/lootboxes-with-weapon-data-json-screenshot.jpg";
+import nftScanner2 from "/images/projects/nft-scanner/console-get-all-mint-addresses-js.jpg";
+import nftScanner3 from "/images/projects/nft-scanner/console-scanner-js.jpg";
+import nftScanner4 from "/images/projects/nft-scanner/wallet-confirm-lootbox-open.jpg";
+import ElectricBorder from "@/components/ElectricBorder";
 
 export default function NFTScanner() {
+    const images = [
+        { id: 4, img: nftScanner4 },
+        { id: 3, img: nftScanner3 },
+        { id: 2, img: nftScanner2 },
+        { id: 1, img: nftScanner1 },
+    ];
+
     const [rerender, setRerender] = useState(false);
 
     useEffect(() => {
@@ -31,8 +44,18 @@ export default function NFTScanner() {
                         asciiFontSize={8}
                     />
                 </div>
-
                 <div className="flex flex-col gap-6">
+                    <div className="flex justify-center">
+                        <div className="scale-50 lg:scale-100">
+                            <Stack
+                                randomRotation={false}
+                                sensitivity={180}
+                                sendToBackOnClick={true}
+                                cardDimensions={{ width: 500, height: 500 }}
+                                cardsData={images}
+                            />
+                        </div>
+                    </div>
                     <Accordion type="multiple">
                         <AccordionItem value="item-1" className="px-8 border-dashed">
                             <AccordionTrigger>
@@ -188,23 +211,31 @@ export default function NFTScanner() {
                     </Accordion>
                 </div>
                 <div className="flex justify-center mt-4 px-6 pt-4 pb-24">
-                    <Button variant={"outline"}>
-                        <a
-                            href="https://github.com/Tammam-Al-Bahri/br1-lootbox-scanner"
-                            target="_blank"
-                            className="text-xl flex items-center"
-                        >
-                            <GradientText
-                                colors={["#078000", "#259463", "#269693", "#078000"]}
-                                animationSpeed={10}
-                                showBorder={false}
-                                className="px-2"
+                    <ElectricBorder
+                        color="#27e676"
+                        speed={2}
+                        chaos={0.5}
+                        thickness={2}
+                        className="rounded-xl p-1"
+                    >
+                        <Button variant={"outline"}>
+                            <a
+                                href="https://github.com/Tammam-Al-Bahri/br1-lootbox-scanner"
+                                target="_blank"
+                                className="text-xl flex items-center"
                             >
-                                code
-                            </GradientText>
-                            <ExternalLink />
-                        </a>
-                    </Button>
+                                <GradientText
+                                    colors={["#078000", "#259463", "#269693", "#078000"]}
+                                    animationSpeed={10}
+                                    showBorder={false}
+                                    className="px-2"
+                                >
+                                    code
+                                </GradientText>
+                                <ExternalLink />
+                            </a>
+                        </Button>
+                    </ElectricBorder>
                 </div>
             </div>
         </div>
