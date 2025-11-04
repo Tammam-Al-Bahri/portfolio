@@ -27,7 +27,7 @@ const pages = [
     // projects
     {
         path: "/projects/granada",
-        title: "Granada",
+        title: "Granada PMS",
         component: Granada,
     },
     {

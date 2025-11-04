@@ -61,7 +61,7 @@ export default function Portfolio() {
 
     return (
         <div className="relative overflow-auto w-screen h-screen dark:invert">
-            <div className="max-w-5xl mx-auto h-[full+700px] lg:border-x-2 border-dashed bg-accent/10 dark:invert">
+            <div className="max-w-5xl mx-auto lg:border-x-2 border-dashed bg-accent/10 dark:invert">
                 <div className="relative w-full h-64 md:h-96 lg:h-[300px] flex items-center justify-center overflow-hidden invert dark:invert-0">
                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[150px] bg-white/20 dark:bg-white/10 blur-3xl rounded-full" />
                     <ASCIIText
@@ -117,7 +117,7 @@ export default function Portfolio() {
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent className="px-6 text-card-foreground">
-                                <p>
+                                <p className="pb-4">
                                     Working on this project has been fantastic for my frontend
                                     proficiency. It has helped me solidify my Tailwind and React
                                     skills in particular, and get more confident in problem solving

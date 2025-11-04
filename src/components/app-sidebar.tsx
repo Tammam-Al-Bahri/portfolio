@@ -67,7 +67,7 @@ const projectItems: MenuItem[] = [
         icon: SearchCode,
     },
     {
-        title: "Granada",
+        title: "Granada PMS",
         path: "/projects/granada",
         icon: BriefcaseBusiness,
     },

@@ -1,4 +1,14 @@
 import ASCIIText from "@/components/ASCIIText";
+import GradientText from "@/components/GradientText";
+import ShinyText from "@/components/ShinyText";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { FileText, Flag, Cpu, ExternalLink } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function NFTScanner() {
@@ -22,8 +32,179 @@ export default function NFTScanner() {
                     />
                 </div>
 
-                <div className="flex flex-col gap-6 px-12">
-                    https://github.com/Tammam-Al-Bahri/br1-lootbox-scanner
+                <div className="flex flex-col gap-6">
+                    <Accordion type="multiple">
+                        <AccordionItem value="item-1" className="px-8 border-dashed">
+                            <AccordionTrigger>
+                                <div className="flex gap-2 items-center font-bold">
+                                    <FileText size={16} />
+                                    Overview
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent className="px-6 text-card-foreground">
+                                <p>
+                                    A simple browser based utility that scans{" "}
+                                    <a
+                                        href="https://www.br1game.com/"
+                                        target="_blank"
+                                        className="font-bold underline"
+                                    >
+                                        BR1 Infinite
+                                    </a>{" "}
+                                    <a
+                                        href="https://magiceden.io/marketplace/br1_loot_boxes"
+                                        target="_blank"
+                                        className="italic underline"
+                                    >
+                                        lootboxes
+                                    </a>{" "}
+                                    and extracts their weapon IDs and metadata, including rarities,
+                                    directly from the game website's API - no Node.js, no setup,
+                                    runs straight in browser DevTools.
+                                </p>
+                                <p className="pt-4">Consists of two small JS scripts:</p>
+                                <ul className="list-disc px-6 py-2">
+                                    <li>
+                                        <code>scanner.js</code> — fetches lootbox contents and
+                                        weapon rarity and exports JSON
+                                    </li>
+                                    <li>
+                                        <code>getAllMintAddresses.js</code> — grabs all NFT mint
+                                        addresses from Solana collection via Helius API
+                                    </li>
+                                </ul>
+                                <p className="pt-4">
+                                    The result is a JSON file with the entire remaining lootbox
+                                    collection (2553 addresses), each with the IDs and rarities of
+                                    its 3 weapons. Now anyone can use this to find or buy listed
+                                    lootboxes with rare contents.
+                                </p>
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-2" className="px-8 border-dashed">
+                            <AccordionTrigger>
+                                <div className="flex gap-2 items-center font-bold">
+                                    <Flag size={16} />
+                                    Challenges and Takeaways
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent className="px-6 text-card-foreground">
+                                <p className="pb-4">
+                                    I first realised it might be possible to see lootbox contents
+                                    before opening them as when you click the <em>open</em> button
+                                    on the BR1 site, the connected wallet already shows exactly what
+                                    you'll receive <em>before</em> you approve the transaction, and
+                                    it's always the same balance change.
+                                </p>
+                                <p className="pb-4">
+                                    That got me curious, especially since they are dropping a new
+                                    lootbox collection with a cash bounty on a rare skin, so I did
+                                    some quick reverse engineering.
+                                </p>
+                                <p className="pb-4">
+                                    Using the Network tab in DevTools, I found the{" "}
+                                    <code>/api/lootbox/open</code> endpoint, which returns the
+                                    weapon IDs for a given lootbox mint address. Then, by checking a{" "}
+                                    <a
+                                        href="https://solscan.io/token/9mjeJbsPhMDTVLisAkjtHT3gGfUo7BrxTbAkPNWBjNC7#metadata"
+                                        target="_blank"
+                                        className="underline"
+                                    >
+                                        weapon's NFT metadata
+                                    </a>{" "}
+                                    on a Solana explorer, I discovered the endpoint.
+                                </p>
+                                <p className="py-4">
+                                    I attempted to write a Python script first, but the main issue
+                                    was CORS. This was solved by running everything directly in
+                                    DevTools on{" "}
+                                    <a
+                                        href="https://www.br1game.com"
+                                        target="_blank"
+                                        className="underline"
+                                    >
+                                        br1game.com
+                                    </a>
+                                    , so requests came from an allowed origin.
+                                </p>
+                                <p className="py-4">
+                                    I had to map lootbox data with weapon metadata manually and log
+                                    progress in console. I kept it minimal - no libraries, just{" "}
+                                    <code>fetch()</code>.
+                                </p>
+                                <p className="py-4">
+                                    I learned how to work with Solana NFT data and the{" "}
+                                    <a
+                                        href="https://www.helius.dev/"
+                                        target="_blank"
+                                        className="underline"
+                                    >
+                                        Helius
+                                    </a>{" "}
+                                    API.
+                                </p>
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-3" className="px-8 border-dashed">
+                            <AccordionTrigger>
+                                <div className="flex gap-2 items-center font-bold">
+                                    <Cpu size={16} />
+                                    Technologies Used
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent className="px-6 text-card-foreground">
+                                <ul className="py-4 px-4 text-lg list-disc">
+                                    <li className="pt-2">
+                                        <ShinyText
+                                            text="JavaScript"
+                                            disabled={false}
+                                            speed={4}
+                                            className="invert dark:invert-0 font-bold text-xl"
+                                        />{" "}
+                                        - browser-only scripts using <code>fetch()</code> and async
+                                        functions for direct API calls
+                                    </li>
+                                    <li className="pt-2">
+                                        <ShinyText
+                                            text="Helius API"
+                                            disabled={false}
+                                            speed={4}
+                                            className="invert dark:invert-0 font-bold text-xl"
+                                        />{" "}
+                                        - to pull all mint addresses from a Solana NFT collection
+                                    </li>
+                                    <li className="pt-2">
+                                        <ShinyText
+                                            text="BR1 Infinite API"
+                                            disabled={false}
+                                            speed={4}
+                                            className="invert dark:invert-0 font-bold text-xl"
+                                        />{" "}
+                                        - metadata
+                                    </li>
+                                </ul>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+                </div>
+                <div className="flex justify-center mt-4 px-6 pt-4 pb-24">
+                    <Button variant={"outline"}>
+                        <a
+                            href="https://github.com/Tammam-Al-Bahri/br1-lootbox-scanner"
+                            target="_blank"
+                            className="text-xl flex items-center"
+                        >
+                            <GradientText
+                                colors={["#078000", "#259463", "#269693", "#078000"]}
+                                animationSpeed={10}
+                                showBorder={false}
+                                className="px-2"
+                            >
+                                code
+                            </GradientText>
+                            <ExternalLink />
+                        </a>
+                    </Button>
                 </div>
             </div>
         </div>
