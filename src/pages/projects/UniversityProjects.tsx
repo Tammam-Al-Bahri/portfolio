@@ -1,6 +1,4 @@
 import ASCIIText from "@/components/ASCIIText";
-import ElectricBorder from "@/components/ElectricBorder";
-import GradientText from "@/components/GradientText";
 import ShinyText from "@/components/ShinyText";
 import Stack from "@/components/Stack";
 import {
@@ -9,8 +7,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
-import { Cpu, ExternalLink, FileText, Flag } from "lucide-react";
+import { Cpu, FileText, Flag } from "lucide-react";
 import { useState, useEffect } from "react";
 import uniTsk1 from "/images/projects/university-projects/tsk-collaborator-editing-subtask.jpg";
 import uniTsk2 from "/images/projects/university-projects/tsk-home.jpg";
@@ -123,33 +120,6 @@ export default function UniversityProjects() {
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
-                </div>
-                <div className="flex justify-center mt-4 px-6 pt-4 pb-24">
-                    <ElectricBorder
-                        color="#27e676"
-                        speed={2}
-                        chaos={0.5}
-                        thickness={2}
-                        className="rounded-xl p-1"
-                    >
-                        <Button variant={"outline"}>
-                            <a
-                                href="https://github.com/Tammam-Al-Bahri/granada-monorepo"
-                                target="_blank"
-                                className="text-xl flex items-center"
-                            >
-                                <GradientText
-                                    colors={["#078000", "#259463", "#269693", "#078000"]}
-                                    animationSpeed={10}
-                                    showBorder={false}
-                                    className="px-2"
-                                >
-                                    code
-                                </GradientText>
-                                <ExternalLink />
-                            </a>
-                        </Button>
-                    </ElectricBorder>
                 </div>
             </div>
         </div>
