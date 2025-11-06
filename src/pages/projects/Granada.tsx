@@ -1,7 +1,21 @@
 import ASCIIText from "@/components/ASCIIText";
+import ElectricBorder from "@/components/ElectricBorder";
+import GradientText from "@/components/GradientText";
+import ShinyText from "@/components/ShinyText";
+import Stack from "@/components/Stack";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { Cpu, ExternalLink, FileText, Flag } from "lucide-react";
 import { useState, useEffect } from "react";
+import granada1 from "/images/projects/granada/app-and-docker.jpg";
 
 export default function Granada() {
+    const images = [{ id: 1, img: granada1 }];
     const [rerender, setRerender] = useState(false);
 
     useEffect(() => {
@@ -22,8 +36,114 @@ export default function Granada() {
                     />
                 </div>
 
-                <div className="flex flex-col gap-6 px-12">
-                    https://github.com/Tammam-Al-Bahri/granada-monorepo
+                <div className="flex flex-col">
+                    <div className="flex justify-center">
+                        <div className="scale-50 lg:scale-100">
+                            <Stack
+                                randomRotation={false}
+                                sensitivity={180}
+                                sendToBackOnClick={true}
+                                cardDimensions={{ width: 500, height: 500 }}
+                                cardsData={images}
+                            />
+                        </div>
+                    </div>
+                    <Accordion type="multiple">
+                        <AccordionItem value="item-1" className="px-8 border-dashed">
+                            <AccordionTrigger>
+                                <div className="flex gap-2 items-center font-bold">
+                                    <FileText size={16} />
+                                    Overview
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent className="px-6 text-card-foreground">
+                                <p>**UPDATE**</p>
+                                <p className="pt-4">**UPDATE**</p>
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-2" className="px-8 border-dashed">
+                            <AccordionTrigger>
+                                <div className="flex gap-2 items-center font-bold">
+                                    <Flag size={16} />
+                                    Challenges and Takeaways
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent className="px-6 text-card-foreground">
+                                <p className="pb-4">**UPDATE**</p>
+                                <p className="pb-4">**UPDATE**</p>
+                                <p className="pb-4">**UPDATE**</p>
+                                <p className="py-4">**UPDATE**</p>
+                                <p className="py-4">**UPDATE**</p>
+                                <p className="py-4">**UPDATE**</p>
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-3" className="px-8 border-dashed">
+                            <AccordionTrigger>
+                                <div className="flex gap-2 items-center font-bold">
+                                    <Cpu size={16} />
+                                    Technologies Used
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent className="px-6 text-card-foreground">
+                                <ul className="py-4 px-4 text-lg list-disc">
+                                    <li className="pt-2">
+                                        <ShinyText
+                                            text="**UPDATE**"
+                                            disabled={false}
+                                            speed={4}
+                                            className="invert dark:invert-0 font-bold text-xl"
+                                        />{" "}
+                                        - **UPDATE**
+                                    </li>
+                                    <li className="pt-2">
+                                        <ShinyText
+                                            text="**UPDATE**"
+                                            disabled={false}
+                                            speed={4}
+                                            className="invert dark:invert-0 font-bold text-xl"
+                                        />{" "}
+                                        - **UPDATE**
+                                    </li>
+                                    <li className="pt-2">
+                                        <ShinyText
+                                            text="**UPDATE**"
+                                            disabled={false}
+                                            speed={4}
+                                            className="invert dark:invert-0 font-bold text-xl"
+                                        />{" "}
+                                        - **UPDATE**
+                                    </li>
+                                </ul>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+                </div>
+                <div className="flex justify-center mt-4 px-6 pt-4 pb-24">
+                    <ElectricBorder
+                        color="#27e676"
+                        speed={2}
+                        chaos={0.5}
+                        thickness={2}
+                        className="rounded-xl p-1"
+                    >
+                        <Button variant={"outline"}>
+                            <a
+                                href="https://github.com/Tammam-Al-Bahri/granada-monorepo"
+                                target="_blank"
+                                className="text-xl flex items-center"
+                            >
+                                <GradientText
+                                    colors={["#078000", "#259463", "#269693", "#078000"]}
+                                    animationSpeed={10}
+                                    showBorder={false}
+                                    className="px-2"
+                                >
+                                    code
+                                </GradientText>
+                                <ExternalLink />
+                            </a>
+                        </Button>
+                    </ElectricBorder>
                 </div>
             </div>
         </div>

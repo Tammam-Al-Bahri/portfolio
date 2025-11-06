@@ -109,8 +109,8 @@ export default function Projects() {
             icon: University,
             images: [
                 { id: 2, img: uniTsk2 },
-                { id: 1, img: uniTsk1 },
                 { id: 3, img: uniTsk3 },
+                { id: 1, img: uniTsk1 },
             ],
             logos: [
                 SiDotnet,
