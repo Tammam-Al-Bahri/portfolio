@@ -45,9 +45,9 @@ import {
     SiTailwindcss,
     SiShadcnui,
     SiClerk,
-    SiLinuxmint,
     SiCss3,
     SiGithubpages,
+    SiLinux,
 } from "react-icons/si";
 import FallingIcons from "@/components/FallingIcons";
 
@@ -133,7 +133,7 @@ export default function Projects() {
                 { id: 2, img: frank2 },
                 { id: 1, img: frank1 },
             ],
-            logos: [SiLinuxmint],
+            logos: [SiLinux, SiDocker],
         },
     ];
 
