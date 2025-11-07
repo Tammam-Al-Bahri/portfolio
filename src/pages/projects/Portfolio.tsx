@@ -24,6 +24,7 @@ import {
     SiGithub,
     SiGithubpages,
 } from "react-icons/si";
+import NavButtons from "@/components/NavButtons";
 
 export default function Portfolio() {
     const techLogos = [
@@ -93,7 +94,33 @@ export default function Portfolio() {
                             ></iframe>
                         </div>
                     </div>
-
+                    <div className="flex justify-center mt-4 px-6 pt-4">
+                        <ElectricBorder
+                            color="#27e676"
+                            speed={2}
+                            chaos={0.5}
+                            thickness={2}
+                            className="rounded-xl p-1"
+                        >
+                            <Button variant={"outline"}>
+                                <a
+                                    href="https://github.com/Tammam-Al-Bahri/portfolio"
+                                    target="_blank"
+                                    className="text-xl flex items-center"
+                                >
+                                    <GradientText
+                                        colors={["#078000", "#259463", "#269693", "#078000"]}
+                                        animationSpeed={10}
+                                        showBorder={false}
+                                        className="px-2"
+                                    >
+                                        code
+                                    </GradientText>
+                                    <ExternalLink />
+                                </a>
+                            </Button>
+                        </ElectricBorder>
+                    </div>
                     <Accordion type="multiple">
                         <AccordionItem value="item-1" className="px-8 border-dashed">
                             <AccordionTrigger>
@@ -238,32 +265,8 @@ export default function Portfolio() {
                         </AccordionItem>
                     </Accordion>
                 </div>
-                <div className="flex justify-center mt-4 px-6 pt-4 pb-24">
-                    <ElectricBorder
-                        color="#27e676"
-                        speed={2}
-                        chaos={0.5}
-                        thickness={2}
-                        className="rounded-xl p-1"
-                    >
-                        <Button variant={"outline"}>
-                            <a
-                                href="https://github.com/Tammam-Al-Bahri/portfolio"
-                                target="_blank"
-                                className="text-xl flex items-center"
-                            >
-                                <GradientText
-                                    colors={["#078000", "#259463", "#269693", "#078000"]}
-                                    animationSpeed={10}
-                                    showBorder={false}
-                                    className="px-2"
-                                >
-                                    code
-                                </GradientText>
-                                <ExternalLink />
-                            </a>
-                        </Button>
-                    </ElectricBorder>
+                <div className="flex justify-between w-full max-w-5xl mx-auto mt-4 px-6 pt-4 pb-24">
+                    <NavButtons />
                 </div>
             </div>
         </div>

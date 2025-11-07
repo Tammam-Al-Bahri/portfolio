@@ -1,19 +1,10 @@
 import { Button } from "@/components/ui/button";
-import {
-    ArrowLeft,
-    Bot,
-    BriefcaseBusiness,
-    PanelLeftIcon,
-    Paperclip,
-    SearchCode,
-    University,
-} from "lucide-react";
+import { Bot, BriefcaseBusiness, Paperclip, SearchCode, University } from "lucide-react";
 import pages from ".";
 import { useNavigate } from "react-router-dom";
 import ASCIIText from "@/components/ASCIIText";
 import { useState, useEffect } from "react";
 import PixelCard from "@/components/PixelCard";
-import { useSidebar } from "@/components/ui/sidebar";
 import Stack from "@/components/Stack";
 import nftScanner1 from "/images/projects/nft-scanner/lootboxes-with-weapon-data-json-screenshot.jpg";
 import nftScanner2 from "/images/projects/nft-scanner/console-get-all-mint-addresses-js.jpg";
@@ -50,12 +41,13 @@ import {
     SiLinux,
 } from "react-icons/si";
 import FallingIcons from "@/components/FallingIcons";
+import NavButtons from "@/components/NavButtons";
 
 export default function Projects() {
     const variants = ["default", "blue", "yellow", "pink"] as const;
     const projects = [
         {
-            page: pages[4],
+            page: pages[3],
             variant: 1,
             icon: Paperclip,
             images: [
@@ -73,7 +65,7 @@ export default function Projects() {
             ],
         },
         {
-            page: pages[7],
+            page: pages[4],
             variant: 3,
             icon: SearchCode,
             images: [
@@ -85,7 +77,7 @@ export default function Projects() {
             logos: [SiJavascript],
         },
         {
-            page: pages[3],
+            page: pages[5],
             variant: 0,
             icon: BriefcaseBusiness,
             images: [{ id: 1, img: granada1 }],
@@ -104,7 +96,7 @@ export default function Projects() {
             ],
         },
         {
-            page: pages[5],
+            page: pages[6],
             variant: 2,
             icon: University,
             images: [
@@ -126,7 +118,7 @@ export default function Projects() {
             ],
         },
         {
-            page: pages[6],
+            page: pages[7],
             variant: 0,
             icon: Bot,
             images: [
@@ -139,8 +131,6 @@ export default function Projects() {
 
     const navigate = useNavigate();
     const [rerender, setRerender] = useState(false);
-
-    const { toggleSidebar } = useSidebar();
 
     useEffect(() => {
         const timer = setTimeout(() => setRerender(true), 200);
@@ -226,17 +216,7 @@ export default function Projects() {
                     <div className="flex-grow basis-[300px] max-w-[300px]" />
                 </div>
                 <div className="flex justify-between w-full max-w-5xl mx-auto mt-4 px-6 pt-4 pb-8">
-                    <Button
-                        variant="outline"
-                        onClick={() => navigate(pages[1].path, { replace: false })}
-                        className="flex items-center gap-2"
-                    >
-                        <ArrowLeft />
-                        {pages[1].title}
-                    </Button>
-                    <Button variant="outline" size="icon" onClick={toggleSidebar}>
-                        <PanelLeftIcon />
-                    </Button>
+                    <NavButtons />
                 </div>
             </div>
         </div>

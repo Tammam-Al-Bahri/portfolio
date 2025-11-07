@@ -1,7 +1,5 @@
 import LogoLoop from "@/components/LogoLoop";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import {
     SiDocker,
     SiDotnet,
@@ -25,12 +23,11 @@ import {
     SiCss3,
     SiGithubpages,
 } from "react-icons/si";
-import pages from ".";
-import { useNavigate } from "react-router-dom";
 import ASCIIText from "@/components/ASCIIText";
 import ShinyText from "@/components/ShinyText";
 import { useState, useEffect } from "react";
 import ElectricBorder from "@/components/ElectricBorder";
+import NavButtons from "@/components/NavButtons";
 
 export default function Skills() {
     const techLogos = [
@@ -92,7 +89,7 @@ export default function Skills() {
         "Blitz Chess",
         "Rowing",
     ];
-    const navigate = useNavigate();
+
     const [rerender, setRerender] = useState(false);
 
     useEffect(() => {
@@ -274,22 +271,7 @@ export default function Skills() {
                         </CardContent>
                     </Card>
                     <div className="flex justify-between w-full max-w-5xl mx-auto mt-4 pt-4 pb-8">
-                        <Button
-                            variant="outline"
-                            onClick={() => navigate(pages[0].path, { replace: false })}
-                            className="flex items-center gap-2"
-                        >
-                            <ArrowLeft />
-                            {pages[0].title}
-                        </Button>
-                        <Button
-                            variant="outline"
-                            onClick={() => navigate(pages[2].path, { replace: false })}
-                            className="flex items-center gap-2"
-                        >
-                            {pages[2].title}
-                            <ArrowRight />
-                        </Button>
+                        <NavButtons />
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import ASCIIText from "@/components/ASCIIText";
+import NavButtons from "@/components/NavButtons";
 import { useState, useEffect } from "react";
 
 export default function Frank() {
@@ -22,12 +23,15 @@ export default function Frank() {
                     />
                 </div>
 
-                <div className="flex flex-col gap-6 px-12">
+                <div className="flex flex-col gap-6 px-6">
                     Frank is an old laptop I disassembled. Headless setup. I first used it to
                     experiment with linux, docker, and SSH by running the express api I'm working on
                     for the Granada project. I have also hosted a minecraft server on it. I plan to
                     reattach the touchscreen display and turn it into some sort of personal
                     productivity hub in the near future. pictures coming soon
+                </div>
+                <div className="flex justify-between w-full max-w-5xl mx-auto mt-4 px-6 pt-4 pb-24">
+                    <NavButtons />
                 </div>
             </div>
         </div>

@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 import uniTsk1 from "/images/projects/university-projects/tsk-collaborator-editing-subtask.jpg";
 import uniTsk2 from "/images/projects/university-projects/tsk-home.jpg";
 import uniTsk3 from "/images/projects/university-projects/tsk-managing-invites.jpg";
+import NavButtons from "@/components/NavButtons";
 
 export default function UniversityProjects() {
     const images = [
@@ -120,6 +121,9 @@ export default function UniversityProjects() {
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
+                </div>
+                <div className="flex justify-between w-full max-w-5xl mx-auto mt-4 px-6 pt-24 pb-24">
+                    <NavButtons />
                 </div>
             </div>
         </div>
