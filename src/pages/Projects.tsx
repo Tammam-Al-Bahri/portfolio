@@ -18,6 +18,16 @@ import laptop2 from "/images/projects/repurposed-laptop/login-screen.jpg";
 import uniTsk1 from "/images/projects/university-projects/tsk-collaborator-editing-subtask.jpg";
 import uniTsk2 from "/images/projects/university-projects/tsk-home.jpg";
 import uniTsk3 from "/images/projects/university-projects/tsk-managing-invites.jpg";
+import uniCc1 from "/images/projects/university-projects/cc-home.jpg";
+import uniCc2 from "/images/projects/university-projects/cc-find-contact.jpg";
+import uniCc3 from "/images/projects/university-projects/cc-courses.jpg";
+import uniCrm1 from "/images/projects/university-projects/crm-dashboard-search.jpg";
+import uniCrm2 from "/images/projects/university-projects/crm-dashboard-admin.jpg";
+import uniCrm3 from "/images/projects/university-projects/crm-login.jpg";
+import uniRecipeManager1 from "/images/projects/university-projects/recipe-manager-1.jpg";
+import uniRecipeManager2 from "/images/projects/university-projects/recipe-manager-2.jpg";
+import uniCrud1 from "/images/projects/university-projects/shuber-1.jpg";
+import uniCrud2 from "/images/projects/university-projects/shuber-2.jpg";
 import {
     SiDotnet,
     SiJavascript,
@@ -100,9 +110,19 @@ export default function Projects() {
             variant: 2,
             icon: University,
             images: [
-                { id: 2, img: uniTsk2 },
+                { id: 12, img: uniCrud2 },
+                { id: 13, img: uniCrud1 },
+                { id: 10, img: uniRecipeManager2 },
+                { id: 11, img: uniRecipeManager1 },
+                { id: 7, img: uniCrm3 },
+                { id: 8, img: uniCrm2 },
+                { id: 9, img: uniCrm1 },
+                { id: 4, img: uniCc3 },
+                { id: 5, img: uniCc2 },
+                { id: 6, img: uniCc1 },
                 { id: 3, img: uniTsk3 },
                 { id: 1, img: uniTsk1 },
+                { id: 2, img: uniTsk2 },
             ],
             logos: [
                 SiDotnet,

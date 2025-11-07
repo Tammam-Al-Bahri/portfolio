@@ -1,24 +1,46 @@
 import ASCIIText from "@/components/ASCIIText";
-import ShinyText from "@/components/ShinyText";
 import Stack from "@/components/Stack";
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Cpu, FileText, Flag } from "lucide-react";
 import { useState, useEffect } from "react";
 import uniTsk1 from "/images/projects/university-projects/tsk-collaborator-editing-subtask.jpg";
 import uniTsk2 from "/images/projects/university-projects/tsk-home.jpg";
 import uniTsk3 from "/images/projects/university-projects/tsk-managing-invites.jpg";
+import uniCc1 from "/images/projects/university-projects/cc-home.jpg";
+import uniCc2 from "/images/projects/university-projects/cc-find-contact.jpg";
+import uniCc3 from "/images/projects/university-projects/cc-courses.jpg";
+import uniCrm1 from "/images/projects/university-projects/crm-dashboard-search.jpg";
+import uniCrm2 from "/images/projects/university-projects/crm-dashboard-admin.jpg";
+import uniCrm3 from "/images/projects/university-projects/crm-login.jpg";
+import uniRecipeManager1 from "/images/projects/university-projects/recipe-manager-1.jpg";
+import uniRecipeManager2 from "/images/projects/university-projects/recipe-manager-2.jpg";
+import uniCrud1 from "/images/projects/university-projects/shuber-1.jpg";
+import uniCrud2 from "/images/projects/university-projects/shuber-2.jpg";
 import NavButtons from "@/components/NavButtons";
 
 export default function UniversityProjects() {
-    const images = [
-        { id: 2, img: uniTsk2 },
+    const tskImages = [
         { id: 3, img: uniTsk3 },
         { id: 1, img: uniTsk1 },
+        { id: 2, img: uniTsk2 },
+    ];
+    const ccImages = [
+        { id: 3, img: uniCc3 },
+        { id: 2, img: uniCc2 },
+        { id: 1, img: uniCc1 },
+    ];
+
+    const crmImages = [
+        { id: 3, img: uniCrm3 },
+        { id: 2, img: uniCrm2 },
+        { id: 1, img: uniCrm1 },
+    ];
+
+    const recipeMangerImages = [
+        { id: 2, img: uniRecipeManager2 },
+        { id: 1, img: uniRecipeManager1 },
+    ];
+    const crudImages = [
+        { id: 2, img: uniCrud2 },
+        { id: 1, img: uniCrud1 },
     ];
     const [rerender, setRerender] = useState(false);
 
@@ -41,86 +63,66 @@ export default function UniversityProjects() {
                 </div>
 
                 <div className="flex flex-col">
+                    <div className="text-center text-xl font-bold">Task Management App</div>
                     <div className="flex justify-center">
-                        <div className="scale-50 lg:scale-100">
+                        <div className="scale-60 lg:scale-100">
                             <Stack
                                 randomRotation={false}
                                 sensitivity={180}
                                 sendToBackOnClick={true}
                                 cardDimensions={{ width: 500, height: 500 }}
-                                cardsData={images}
+                                cardsData={tskImages}
                             />
                         </div>
                     </div>
-                    <Accordion type="multiple">
-                        <AccordionItem value="item-1" className="px-8 border-dashed">
-                            <AccordionTrigger>
-                                <div className="flex gap-2 items-center font-bold">
-                                    <FileText size={16} />
-                                    Overview
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent className="px-6 text-card-foreground">
-                                <p>**UPDATE**</p>
-                                <p className="pt-4">**UPDATE**</p>
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="item-2" className="px-8 border-dashed">
-                            <AccordionTrigger>
-                                <div className="flex gap-2 items-center font-bold">
-                                    <Flag size={16} />
-                                    Challenges and Takeaways
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent className="px-6 text-card-foreground">
-                                <p className="pb-4">**UPDATE**</p>
-                                <p className="pb-4">**UPDATE**</p>
-                                <p className="pb-4">**UPDATE**</p>
-                                <p className="py-4">**UPDATE**</p>
-                                <p className="py-4">**UPDATE**</p>
-                                <p className="py-4">**UPDATE**</p>
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="item-3" className="px-8 border-dashed">
-                            <AccordionTrigger>
-                                <div className="flex gap-2 items-center font-bold">
-                                    <Cpu size={16} />
-                                    Technologies Used
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent className="px-6 text-card-foreground">
-                                <ul className="py-4 px-4 text-lg list-disc">
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="**UPDATE**"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - **UPDATE**
-                                    </li>
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="**UPDATE**"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - **UPDATE**
-                                    </li>
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="**UPDATE**"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - **UPDATE**
-                                    </li>
-                                </ul>
-                            </AccordionContent>
-                        </AccordionItem>
-                    </Accordion>
+                    <div className="text-center text-xl font-bold pt-8">Cantor Collage</div>
+                    <div className="flex justify-center">
+                        <div className="scale-60 lg:scale-100">
+                            <Stack
+                                randomRotation={false}
+                                sensitivity={180}
+                                sendToBackOnClick={true}
+                                cardDimensions={{ width: 500, height: 500 }}
+                                cardsData={ccImages}
+                            />
+                        </div>
+                    </div>
+                    <div className="text-center text-xl font-bold pt-8">CRM</div>
+                    <div className="flex justify-center">
+                        <div className="scale-60 lg:scale-100">
+                            <Stack
+                                randomRotation={false}
+                                sensitivity={180}
+                                sendToBackOnClick={true}
+                                cardDimensions={{ width: 500, height: 500 }}
+                                cardsData={crmImages}
+                            />
+                        </div>
+                    </div>
+                    <div className="text-center text-xl font-bold pt-8">Recipe Manager</div>
+                    <div className="flex justify-center">
+                        <div className="scale-60 lg:scale-100">
+                            <Stack
+                                randomRotation={false}
+                                sensitivity={180}
+                                sendToBackOnClick={true}
+                                cardDimensions={{ width: 500, height: 500 }}
+                                cardsData={recipeMangerImages}
+                            />
+                        </div>
+                    </div>
+                    <div className="text-center text-xl font-bold pt-8">CRUD</div>
+                    <div className="flex justify-center">
+                        <div className="scale-60 lg:scale-100">
+                            <Stack
+                                randomRotation={false}
+                                sensitivity={180}
+                                sendToBackOnClick={true}
+                                cardDimensions={{ width: 500, height: 500 }}
+                                cardsData={crudImages}
+                            />
+                        </div>
+                    </div>
                 </div>
                 <div className="flex justify-between w-full max-w-5xl mx-auto mt-4 px-6 pt-24 pb-24">
                     <NavButtons />

@@ -47,7 +47,7 @@ export default function NFTScanner() {
                 </div>
                 <div className="flex flex-col gap-6">
                     <div className="flex justify-center">
-                        <div className="scale-50 lg:scale-100">
+                        <div className="scale-60 lg:scale-100">
                             <Stack
                                 randomRotation={false}
                                 sensitivity={180}
