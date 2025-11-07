@@ -133,10 +133,8 @@ export default function NFTScanner() {
                                 <p className="pt-4">
                                     <strong>Update: </strong>I have used this for the new
                                     collection, found the lootbox containing the rare skin with the
-                                    bounty, informed the team of a visual bug which they were
-                                    thankful for and have now fixed, and I'm now hoping that my
-                                    offer for this unopened lootbox is filled so I can claim the
-                                    bounty.
+                                    bounty, and informed the team of a visual bug which they were
+                                    thankful for and have now fixed.
                                 </p>
                             </AccordionContent>
                         </AccordionItem>
