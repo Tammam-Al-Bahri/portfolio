@@ -130,6 +130,13 @@ export default function NFTScanner() {
                                     its 3 weapons. Now anyone can use this to find or buy listed
                                     lootboxes with rare contents.
                                 </p>
+                                <p className="pt-4">
+                                    <strong>Update: </strong>I have used this for the new
+                                    collection, found the lootbox containing the rare skin with the
+                                    bounty, informed the team of a visual bug which they were
+                                    thankful for and have now fixed, and I'm hoping for my offer for
+                                    this lootbox to be filled so I can claim the bounty.
+                                </p>
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2" className="px-8 border-dashed">
@@ -163,7 +170,15 @@ export default function NFTScanner() {
                                     >
                                         weapon's NFT metadata
                                     </a>{" "}
-                                    on a Solana explorer, I discovered the endpoint.
+                                    on a Solana explorer, I discovered the{" "}
+                                    <a
+                                        href="https://assets.bravoready.com/br1-infinite/weapons/7151.json"
+                                        target="_blank"
+                                        className="underline"
+                                    >
+                                        endpoint
+                                    </a>{" "}
+                                    with the weapon data.
                                 </p>
                                 <p className="py-4">
                                     I attempted to write a Python script first, but the main issue

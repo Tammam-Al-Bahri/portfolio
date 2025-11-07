@@ -158,7 +158,7 @@ export default function Skills() {
                                     </p>
                                 </section>
                                 <section>
-                                    <p>
+                                    <div>
                                         I'm diving deep into{" "}
                                         <ShinyText
                                             text="TypeScript"
@@ -169,7 +169,7 @@ export default function Skills() {
                                         and its ecosystem because it's a powerful foundation for
                                         creating robust applications and a valuable skill for modern
                                         development.
-                                    </p>
+                                    </div>
                                 </section>
                                 <section>
                                     <p>
@@ -200,7 +200,7 @@ export default function Skills() {
                                 ariaLabel="Technology Stack"
                                 className="border-x-1 border-dashed"
                             />
-                            <p className="py-4 text-muted-foreground text-center">
+                            <div className="py-4 text-muted-foreground text-center">
                                 My current stack for web apps is{" "}
                                 <ShinyText
                                     text="Next.js + Prisma"
@@ -223,7 +223,7 @@ export default function Skills() {
                                     className="invert dark:invert-0 font-bold"
                                 />{" "}
                                 backend.
-                            </p>
+                            </div>
                             <div className="flex flex-wrap gap-2">
                                 {techLogos.map((item) => (
                                     <a
