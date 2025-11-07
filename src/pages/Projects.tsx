@@ -229,7 +229,7 @@ export default function Projects() {
                                         <Button
                                             className="w-full z-10"
                                             onClick={() => {
-                                                navigate(project.page.path, { replace: false });
+                                                navigate(project.page.path);
                                             }}
                                         >
                                             View

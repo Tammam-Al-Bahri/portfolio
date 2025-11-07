@@ -7,7 +7,6 @@ export default function NavButtons() {
     const navigate = useNavigate();
 
     const pageIndex: number = getPageIndex();
-    console.log(pageIndex);
     return (
         <>
             {pageIndex > 0 ? (

@@ -108,7 +108,7 @@ export function AppSidebar() {
                                     <SidebarMenuButton
                                         asChild
                                         onClick={() => (
-                                            navigate(item.path, { replace: false }),
+                                            navigate(item.path),
                                             sidebar.isMobile ? sidebar.toggleSidebar() : null
                                         )}
                                     >
@@ -131,7 +131,7 @@ export function AppSidebar() {
                                     <SidebarMenuButton
                                         asChild
                                         onClick={() => (
-                                            navigate(item.path, { replace: false }),
+                                            navigate(item.path),
                                             sidebar.isMobile ? sidebar.toggleSidebar() : null
                                         )}
                                     >
