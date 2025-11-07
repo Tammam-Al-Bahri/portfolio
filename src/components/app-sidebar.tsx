@@ -62,14 +62,14 @@ const projectItems: MenuItem[] = [
         icon: Paperclip,
     },
     {
-        path: "/projects/nft-scanner",
-        title: "NFT Scanner",
-        icon: SearchCode,
-    },
-    {
         title: "Granada PMS",
         path: "/projects/granada",
         icon: BriefcaseBusiness,
+    },
+    {
+        path: "/projects/nft-scanner",
+        title: "NFT Scanner",
+        icon: SearchCode,
     },
     {
         path: "/projects/university-projects",

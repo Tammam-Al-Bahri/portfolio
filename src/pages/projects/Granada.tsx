@@ -13,10 +13,16 @@ import { Button } from "@/components/ui/button";
 import { Cpu, ExternalLink, FileText, Flag } from "lucide-react";
 import { useState, useEffect } from "react";
 import granada1 from "/images/projects/granada/app-and-docker.jpg";
+import granada2 from "/images/projects/granada/app-login.jpg";
+import granada3 from "/images/projects/granada/app-api-url.jpg";
 import NavButtons from "@/components/NavButtons";
 
 export default function Granada() {
-    const images = [{ id: 1, img: granada1 }];
+    const images = [
+        { id: 3, img: granada3 },
+        { id: 2, img: granada2 },
+        { id: 1, img: granada1 },
+    ];
     const [rerender, setRerender] = useState(false);
 
     useEffect(() => {

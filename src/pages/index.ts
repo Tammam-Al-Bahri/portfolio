@@ -32,14 +32,14 @@ const pages = [
         component: Portfolio,
     },
     {
-        path: "/projects/nft-scanner",
-        title: "NFT Scanner",
-        component: NFTScanner,
-    },
-    {
         path: "/projects/granada",
         title: "Granada PMS",
         component: Granada,
+    },
+    {
+        path: "/projects/nft-scanner",
+        title: "NFT Scanner",
+        component: NFTScanner,
     },
     {
         path: "/projects/university-projects",

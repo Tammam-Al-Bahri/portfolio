@@ -13,6 +13,8 @@ import nftScanner4 from "/images/projects/nft-scanner/wallet-confirm-lootbox-ope
 import portfolio1 from "/images/projects/portfolio/projects.jpg";
 import portfolio2 from "/images/projects/portfolio/portfolio-recursion.jpg";
 import granada1 from "/images/projects/granada/app-and-docker.jpg";
+import granada2 from "/images/projects/granada/app-login.jpg";
+import granada3 from "/images/projects/granada/app-api-url.jpg";
 import laptop1 from "/images/projects/repurposed-laptop/pcb.jpg";
 import laptop2 from "/images/projects/repurposed-laptop/login-screen.jpg";
 import uniTsk1 from "/images/projects/university-projects/tsk-collaborator-editing-subtask.jpg";
@@ -76,21 +78,13 @@ export default function Projects() {
         },
         {
             page: pages[4],
-            variant: 3,
-            icon: SearchCode,
-            images: [
-                { id: 4, img: nftScanner4 },
-                { id: 3, img: nftScanner3 },
-                { id: 2, img: nftScanner2 },
-                { id: 1, img: nftScanner1 },
-            ],
-            logos: [SiJavascript],
-        },
-        {
-            page: pages[5],
             variant: 0,
             icon: BriefcaseBusiness,
-            images: [{ id: 1, img: granada1 }],
+            images: [
+                { id: 3, img: granada3 },
+                { id: 2, img: granada2 },
+                { id: 1, img: granada1 },
+            ],
             logos: [
                 SiTypescript,
                 SiElectron,
@@ -104,6 +98,18 @@ export default function Projects() {
                 SiPrisma,
                 SiPostgresql,
             ],
+        },
+        {
+            page: pages[5],
+            variant: 3,
+            icon: SearchCode,
+            images: [
+                { id: 4, img: nftScanner4 },
+                { id: 3, img: nftScanner3 },
+                { id: 2, img: nftScanner2 },
+                { id: 1, img: nftScanner1 },
+            ],
+            logos: [SiJavascript],
         },
         {
             page: pages[6],
