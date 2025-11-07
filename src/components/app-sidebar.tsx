@@ -77,8 +77,8 @@ const projectItems: MenuItem[] = [
         icon: University,
     },
     {
-        path: "/projects/frank",
-        title: "Frank",
+        path: "/projects/repurposed-laptop",
+        title: "Repurposed Laptop",
         icon: Bot,
     },
 ];

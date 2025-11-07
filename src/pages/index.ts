@@ -4,7 +4,7 @@ import Portfolio from "./projects/Portfolio";
 import Skills from "./Skills";
 import Granada from "./projects/Granada";
 import UniversityProjects from "./projects/UniversityProjects";
-import Frank from "./projects/Frank";
+import RepurposedLaptop from "./projects/RepurposedLaptop";
 import NFTScanner from "./projects/NFTScanner";
 import { useLocation } from "react-router-dom";
 
@@ -47,9 +47,9 @@ const pages = [
         component: UniversityProjects,
     },
     {
-        path: "/projects/frank",
-        title: "Frank",
-        component: Frank,
+        path: "/projects/repurposed-laptop",
+        title: "Repurposed Laptop",
+        component: RepurposedLaptop,
     },
 ] as const;
 

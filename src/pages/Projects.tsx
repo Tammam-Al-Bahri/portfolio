@@ -13,8 +13,8 @@ import nftScanner4 from "/images/projects/nft-scanner/wallet-confirm-lootbox-ope
 import portfolio1 from "/images/projects/portfolio/projects.jpg";
 import portfolio2 from "/images/projects/portfolio/portfolio-recursion.jpg";
 import granada1 from "/images/projects/granada/app-and-docker.jpg";
-import frank1 from "/images/projects/frank/pcb.jpg";
-import frank2 from "/images/projects/frank/login-screen.jpg";
+import laptop1 from "/images/projects/repurposed-laptop/pcb.jpg";
+import laptop2 from "/images/projects/repurposed-laptop/login-screen.jpg";
 import uniTsk1 from "/images/projects/university-projects/tsk-collaborator-editing-subtask.jpg";
 import uniTsk2 from "/images/projects/university-projects/tsk-home.jpg";
 import uniTsk3 from "/images/projects/university-projects/tsk-managing-invites.jpg";
@@ -122,8 +122,8 @@ export default function Projects() {
             variant: 0,
             icon: Bot,
             images: [
-                { id: 2, img: frank2 },
-                { id: 1, img: frank1 },
+                { id: 2, img: laptop2 },
+                { id: 1, img: laptop1 },
             ],
             logos: [SiLinux, SiDocker],
         },
