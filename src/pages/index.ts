@@ -9,7 +9,6 @@ import NFTScanner from "./projects/NFTScanner";
 import { useLocation } from "react-router-dom";
 
 const pages = [
-    // about me
     {
         path: "/",
         title: "About Me",
@@ -25,7 +24,6 @@ const pages = [
         title: "Projects",
         component: Projects,
     },
-    // projects
     {
         path: "/projects/portfolio",
         title: "Portfolio",
@@ -33,7 +31,7 @@ const pages = [
     },
     {
         path: "/projects/granada",
-        title: "Granada PMS",
+        title: "Granada",
         component: Granada,
     },
     {

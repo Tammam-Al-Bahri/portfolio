@@ -207,7 +207,7 @@ export default function Projects() {
                                             iconsVisible ? "md:opacity-100" : "opacity-0"
                                         } group-hover:opacity-100 transition-opacity duration-200`}
                                         onClick={() => {
-                                            if(isMobile) setIconsVisible(true);
+                                            if (isMobile) setIconsVisible(true);
                                         }}
                                     >
                                         <FallingIcons
@@ -219,7 +219,7 @@ export default function Projects() {
                                             mouseConstraintStiffness={0.9}
                                         />
                                     </div>
-                                    <div className="flex justify-center my-4 z-10">
+                                    <div className="flex justify-center my-4 z-10 hover:scale-105">
                                         <Stack
                                             randomRotation={true}
                                             sensitivity={180}
