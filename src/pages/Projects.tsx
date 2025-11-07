@@ -54,6 +54,7 @@ import {
 } from "react-icons/si";
 import FallingIcons from "@/components/FallingIcons";
 import NavButtons from "@/components/NavButtons";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Projects() {
     const variants = ["default", "blue", "yellow", "pink"] as const;
@@ -171,6 +172,8 @@ export default function Projects() {
         }, 100);
     }, []);
 
+    const isMobile = useIsMobile();
+
     return (
         <div className="relative overflow-auto w-screen h-screen dark:invert">
             <div className="max-w-5xl mx-auto mb-12 lg:border-x-2 border-dashed bg-accent/10 dark:invert">
@@ -204,7 +207,7 @@ export default function Projects() {
                                             iconsVisible ? "md:opacity-100" : "opacity-0"
                                         } group-hover:opacity-100 transition-opacity duration-200`}
                                         onClick={() => {
-                                            setIconsVisible(true);
+                                            if(isMobile) setIconsVisible(true);
                                         }}
                                     >
                                         <FallingIcons
