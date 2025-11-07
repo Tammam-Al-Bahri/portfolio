@@ -120,34 +120,14 @@ export default function Portfolio() {
                             <AccordionContent className="px-6 text-card-foreground">
                                 <p className="pb-4">
                                     Working on this project has been fantastic for my frontend
-                                    proficiency. It has helped me solidify my Tailwind and React
+                                    proficiency. It has helped me solidify my React and Tailwind
                                     skills in particular, and get more confident in problem solving
                                     and experimenting with component architecture.
                                 </p>
-                                <p className="py-4">
-                                    I've gotten especially comfortable with Shadcn and React Bits
-                                    components, and that has motivated me to level up my workflow
-                                    even further. As I begin to master these skills, I plan to start
-                                    integrating tools like MCP and Claude Code to cut down on
-                                    repetitive tasks, so I can focus mainly on the backend logic and
-                                    product goals.
-                                </p>
-                                <p className="py-4">
-                                    This is also my first deployed project - a small but important
-                                    milestone.
-                                </p>
-                                <p className="py-4">
-                                    The design ended up being quite experimental since I let myself
-                                    play with ideas instead of sticking to a wireframe. Honestly,
-                                    that helped me explore UI/UX with real freedom.
-                                </p>
-                                <p className="py-4">
-                                    Something I've realized is that my biggest bottleneck isn't my
-                                    programming ability - it's knowing the specifics of what should
-                                    be built, and all the small but important decisions early on,
-                                    all with scalability in mind. That's why I'm excited to work
-                                    with experienced engineers and designers who can guide me in all
-                                    software engineering aspects.
+                                <p>
+                                    The design ended up being experimental since I let myself play
+                                    with ideas instead of sticking to a wireframe. This helped me
+                                    explore UI/UX with more freedom.
                                 </p>
                             </AccordionContent>
                         </AccordionItem>
@@ -201,7 +181,7 @@ export default function Portfolio() {
                                             speed={4}
                                             className="invert dark:invert-0 font-bold text-xl"
                                         />{" "}
-                                        - strong typing for safer, more maintainable code
+                                        - strong typing for safer and more maintainable code
                                     </li>
 
                                     <li className="pt-2">
@@ -231,8 +211,7 @@ export default function Portfolio() {
                                             speed={4}
                                             className="invert dark:invert-0 font-bold text-xl"
                                         />{" "}
-                                        - accessible, customisable components to speed up
-                                        development
+                                        - customisable components to speed up development
                                     </li>
 
                                     <li className="pt-2">
@@ -242,7 +221,7 @@ export default function Portfolio() {
                                             speed={4}
                                             className="invert dark:invert-0 font-bold text-xl"
                                         />{" "}
-                                        - fun and interactive UI effects
+                                        - interactive UI effects
                                     </li>
 
                                     <li className="pt-2">
