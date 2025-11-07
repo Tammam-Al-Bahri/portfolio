@@ -62,8 +62,8 @@ const projectItems: MenuItem[] = [
         icon: Paperclip,
     },
     {
-        title: "Granada",
-        path: "/projects/granada",
+        title: "Project Manager",
+        path: "/projects/project-manager",
         icon: BriefcaseBusiness,
     },
     {

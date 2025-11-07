@@ -17,7 +17,7 @@ import granada2 from "/images/projects/granada/app-login.jpg";
 import granada3 from "/images/projects/granada/app-api-url.jpg";
 import NavButtons from "@/components/NavButtons";
 
-export default function Granada() {
+export default function ProjectManager() {
     const images = [
         { id: 3, img: granada3 },
         { id: 2, img: granada2 },
@@ -37,7 +37,7 @@ export default function Granada() {
                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[150px] bg-white/20 dark:bg-white/10 blur-3xl rounded-full" />
                     <ASCIIText
                         key={rerender ? "rerendered" : "initial"}
-                        text="Granada"
+                        text="Project Manager"
                         enableWaves={false}
                         asciiFontSize={8}
                     />
@@ -90,7 +90,7 @@ export default function Granada() {
                                     Overview
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent className="px-6 text-card-foreground">
+                            <AccordionContent className="px-6 text-lg text-card-foreground">
                                 <p>
                                     This is a project manager I'm building for a family owned
                                     architecture and construction consultancy in the UAE.
@@ -103,8 +103,8 @@ export default function Granada() {
                                 <p className="pt-4">
                                     I designed the whole project as a TypeScript monorepo,
                                     consisting of an Electron desktop app, and a locally hosted
-                                    Express + PostgreSQL backend, designed for use within the
-                                    company's office network.
+                                    Express + PostgreSQL backend, for use within the company's
+                                    office network.
                                 </p>
                                 <p className="pt-4">
                                     The current focus is delivering a scalable foundation for an MVP
@@ -119,7 +119,7 @@ export default function Granada() {
                                     Challenges and Takeaways
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent className="px-6 text-card-foreground">
+                            <AccordionContent className="px-6 text-lg text-card-foreground">
                                 <p className="pb-4">
                                     As the solo developer with minimal guidance, I had to decide
                                     what to build and how to build it. I focused on creating a

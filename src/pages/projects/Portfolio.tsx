@@ -129,7 +129,7 @@ export default function Portfolio() {
                                     Overview
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent className="px-6 text-card-foreground">
+                            <AccordionContent className="px-6 text-lg text-card-foreground">
                                 <p>
                                     A personal portfolio website built with React to showcase my
                                     projects, skills, and background. It has a clean, interactive,
@@ -144,7 +144,7 @@ export default function Portfolio() {
                                     Challenges and Takeaways
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent className="px-6 text-card-foreground">
+                            <AccordionContent className="px-6 text-lg text-card-foreground">
                                 <p className="pb-4">
                                     Working on this project has been fantastic for my frontend
                                     proficiency. It has helped me solidify my React and Tailwind

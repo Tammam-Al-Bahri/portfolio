@@ -92,7 +92,7 @@ export default function NFTScanner() {
                                     Overview
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent className="px-6 text-card-foreground">
+                            <AccordionContent className="px-6 text-lg text-card-foreground">
                                 <p>
                                     A simple browser based utility that scans{" "}
                                     <a
@@ -145,7 +145,7 @@ export default function NFTScanner() {
                                     Challenges and Takeaways
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent className="px-6 text-card-foreground">
+                            <AccordionContent className="px-6 text-lg text-card-foreground">
                                 <p className="pb-4">
                                     I first realised it might be possible to see lootbox contents
                                     before opening them as when you click the <em>open</em> button
@@ -217,7 +217,7 @@ export default function NFTScanner() {
                                     Technologies Used
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent className="px-6 text-card-foreground">
+                            <AccordionContent className="px-6 text-lg text-card-foreground">
                                 <ul className="py-4 px-4 text-lg list-disc">
                                     <li className="pt-2">
                                         <ShinyText
@@ -237,15 +237,6 @@ export default function NFTScanner() {
                                             className="invert dark:invert-0 font-bold text-xl"
                                         />{" "}
                                         - to pull all mint addresses from a Solana NFT collection
-                                    </li>
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="BR1 Infinite API"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - metadata
                                     </li>
                                 </ul>
                             </AccordionContent>

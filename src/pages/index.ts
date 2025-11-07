@@ -2,7 +2,7 @@ import AboutMe from "./AboutMe";
 import Projects from "./Projects";
 import Portfolio from "./projects/Portfolio";
 import Skills from "./Skills";
-import Granada from "./projects/Granada";
+import ProjectManager from "./projects/ProjectManager";
 import UniversityProjects from "./projects/UniversityProjects";
 import RepurposedLaptop from "./projects/RepurposedLaptop";
 import NFTScanner from "./projects/NFTScanner";
@@ -30,9 +30,9 @@ const pages = [
         component: Portfolio,
     },
     {
-        path: "/projects/granada",
-        title: "Granada",
-        component: Granada,
+        path: "/projects/project-manager",
+        title: "Project Manager",
+        component: ProjectManager,
     },
     {
         path: "/projects/nft-scanner",
