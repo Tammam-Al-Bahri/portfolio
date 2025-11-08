@@ -9,7 +9,7 @@ export default function NavButtons() {
     const pageIndex: number = getPageIndex();
     return (
         <>
-            {pageIndex > 0 ? (
+            {pageIndex > 0 && (
                 <Button
                     variant="outline"
                     onClick={() => navigate(pages[pageIndex - 1].path)}
@@ -18,11 +18,9 @@ export default function NavButtons() {
                     <ArrowLeft />
                     {pages[pageIndex - 1].title}
                 </Button>
-            ) : (
-                <></>
             )}
 
-            {pageIndex < pages.length - 1 ? (
+            {pageIndex < pages.length - 1 && (
                 <Button
                     variant="outline"
                     onClick={() => navigate(pages[pageIndex + 1].path)}
@@ -31,8 +29,6 @@ export default function NavButtons() {
                     {pages[pageIndex + 1].title}
                     <ArrowRight />
                 </Button>
-            ) : (
-                <></>
             )}
         </>
     );

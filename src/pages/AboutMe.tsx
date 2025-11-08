@@ -6,14 +6,11 @@ import LightRays from "@/components/LightRays";
 import ShinyText from "@/components/ShinyText";
 import TextType from "@/components/TextType";
 import { useTheme } from "@/components/theme-provider";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
-import pages from ".";
-import { useNavigate } from "react-router-dom";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { useState, useEffect } from "react";
 import ClickSpark from "@/components/ClickSpark";
+import NavButtons from "@/components/NavButtons";
 
 export default function AboutMe() {
     const text = [
@@ -34,7 +31,6 @@ export default function AboutMe() {
         "avoids merge conflicts",
     ];
     const { theme } = useTheme();
-    const navigate = useNavigate();
     const [scaleClass, setScaleClass] = useState("scale-0");
 
     useEffect(() => {
@@ -170,15 +166,7 @@ export default function AboutMe() {
                         </Card>
                         <div className="flex justify-between w-full max-w-lg px-4 lg:px-0 mx-auto mt-4 pb-8 pointer-events-auto">
                             <ThemeToggle />
-
-                            <Button
-                                variant="outline"
-                                onClick={() => navigate(pages[1].path)}
-                                className="flex items-center gap-2"
-                            >
-                                {pages[1].title}
-                                <ArrowRight />
-                            </Button>
+                            <NavButtons />
                         </div>
                     </div>
                 </div>
