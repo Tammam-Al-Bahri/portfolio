@@ -1,7 +1,6 @@
 import ASCIIText from "@/components/ASCIIText";
 import ElectricBorder from "@/components/ElectricBorder";
 import GradientText from "@/components/GradientText";
-import LogoLoop from "@/components/LogoLoop";
 import ShinyText from "@/components/ShinyText";
 import {
     Accordion,
@@ -12,38 +11,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { Cpu, ExternalLink, FileText, Flag } from "lucide-react";
 import { useState, useEffect } from "react";
-import {
-    SiTypescript,
-    SiReact,
-    SiReactrouter,
-    SiVite,
-    SiCss3,
-    SiTailwindcss,
-    SiShadcnui,
-    SiGit,
-    SiGithub,
-    SiGithubpages,
-} from "react-icons/si";
 import NavButtons from "@/components/NavButtons";
 
 export default function Portfolio() {
-    const techLogos = [
-        { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
-        { node: <SiReact />, title: "React", href: "https://react.dev" },
-        { node: <SiReactrouter />, title: "React Router", href: "https://reactrouter.com" },
-        { node: <SiVite />, title: "Vite", href: "https://vite.dev/" },
-        { node: <SiCss3 />, title: "CSS", href: "https://en.wikipedia.org/wiki/CSS" },
-        { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
-        { node: <SiShadcnui />, title: "Shadcn", href: "https://ui.shadcn.com" },
-        { node: <SiGit />, title: "Git", href: "https://git-scm.com/" },
-        { node: <SiGithub />, title: "GitHub", href: "https://github.com/" },
-        {
-            node: <SiGithubpages />,
-            title: "GitHub Pages",
-            href: "https://docs.github.com/en/pages/",
-        },
-    ];
-
     const [level, setLevel] = useState(0);
 
     useEffect(() => {
@@ -76,12 +46,18 @@ export default function Portfolio() {
                 <div className="flex flex-col">
                     <div className="text-center italic select-none">Live View:</div>
                     <div className="relative flex justify-center group select-none">
-                        <div className="text-center text-sm text-muted-foreground font-mono group-hover:underline">
+                        <div
+                            className={`text-center text-sm text-muted-foreground font-mono ${
+                                level == 0 && "group-hover:underline"
+                            }`}
+                        >
                             Inception Level: {level}
                         </div>
-                        <div className="absolute top-full z-10 mt-1 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
-                            navigate to this page on the phone
-                        </div>
+                        {level == 0 && (
+                            <div className="absolute top-full z-10 mt-1 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
+                                navigate to this page on the phone
+                            </div>
+                        )}
                     </div>
                     <div className="flex justify-center">
                         <div className="relative w-[400px] h-[750px] scale-100 rounded-[3rem] border-8 border-neutral-800 bg-black shadow-2xl overflow-hidden">
@@ -166,21 +142,8 @@ export default function Portfolio() {
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent className="px-6 text-card-foreground">
-                                <div className="flex items-center">
-                                    <LogoLoop
-                                        logos={techLogos}
-                                        speed={25}
-                                        direction="right"
-                                        logoHeight={32}
-                                        gap={75}
-                                        pauseOnHover
-                                        scaleOnHover
-                                        ariaLabel="Technology Stack"
-                                        className="border-x-1 border-dashed"
-                                    />
-                                </div>
                                 <ul className="py-4 px-4 text-lg list-disc">
-                                    <li className="pt-2">
+                                    <li>
                                         <ShinyText
                                             text="React"
                                             disabled={false}
@@ -197,7 +160,7 @@ export default function Portfolio() {
                                             speed={4}
                                             className="invert dark:invert-0 font-bold text-xl"
                                         />{" "}
-                                        - fast dev environment with fast HMR and optimised builds
+                                        - dev environment with fast HMR and optimised builds
                                     </li>
 
                                     <li className="pt-2">

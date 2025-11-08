@@ -173,9 +173,9 @@ export default function Skills() {
                                 </section>
                                 <section>
                                     <p>
-                                        I enjoy hyper-focusing on specific challenges and bringing
-                                        ideas to life. I thrive with clear goals and structure, and
-                                        love solving real world problems.
+                                        I enjoy hyper-focusing on specific challenges. I thrive with
+                                        clear goals and structure, and love solving real world
+                                        problems.
                                     </p>
                                 </section>
                             </div>
