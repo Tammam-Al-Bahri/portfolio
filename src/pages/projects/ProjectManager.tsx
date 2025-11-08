@@ -31,8 +31,8 @@ export default function ProjectManager() {
     }, []);
 
     return (
-        <div className="relative overflow-auto w-screen h-screen dark:invert">
-            <div className="max-w-5xl mx-auto mb-12 lg:border-x-2 border-dashed bg-accent/10 dark:invert">
+        <div className="relative overflow-auto w-screen h-screen">
+            <div className="max-w-5xl mx-auto mb-12 lg:border-x-2 border-dashed bg-accent/10">
                 <div className="relative w-full h-64 md:h-96 lg:h-[300px] flex items-center justify-center overflow-hidden invert dark:invert-0">
                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[150px] bg-white/20 dark:bg-white/10 blur-3xl rounded-full" />
                     <ASCIIText
@@ -149,8 +149,9 @@ export default function ProjectManager() {
                                 </p>
                                 <p className="py-4">
                                     This project gave me hands on experience with full stack
-                                    development, monorepo architecture, and creating shared packages
-                                    for type safety and validation between the frontend and backend.
+                                    development, monorepo architecture, and creating a shared
+                                    package for type safety and validation between the frontend and
+                                    backend.
                                 </p>
                             </AccordionContent>
                         </AccordionItem>
@@ -188,8 +189,7 @@ export default function ProjectManager() {
                                             speed={4}
                                             className="invert dark:invert-0 font-bold text-xl"
                                         />{" "}
-                                        - Containerised API and database for consistent enviroments
-                                        across devices
+                                        - Containerised API and database
                                     </li>
                                     <li className="pt-2">
                                         <ShinyText
@@ -207,7 +207,7 @@ export default function ProjectManager() {
                                             speed={4}
                                             className="invert dark:invert-0 font-bold text-xl"
                                         />{" "}
-                                        - Reusable component system for scalable UI
+                                        - Reusable UI components and direct styling
                                     </li>
                                     <li className="pt-2">
                                         <ShinyText

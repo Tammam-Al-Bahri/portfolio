@@ -123,8 +123,8 @@ export default function Skills() {
     };
 
     return (
-        <div className="relative overflow-auto w-screen h-screen dark:invert">
-            <div className="max-w-5xl mx-auto mb-12 lg:border-x-2 border-dashed bg-accent/10 dark:invert">
+        <div className="relative overflow-auto w-screen h-screen">
+            <div className="max-w-5xl mx-auto mb-12 lg:border-x-2 border-dashed bg-accent/10">
                 <div className="relative w-full h-64 md:h-96 lg:h-[300px] flex items-center justify-center overflow-hidden invert dark:invert-0">
                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[150px] bg-white/20 dark:bg-white/10 blur-3xl rounded-full" />
                     <ASCIIText
@@ -174,7 +174,7 @@ export default function Skills() {
                                 <section>
                                     <p>
                                         I enjoy hyper-focusing on specific challenges and bringing
-                                        ideas to life - I thrive with clear goals and structure, and
+                                        ideas to life. I thrive with clear goals and structure, and
                                         love solving real world problems.
                                     </p>
                                 </section>

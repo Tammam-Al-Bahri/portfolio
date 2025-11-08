@@ -62,8 +62,8 @@ export default function Portfolio() {
     }, []);
 
     return (
-        <div className="relative overflow-auto w-screen h-screen dark:invert">
-            <div className="max-w-5xl mx-auto lg:border-x-2 border-dashed bg-accent/10 dark:invert">
+        <div className="relative overflow-auto w-screen h-screen">
+            <div className="max-w-5xl mx-auto lg:border-x-2 border-dashed bg-accent/10">
                 <div className="relative w-full h-64 md:h-96 lg:h-[300px] flex items-center justify-center overflow-hidden invert dark:invert-0">
                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[150px] bg-white/20 dark:bg-white/10 blur-3xl rounded-full" />
                     <ASCIIText
@@ -187,8 +187,7 @@ export default function Portfolio() {
                                             speed={4}
                                             className="invert dark:invert-0 font-bold text-xl"
                                         />{" "}
-                                        - component based UI and hooks for clean, reusable front-end
-                                        structure
+                                        - component based UI and hooks
                                     </li>
 
                                     <li className="pt-2">
@@ -198,7 +197,7 @@ export default function Portfolio() {
                                             speed={4}
                                             className="invert dark:invert-0 font-bold text-xl"
                                         />{" "}
-                                        - fast dev environment with instant HMR and optimized builds
+                                        - fast dev environment with fast HMR and optimised builds
                                     </li>
 
                                     <li className="pt-2">
@@ -248,7 +247,7 @@ export default function Portfolio() {
                                             speed={4}
                                             className="invert dark:invert-0 font-bold text-xl"
                                         />{" "}
-                                        - interactive UI effects
+                                        - interactive UI components
                                     </li>
 
                                     <li className="pt-2">

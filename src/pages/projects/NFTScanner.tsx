@@ -34,8 +34,8 @@ export default function NFTScanner() {
     }, []);
 
     return (
-        <div className="relative overflow-auto w-screen h-screen dark:invert">
-            <div className="max-w-5xl mx-auto mb-12 lg:border-x-2 border-dashed bg-accent/10 dark:invert">
+        <div className="relative overflow-auto w-screen h-screen">
+            <div className="max-w-5xl mx-auto mb-12 lg:border-x-2 border-dashed bg-accent/10">
                 <div className="relative w-full h-64 md:h-96 lg:h-[300px] flex items-center justify-center overflow-hidden invert dark:invert-0">
                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[150px] bg-white/20 dark:bg-white/10 blur-3xl rounded-full" />
                     <ASCIIText
@@ -105,7 +105,7 @@ export default function NFTScanner() {
                                     <a
                                         href="https://magiceden.io/marketplace/br1_loot_boxes"
                                         target="_blank"
-                                        className="italic underline"
+                                        className="font-semibold underline"
                                     >
                                         lootboxes
                                     </a>{" "}
@@ -149,9 +149,9 @@ export default function NFTScanner() {
                                 <p className="pb-4">
                                     I first realised it might be possible to see lootbox contents
                                     before opening them as when you click the <em>open</em> button
-                                    on the BR1 site, the connected wallet already shows exactly what
-                                    you'll receive <em>before</em> you approve the transaction, and
-                                    it's always the same balance change.
+                                    on the BR1 site, your connected wallet already shows exactly
+                                    what you'll receive <em>before</em> you approve the transaction,
+                                    and it's always the same balance change.
                                 </p>
                                 <p className="pb-4">
                                     That got me curious, especially since they are dropping a new
@@ -191,11 +191,6 @@ export default function NFTScanner() {
                                         br1game.com
                                     </a>
                                     , so requests came from an allowed origin.
-                                </p>
-                                <p className="py-4">
-                                    I had to map lootbox data with weapon metadata manually and log
-                                    progress in console. I kept it minimal - no libraries, just{" "}
-                                    <code>fetch()</code>.
                                 </p>
                                 <p className="py-4">
                                     I learned how to work with Solana NFT data and the{" "}
