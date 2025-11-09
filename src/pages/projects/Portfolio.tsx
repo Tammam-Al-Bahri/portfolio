@@ -45,20 +45,18 @@ export default function Portfolio() {
                 </div>
                 <div className="flex flex-col">
                     <ShinyText
-                        text="Live View:"
+                        text="Interactive Live View:"
                         disabled={false}
                         speed={4}
-                        className="invert dark:invert-0 font-bold text-2xl text-center"
+                        className="invert dark:invert-0 font-bold text-3xl text-center italic"
                     />
-                    <div className="relative flex justify-center group select-none">
+                    <div className="relative flex justify-center group select-none mb-4">
                         <div className="text-center text-sm text-muted-foreground font-mono">
                             Inception Level: {level}
                         </div>
-                        {level == 0 && (
-                            <div className="absolute top-full z-10 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
-                                navigate to this page on the phone
-                            </div>
-                        )}
+                        <div className="absolute top-full z-10 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
+                            navigate to this page on the phone
+                        </div>
                     </div>
                     <div className="flex justify-center">
                         <div className="relative w-[400px] h-[750px] scale-100 rounded-[3rem] border-8 border-neutral-800 bg-black shadow-2xl overflow-hidden">
