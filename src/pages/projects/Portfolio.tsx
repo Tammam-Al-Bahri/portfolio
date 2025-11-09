@@ -44,17 +44,18 @@ export default function Portfolio() {
                     />
                 </div>
                 <div className="flex flex-col">
-                    <div className="text-center italic select-none">Live View:</div>
+                    <ShinyText
+                        text="Live View:"
+                        disabled={false}
+                        speed={4}
+                        className="invert dark:invert-0 font-bold text-2xl text-center"
+                    />
                     <div className="relative flex justify-center group select-none">
-                        <div
-                            className={`text-center text-sm text-muted-foreground font-mono ${
-                                level == 0 && "group-hover:underline"
-                            }`}
-                        >
+                        <div className="text-center text-sm text-muted-foreground font-mono">
                             Inception Level: {level}
                         </div>
                         {level == 0 && (
-                            <div className="absolute top-full z-10 mt-1 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div className="absolute top-full z-10 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
                                 navigate to this page on the phone
                             </div>
                         )}

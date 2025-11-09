@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/sidebar";
 import { type Pages } from "@/pages";
 import { ThemeToggle } from "./theme-toggle";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSidebar } from "@/components/ui/sidebar";
 import GradientText from "./GradientText";
 
@@ -95,7 +95,7 @@ export function AppSidebar() {
                     showBorder={false}
                     className="px-2"
                 >
-                    Tammam Al Bahri
+                    <Link to={aboutMeItems[0].path}>Tammam Al Bahri</Link>
                 </GradientText>
             </SidebarHeader>
             <SidebarContent className="shadow-2xl">

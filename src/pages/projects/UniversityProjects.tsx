@@ -75,7 +75,7 @@ export default function UniversityProjects() {
                             />
                         </div>
                     </div>
-                    <div className="text-center text-xl font-bold pt-8">Cantor Collage</div>
+                    <div className="text-center text-xl font-bold pt-8">Cantor College</div>
                     <div className="flex justify-center">
                         <div className="scale-60 lg:scale-100">
                             <Stack

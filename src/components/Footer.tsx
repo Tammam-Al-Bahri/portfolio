@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="flex gap-4">
                 <Button variant="ghost" size="icon" asChild>
                     <a
-                        href="https://www.linkedin.com/in/tammam-al-bahri-7242ba2a9/"
+                        href="https://www.linkedin.com/in/tammam-al-bahri/"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn"
