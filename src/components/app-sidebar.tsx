@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/sidebar";
 import { type Pages } from "@/pages";
 import { ThemeToggle } from "./theme-toggle";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSidebar } from "@/components/ui/sidebar";
 import GradientText from "./GradientText";
 
@@ -95,7 +95,13 @@ export function AppSidebar() {
                     showBorder={false}
                     className="px-2"
                 >
-                    <Link to={aboutMeItems[0].path}>Tammam Al Bahri</Link>
+                    <a
+                        onClick={() => (
+                            navigate(aboutMeItems[0].path), sidebar.setOpenMobile(false)
+                        )}
+                    >
+                        Tammam Al Bahri
+                    </a>
                 </GradientText>
             </SidebarHeader>
             <SidebarContent className="shadow-2xl">
@@ -108,8 +114,7 @@ export function AppSidebar() {
                                     <SidebarMenuButton
                                         asChild
                                         onClick={() => (
-                                            navigate(item.path),
-                                            sidebar.isMobile ? sidebar.toggleSidebar() : null
+                                            navigate(item.path), sidebar.setOpenMobile(false)
                                         )}
                                     >
                                         <button className="select-none">
@@ -131,8 +136,7 @@ export function AppSidebar() {
                                     <SidebarMenuButton
                                         asChild
                                         onClick={() => (
-                                            navigate(item.path),
-                                            sidebar.isMobile ? sidebar.toggleSidebar() : null
+                                            navigate(item.path), sidebar.setOpenMobile(false)
                                         )}
                                     >
                                         <button className="select-none">
