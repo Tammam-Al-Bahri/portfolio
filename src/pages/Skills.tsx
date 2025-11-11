@@ -24,7 +24,6 @@ import {
     SiGithubpages,
 } from "react-icons/si";
 import ASCIIText from "@/components/ASCIIText";
-import ShinyText from "@/components/ShinyText";
 import { useState, useEffect } from "react";
 import ElectricBorder from "@/components/ElectricBorder";
 import NavButtons from "@/components/NavButtons";
@@ -158,20 +157,6 @@ export default function Skills() {
                                     </p>
                                 </section>
                                 <section>
-                                    <div>
-                                        I'm diving deep into{" "}
-                                        <ShinyText
-                                            text="TypeScript"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold"
-                                        />{" "}
-                                        and its ecosystem because it's a powerful foundation for
-                                        creating robust applications and a valuable skill for modern
-                                        development.
-                                    </div>
-                                </section>
-                                <section>
                                     <p>
                                         I enjoy hyper-focusing on specific challenges. I thrive with
                                         clear goals and structure, and love solving real world
@@ -200,30 +185,6 @@ export default function Skills() {
                                 ariaLabel="Technology Stack"
                                 className="border-x-1 border-dashed"
                             />
-                            <div className="py-4 text-muted-foreground text-center">
-                                My current stack for web apps is{" "}
-                                <ShinyText
-                                    text="Next.js + Prisma"
-                                    disabled={false}
-                                    speed={4}
-                                    className="invert dark:invert-0 font-bold"
-                                />
-                                , and for desktop apps I'm working with{" "}
-                                <ShinyText
-                                    text="Electron + Vite + React + React Router"
-                                    disabled={false}
-                                    speed={4}
-                                    className="invert dark:invert-0 font-bold"
-                                />{" "}
-                                with a{" "}
-                                <ShinyText
-                                    text="Dockerised Express + Prisma + PostgreSQL"
-                                    disabled={false}
-                                    speed={4}
-                                    className="invert dark:invert-0 font-bold"
-                                />{" "}
-                                backend.
-                            </div>
                             <div className="flex flex-wrap gap-2">
                                 {techLogos.map((item) => (
                                     <a

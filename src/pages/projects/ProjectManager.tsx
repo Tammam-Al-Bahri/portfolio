@@ -135,7 +135,7 @@ export default function ProjectManager() {
                                     As the foundation came together, I realised that building the
                                     system is only part of the challenge - the real work is
                                     understanding what users actually need. A UX designer friend is
-                                    ready to help once I know more about their workflows.
+                                    ready to help once I'm more prepared.
                                 </p>
                                 <p className="py-4">
                                     Deciding what to add next requires talking to employees and
@@ -144,14 +144,8 @@ export default function ProjectManager() {
                                     ones.
                                 </p>
                                 <p className="py-4">
-                                    The app is currently a solid, working prototype. I plan to
-                                    refactor parts of it as it grows.
-                                </p>
-                                <p className="py-4">
-                                    This project gave me hands on experience with full stack
-                                    development, monorepo architecture, and creating a shared
-                                    package for type safety and validation between the frontend and
-                                    backend.
+                                    The app is currently a solid prototype. I plan to refactor parts
+                                    of it as it grows.
                                 </p>
                             </AccordionContent>
                         </AccordionItem>

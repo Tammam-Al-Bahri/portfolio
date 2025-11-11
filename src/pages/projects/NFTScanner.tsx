@@ -94,7 +94,7 @@ export default function NFTScanner() {
                             </AccordionTrigger>
                             <AccordionContent className="px-6 text-lg text-card-foreground">
                                 <p>
-                                    A simple browser based utility that scans{" "}
+                                    A simple script that scans{" "}
                                     <a
                                         href="https://www.br1game.com/"
                                         target="_blank"
@@ -110,8 +110,8 @@ export default function NFTScanner() {
                                         lootboxes
                                     </a>{" "}
                                     and extracts their weapon IDs and metadata, including rarities,
-                                    directly from the game website's API - no Node.js, no setup,
-                                    runs straight in browser DevTools.
+                                    directly from the game website's API - no Node.js or any setup
+                                    as it runs straight in browser DevTools.
                                 </p>
                                 <p className="pt-4">Consists of two small JS scripts:</p>
                                 <ul className="list-disc px-6 py-2">
@@ -126,15 +126,13 @@ export default function NFTScanner() {
                                 </ul>
                                 <p className="pt-4">
                                     The result is a JSON file with the entire remaining lootbox
-                                    collection (2553 addresses), each with the IDs and rarities of
-                                    its 3 weapons. Now anyone can use this to find or buy listed
-                                    lootboxes with rare contents.
+                                    collection, each with the IDs and rarities of its 3 weapons.
                                 </p>
                                 <p className="pt-4">
                                     <strong>Update: </strong>I have used this for the new
-                                    collection, found the lootbox containing the rare skin with the
-                                    bounty, and informed the team of a visual bug which they were
-                                    thankful for and have now fixed.
+                                    collection, found the lootbox containing the rarest skin with
+                                    the bounty, and informed the team of a visual bug which they
+                                    were thankful for and have now fixed.
                                 </p>
                             </AccordionContent>
                         </AccordionItem>
