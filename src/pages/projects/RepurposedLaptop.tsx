@@ -44,8 +44,8 @@ export default function RepurposedLaptop() {
 
                 <div className="flex flex-col gap-6 text-lg pt-12 px-8">
                     This is a physically damaged laptop I disassembled and set up as a Linux server.
-                    I've used it to experiment with SSH, Docker with the API for the Project Manager
-                    project, and even to host a Minecraft server.
+                    So far I've used it to experiment with SSH, Docker with the API for the Project
+                    Manager project, and even to host a Minecraft server.
                 </div>
                 <div className="flex justify-between w-full max-w-5xl mx-auto mt-4 px-8 pt-4 pb-24">
                     <NavButtons />

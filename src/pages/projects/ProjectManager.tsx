@@ -1,7 +1,6 @@
 import ASCIIText from "@/components/ASCIIText";
 import ElectricBorder from "@/components/ElectricBorder";
 import GradientText from "@/components/GradientText";
-import ShinyText from "@/components/ShinyText";
 import Stack from "@/components/Stack";
 import {
     Accordion,
@@ -10,7 +9,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Cpu, ExternalLink, FileText, Flag } from "lucide-react";
+import { ExternalLink, FileText, Flag } from "lucide-react";
 import { useState, useEffect } from "react";
 import granada1 from "/images/projects/granada/app-and-docker.jpg";
 import granada2 from "/images/projects/granada/app-login.jpg";
@@ -96,15 +95,15 @@ export default function ProjectManager() {
                                     architecture and construction consultancy in the UAE.
                                 </p>
                                 <p className="pt-4">
-                                    The goal is to replace scattered spreadsheets and manual work
-                                    flows with a unified and organised system for project tracking,
-                                    documentation, and task management across the company.
+                                    The goal is to replace unorganised spreadsheets and manual work
+                                    flows with a unified system for project tracking, documentation,
+                                    and task management across the company.
                                 </p>
                                 <p className="pt-4">
                                     I designed the whole project as a TypeScript monorepo,
                                     consisting of an Electron desktop app, and a locally hosted
-                                    Express + PostgreSQL backend, for use within the company's
-                                    office network.
+                                    Express + PostgreSQL backend for use within the company's office
+                                    network.
                                 </p>
                                 <p className="pt-4">
                                     The current focus is delivering a scalable foundation for an MVP
@@ -122,9 +121,9 @@ export default function ProjectManager() {
                             <AccordionContent className="px-6 text-lg text-card-foreground">
                                 <p className="pb-4">
                                     As the solo developer with minimal guidance, I had to decide
-                                    what to build and how to build it. I focused on creating a
-                                    scalable codebase since I plan to continue developing it long
-                                    term.
+                                    what to build and how to build it. I focused on trying to create
+                                    a scalable codebase since I plan to continue developing this
+                                    long term.
                                 </p>
                                 <p className="pb-4">
                                     Getting everything to work together was challenging at first as
@@ -134,8 +133,8 @@ export default function ProjectManager() {
                                 <p className="pb-4">
                                     As the foundation came together, I realised that building the
                                     system is only part of the challenge - the real work is
-                                    understanding what users actually need. A UX designer friend is
-                                    ready to help once I'm more prepared.
+                                    understanding what users actually need. Thankfully, UX designer
+                                    friend is ready to help once I'm more prepared.
                                 </p>
                                 <p className="py-4">
                                     Deciding what to add next requires talking to employees and
@@ -147,72 +146,6 @@ export default function ProjectManager() {
                                     The app is currently a solid prototype. I plan to refactor parts
                                     of it as it grows.
                                 </p>
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="item-3" className="px-8 border-dashed">
-                            <AccordionTrigger>
-                                <div className="flex gap-2 items-center font-bold">
-                                    <Cpu size={16} />
-                                    Technologies Used
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent className="px-6 text-card-foreground">
-                                <ul className="py-4 px-4 text-lg list-disc">
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="TypeScript Monorepo"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - Code organized in a monorepo with a shared package
-                                    </li>
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="Electron + React + Vite"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - Cross-platform desktop app using modern web tooling
-                                    </li>
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="Docker + Express + PostgreSQL"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - Containerised API and database
-                                    </li>
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="Prisma ORM"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - Database models and queries with type safety
-                                    </li>
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="Shadcn + Tailwind"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - Reusable UI components and direct styling
-                                    </li>
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="Zod"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - Schema validation shared between frontend and backend
-                                    </li>
-                                </ul>
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>

@@ -25,7 +25,6 @@ import {
 } from "react-icons/si";
 import ASCIIText from "@/components/ASCIIText";
 import { useState, useEffect } from "react";
-import ElectricBorder from "@/components/ElectricBorder";
 import NavButtons from "@/components/NavButtons";
 
 export default function Skills() {
@@ -76,17 +75,14 @@ export default function Skills() {
         "Teamwork",
     ];
     const interests = [
-        "English (fluent)",
-        "Arabic (native)",
-        "Violin",
         "Gym",
         "Calisthenics",
         "Crypto and Blockchain",
+        "Violin",
         "Music Production",
         "Maths",
         "Chemistry",
         "Blitz Chess",
-        "Rowing",
     ];
 
     const [rerender, setRerender] = useState(false);
@@ -135,45 +131,18 @@ export default function Skills() {
                 </div>
 
                 <div className="flex flex-col gap-6 px-12">
-                    <ElectricBorder
-                        color="#27e676"
-                        speed={0.2}
-                        chaos={0.5}
-                        thickness={2}
-                        className={`rounded-xl transition-transform duration-200 ${scaleCardClass}`}
+                    <Card
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        className={`shadow-md mt-16 transition-transform duration-${cardScaleDuration} ${scaleCardClass}`}
                     >
-                        <Card
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                            className="m-1 shadow-md"
-                        >
-                            <div
-                                className={`p-4 lg:px-8 text-center max-w-3xl mx-auto space-y-6 ${scaleTextClass} transition-transform duration-${textFallDuration} ease-in`}
-                            >
-                                <section>
-                                    <p className="font-semibold text-xl">
-                                        I'm passionate about building practical, scalable, and
-                                        useful apps.
-                                    </p>
-                                </section>
-                                <section>
-                                    <p>
-                                        I enjoy hyper-focusing on specific challenges. I thrive with
-                                        clear goals and structure, and love solving real world
-                                        problems.
-                                    </p>
-                                </section>
-                            </div>
-                        </Card>
-                    </ElectricBorder>
-                    <Card className="shadow-md mt-16 hover:scale-101">
                         <CardHeader>
-                            <CardTitle>Technical Skills</CardTitle>
-                            <CardDescription>
-                                Tools, languages, and frameworks I have experience with.
-                            </CardDescription>
+                            <CardTitle>Technologies I've used</CardTitle>
+                            <CardDescription>I'm still learning.</CardDescription>
                         </CardHeader>
-                        <CardContent>
+                        <CardContent
+                            className={`${scaleTextClass} transition-transform duration-${textFallDuration} ease-in`}
+                        >
                             <LogoLoop
                                 logos={techLogos}
                                 speed={25}
@@ -191,7 +160,7 @@ export default function Skills() {
                                         key={item.title}
                                         href={item.href}
                                         target="_blank"
-                                        className="px-3 py-1 border rounded-lg text-xs bg-accent hover:scale-105 select-none"
+                                        className={`px-3 py-1 border rounded-lg text-xs bg-accent hover:scale-105 select-none`}
                                     >
                                         {item.title}
                                     </a>
@@ -199,7 +168,7 @@ export default function Skills() {
                             </div>
                         </CardContent>
                     </Card>
-                    <Card className="shadow-md mt-16 hover:scale-101">
+                    <Card className="shadow-md hover:scale-101">
                         <CardHeader>
                             <CardTitle>Personal Skills</CardTitle>
                             <CardDescription>Skills that define me.</CardDescription>
@@ -217,8 +186,8 @@ export default function Skills() {
                     </Card>
                     <Card className="shadow-md hover:scale-101">
                         <CardHeader>
-                            <CardTitle>Languages & Interests</CardTitle>
-                            <CardDescription>What I speak and what I love.</CardDescription>
+                            <CardTitle>Interests</CardTitle>
+                            <CardDescription>Some of my hobbies.</CardDescription>
                         </CardHeader>
                         <CardContent className="flex flex-wrap gap-2">
                             {interests.map((item) => (

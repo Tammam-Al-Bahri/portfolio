@@ -15,20 +15,17 @@ import NavButtons from "@/components/NavButtons";
 export default function AboutMe() {
     const text = [
         "loves clean code",
-        "manages dependencies",
-        "thrives in vscode",
-        "validates with zod",
-        "runs linux on old hardware",
-        "appreciates pnpm",
-        "writes scalable code",
         "prefers dark mode",
-        "believes in open source",
-        "lives in a docker container",
-        "lets prisma handle the sql",
-        "hashes with bcrypt",
-        "doesn't reinvent buttons",
         "does typing tests for fun",
+        "believes in open source",
+        "doesn't reinvent buttons",
         "avoids merge conflicts",
+        "writes scalable code",
+        "appreciates pnpm",
+        "runs linux on old hardware",
+        "thrives in vscode",
+        "manages dependencies",
+        "lives in a docker container",
     ];
     const { theme } = useTheme();
     const [scaleClass, setScaleClass] = useState("scale-0");

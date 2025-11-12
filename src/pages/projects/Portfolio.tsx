@@ -9,7 +9,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Cpu, ExternalLink, FileText, Flag } from "lucide-react";
+import { ExternalLink, FileText, Flag } from "lucide-react";
 import { useState, useEffect } from "react";
 import NavButtons from "@/components/NavButtons";
 
@@ -121,107 +121,13 @@ export default function Portfolio() {
                             </AccordionTrigger>
                             <AccordionContent className="px-6 text-lg text-card-foreground">
                                 <p className="pb-4">
-                                    Working on this project has been fantastic for my frontend
-                                    proficiency. It has helped me solidify my React and Tailwind
-                                    skills in particular, and get more confident in problem solving
-                                    and experimenting with component architecture.
+                                    Working on this project has been great fun and good frontend
+                                    practice.
                                 </p>
                                 <p>
                                     The design ended up being experimental since I let myself play
-                                    with ideas instead of sticking to a wireframe. This helped me
-                                    explore UI/UX with more freedom.
+                                    with ideas without making a wireframe.
                                 </p>
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="item-3" className="px-8 border-dashed">
-                            <AccordionTrigger>
-                                <div className="flex gap-2 items-center font-bold">
-                                    <Cpu size={16} />
-                                    Technologies Used
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent className="px-6 text-card-foreground">
-                                <ul className="py-4 px-4 text-lg list-disc">
-                                    <li>
-                                        <ShinyText
-                                            text="React"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - component based UI and hooks
-                                    </li>
-
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="Vite"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - dev environment with fast HMR and optimised builds
-                                    </li>
-
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="TypeScript"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - strong typing for safer and more maintainable code
-                                    </li>
-
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="React Router"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - client side routing for a smooth SPA experience
-                                    </li>
-
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="Tailwind CSS"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - utility first styling for fast iteration
-                                    </li>
-
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="Shadcn"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - customisable components to speed up development
-                                    </li>
-
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="React Bits"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - interactive UI components
-                                    </li>
-
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="GitHub Pages"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - simple and reliable deployment for static hosting
-                                    </li>
-                                </ul>
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>

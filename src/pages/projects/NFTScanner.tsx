@@ -1,6 +1,5 @@
 import ASCIIText from "@/components/ASCIIText";
 import GradientText from "@/components/GradientText";
-import ShinyText from "@/components/ShinyText";
 import Stack from "@/components/Stack";
 import {
     Accordion,
@@ -9,7 +8,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { FileText, Flag, Cpu, ExternalLink } from "lucide-react";
+import { FileText, Flag, ExternalLink } from "lucide-react";
 import { useState, useEffect } from "react";
 import nftScanner1 from "/images/projects/nft-scanner/lootboxes-with-weapon-data-json-screenshot.jpg";
 import nftScanner2 from "/images/projects/nft-scanner/console-get-all-mint-addresses-js.jpg";
@@ -17,6 +16,7 @@ import nftScanner3 from "/images/projects/nft-scanner/console-scanner-js.jpg";
 import nftScanner4 from "/images/projects/nft-scanner/wallet-confirm-lootbox-open.jpg";
 import ElectricBorder from "@/components/ElectricBorder";
 import NavButtons from "@/components/NavButtons";
+import ShinyText from "@/components/ShinyText";
 
 export default function NFTScanner() {
     const images = [
@@ -98,41 +98,37 @@ export default function NFTScanner() {
                                     <a
                                         href="https://www.br1game.com/"
                                         target="_blank"
-                                        className="font-bold underline"
+                                        className="underline"
                                     >
                                         BR1 Infinite
                                     </a>{" "}
                                     <a
                                         href="https://magiceden.io/marketplace/br1_loot_boxes"
                                         target="_blank"
-                                        className="font-semibold underline"
+                                        className="underline"
                                     >
                                         lootboxes
                                     </a>{" "}
-                                    and extracts their weapon IDs and metadata, including rarities,
-                                    directly from the game website's API - no Node.js or any setup
-                                    as it runs straight in browser DevTools.
+                                    and extracts their weapon IDs and metadata, including their{" "}
+                                    <ShinyText
+                                        text="rarity"
+                                        disabled={false}
+                                        speed={4}
+                                        className="invert dark:invert-0 font-bold"
+                                    />
+                                    , directly from the game website's API. No Node.js or any setup
+                                    needed, as it runs straight in the browser DevTools.
                                 </p>
-                                <p className="pt-4">Consists of two small JS scripts:</p>
-                                <ul className="list-disc px-6 py-2">
-                                    <li>
-                                        <code>scanner.js</code> — fetches lootbox contents and
-                                        weapon rarity and exports JSON
-                                    </li>
-                                    <li>
-                                        <code>getAllMintAddresses.js</code> — grabs all NFT mint
-                                        addresses from Solana collection via Helius API
-                                    </li>
-                                </ul>
                                 <p className="pt-4">
-                                    The result is a JSON file with the entire remaining lootbox
-                                    collection, each with the IDs and rarities of its 3 weapons.
+                                    The result is a JSON file with the entire lootbox collection,
+                                    with each lootbox and the IDs and rarities of its weapons.
                                 </p>
                                 <p className="pt-4">
                                     <strong>Update: </strong>I have used this for the new
                                     collection, found the lootbox containing the rarest skin with
-                                    the bounty, and informed the team of a visual bug which they
-                                    were thankful for and have now fixed.
+                                    the bounty, tried to buy it before the owner opened it (made an
+                                    offer since they didn't list it), and also informed the team of
+                                    a visual bug which they were thankful for and have now fixed.
                                 </p>
                             </AccordionContent>
                         </AccordionItem>
@@ -145,21 +141,23 @@ export default function NFTScanner() {
                             </AccordionTrigger>
                             <AccordionContent className="px-6 text-lg text-card-foreground">
                                 <p className="pb-4">
-                                    I first realised it might be possible to see lootbox contents
-                                    before opening them as when you click the <em>open</em> button
-                                    on the BR1 site, your connected wallet already shows exactly
-                                    what you'll receive <em>before</em> you approve the transaction,
-                                    and it's always the same balance change.
+                                    I first realised it should be possible to do this when I was
+                                    opening a lootbox on the site. The wallet shows exactly what
+                                    you'll receive <em>before</em> you approve the transaction, and
+                                    it's always the same balance change.
                                 </p>
                                 <p className="pb-4">
                                     That got me curious, especially since they are dropping a new
-                                    lootbox collection with a cash bounty on a rare skin, so I did
-                                    some quick reverse engineering.
+                                    lootbox collection with a cash bounty on a rare skin, so I
+                                    checked it out.
                                 </p>
                                 <p className="pb-4">
                                     Using the Network tab in DevTools, I found the{" "}
                                     <code>/api/lootbox/open</code> endpoint, which returns the
-                                    weapon IDs for a given lootbox mint address. Then, by checking a{" "}
+                                    weapon IDs for a given lootbox mint address.
+                                </p>
+                                <p className="pb-4">
+                                    Then, by checking a{" "}
                                     <a
                                         href="https://solscan.io/token/9mjeJbsPhMDTVLisAkjtHT3gGfUo7BrxTbAkPNWBjNC7#metadata"
                                         target="_blank"
@@ -177,61 +175,12 @@ export default function NFTScanner() {
                                     </a>{" "}
                                     with the weapon data.
                                 </p>
-                                <p className="py-4">
+                                <p className="pb-4">
                                     I attempted to write a Python script first, but the main issue
-                                    was CORS. This was solved by running everything directly in
-                                    DevTools on{" "}
-                                    <a
-                                        href="https://www.br1game.com"
-                                        target="_blank"
-                                        className="underline"
-                                    >
-                                        br1game.com
-                                    </a>
-                                    , so requests came from an allowed origin.
+                                    was CORS. This was solved by simply running everything directly
+                                    in DevTools on their website, so requests came from an allowed
+                                    origin.
                                 </p>
-                                <p className="py-4">
-                                    I learned how to work with Solana NFT data and the{" "}
-                                    <a
-                                        href="https://www.helius.dev/"
-                                        target="_blank"
-                                        className="underline"
-                                    >
-                                        Helius
-                                    </a>{" "}
-                                    API.
-                                </p>
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="item-3" className="px-8 border-dashed">
-                            <AccordionTrigger>
-                                <div className="flex gap-2 items-center font-bold">
-                                    <Cpu size={16} />
-                                    Technologies Used
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent className="px-6 text-lg text-card-foreground">
-                                <ul className="py-4 px-4 text-lg list-disc">
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="JavaScript"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - browser-only scripts using <code>fetch()</code> and async
-                                        functions for direct API calls
-                                    </li>
-                                    <li className="pt-2">
-                                        <ShinyText
-                                            text="Helius API"
-                                            disabled={false}
-                                            speed={4}
-                                            className="invert dark:invert-0 font-bold text-xl"
-                                        />{" "}
-                                        - to pull all mint addresses from a Solana NFT collection
-                                    </li>
-                                </ul>
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
