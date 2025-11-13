@@ -39,13 +39,13 @@ type MenuItem = {
 
 const aboutMeItems: MenuItem[] = [
     {
-        title: "About Me",
+        title: "Me",
         path: "/",
         icon: PersonStanding,
     },
     {
-        title: "Skills",
-        path: "/skills",
+        title: "About Me",
+        path: "/about-me",
         icon: Brain,
     },
     {

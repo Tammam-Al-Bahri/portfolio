@@ -116,8 +116,8 @@ export default function NFTScanner() {
                                         speed={4}
                                         className="invert dark:invert-0 font-bold"
                                     />
-                                    , directly from the game website's API. No Node.js or any setup
-                                    needed, as it runs straight in the browser DevTools.
+                                    , directly from the game website's API. It runs straight in the
+                                    browser dev tools.
                                 </p>
                                 <p className="pt-4">
                                     The result is a JSON file with the entire lootbox collection,
@@ -152,7 +152,7 @@ export default function NFTScanner() {
                                     checked it out.
                                 </p>
                                 <p className="pb-4">
-                                    Using the Network tab in DevTools, I found the{" "}
+                                    Using the network tab in dev tools, I found the{" "}
                                     <code>/api/lootbox/open</code> endpoint, which returns the
                                     weapon IDs for a given lootbox mint address.
                                 </p>
@@ -165,7 +165,7 @@ export default function NFTScanner() {
                                     >
                                         weapon's NFT metadata
                                     </a>{" "}
-                                    on a Solana explorer, I discovered the{" "}
+                                    on a Solana explorer, I found the{" "}
                                     <a
                                         href="https://assets.bravoready.com/br1-infinite/weapons/7151.json"
                                         target="_blank"
@@ -178,7 +178,7 @@ export default function NFTScanner() {
                                 <p className="pb-4">
                                     I attempted to write a Python script first, but the main issue
                                     was CORS. This was solved by simply running everything directly
-                                    in DevTools on their website, so requests came from an allowed
+                                    in dev tools on their website, so requests came from an allowed
                                     origin.
                                 </p>
                             </AccordionContent>

@@ -45,7 +45,7 @@ export default function Portfolio() {
                 </div>
                 <div className="flex flex-col">
                     <ShinyText
-                        text="Interactive Live View:"
+                        text="Live View:"
                         disabled={false}
                         speed={4}
                         className="invert dark:invert-0 font-bold text-3xl text-center italic"
@@ -105,11 +105,7 @@ export default function Portfolio() {
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent className="px-6 text-lg text-card-foreground">
-                                <p>
-                                    A personal portfolio website built with React to showcase my
-                                    projects, skills, and background. It has a clean, interactive,
-                                    and mobile-first UI, and is deployed with GitHub Pages.
-                                </p>
+                                <p>My cool portfolio website. Making it was actually quite fun.</p>
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2" className="px-8 border-dashed">
@@ -121,8 +117,7 @@ export default function Portfolio() {
                             </AccordionTrigger>
                             <AccordionContent className="px-6 text-lg text-card-foreground">
                                 <p className="pb-4">
-                                    Working on this project has been great fun and good frontend
-                                    practice.
+                                    Working on this project was great frontend dev practice.
                                 </p>
                                 <p>
                                     The design ended up being experimental since I let myself play

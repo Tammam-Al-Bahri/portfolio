@@ -1,7 +1,7 @@
-import AboutMe from "./AboutMe";
+import Me from "./Me";
 import Projects from "./Projects";
 import Portfolio from "./projects/Portfolio";
-import Skills from "./Skills";
+import Skills from "./AboutMe";
 import ProjectManager from "./projects/ProjectManager";
 import UniversityProjects from "./projects/UniversityProjects";
 import RepurposedLaptop from "./projects/RepurposedLaptop";
@@ -11,12 +11,12 @@ import { useLocation } from "react-router-dom";
 const pages = [
     {
         path: "/",
-        title: "About Me",
-        component: AboutMe,
+        title: "Me",
+        component: Me,
     },
     {
-        path: "/skills",
-        title: "Skills",
+        path: "/about-me",
+        title: "About Me",
         component: Skills,
     },
     {

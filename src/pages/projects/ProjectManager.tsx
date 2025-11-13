@@ -92,7 +92,7 @@ export default function ProjectManager() {
                             <AccordionContent className="px-6 text-lg text-card-foreground">
                                 <p>
                                     This is a project manager I'm building for a family owned
-                                    architecture and construction consultancy in the UAE.
+                                    architecture and construction business in the UAE.
                                 </p>
                                 <p className="pt-4">
                                     The goal is to replace unorganised spreadsheets and manual work
@@ -100,14 +100,8 @@ export default function ProjectManager() {
                                     and task management across the company.
                                 </p>
                                 <p className="pt-4">
-                                    I designed the whole project as a TypeScript monorepo,
-                                    consisting of an Electron desktop app, and a locally hosted
-                                    Express + PostgreSQL backend for use within the company's office
-                                    network.
-                                </p>
-                                <p className="pt-4">
-                                    The current focus is delivering a scalable foundation for an MVP
-                                    while continuing requirement gathering.
+                                    It's a desktop app and a locally hosted backend for use within
+                                    the company's office network.
                                 </p>
                             </AccordionContent>
                         </AccordionItem>

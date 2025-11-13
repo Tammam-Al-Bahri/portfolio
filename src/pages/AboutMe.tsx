@@ -1,173 +1,226 @@
-import CircularText from "@/components/CircularText";
-import FaultyTerminal from "@/components/FaultyTerminal";
-import GlassSurface from "@/components/GlassSurface";
-import GradientText from "@/components/GradientText";
-import LightRays from "@/components/LightRays";
-import ShinyText from "@/components/ShinyText";
-import TextType from "@/components/TextType";
-import { useTheme } from "@/components/theme-provider";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { ThemeToggle } from "@/components/theme-toggle";
+import LogoLoop from "@/components/LogoLoop";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+    SiDocker,
+    SiDotnet,
+    SiNextdotjs,
+    SiPrisma,
+    SiReact,
+    SiShadcnui,
+    SiTailwindcss,
+    SiTypescript,
+    SiReactrouter,
+    SiExpress,
+    SiVite,
+    SiElectron,
+    SiJavascript,
+    SiClerk,
+    SiGit,
+    SiGithub,
+    SiPostgresql,
+    SiMysql,
+    SiSqlite,
+    SiCss3,
+    SiGithubpages,
+} from "react-icons/si";
+import ASCIIText from "@/components/ASCIIText";
 import { useState, useEffect } from "react";
-import ClickSpark from "@/components/ClickSpark";
 import NavButtons from "@/components/NavButtons";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion";
+import { List } from "lucide-react";
 
 export default function AboutMe() {
-    const text = [
-        "loves clean code",
-        "prefers dark mode",
-        "does typing tests for fun",
-        "believes in open source",
-        "doesn't reinvent buttons",
-        "avoids merge conflicts",
-        "writes scalable code",
-        "appreciates pnpm",
-        "runs linux on old hardware",
-        "thrives in vscode",
-        "manages dependencies",
-        "lives in a docker container",
+    const techLogos = [
+        {
+            node: <SiDotnet />,
+            title: "C#",
+            href: "https://dotnet.microsoft.com/en-us/languages/csharp",
+        },
+        {
+            node: <SiJavascript />,
+            title: "JavaScript",
+            href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        },
+        { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+        { node: <SiReact />, title: "React", href: "https://react.dev" },
+        { node: <SiReactrouter />, title: "React Router", href: "https://reactrouter.com" },
+        { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+        { node: <SiVite />, title: "Vite", href: "https://vite.dev/" },
+        { node: <SiElectron />, title: "Electron", href: "https://www.electronjs.org/" },
+        { node: <SiPrisma />, title: "Prisma", href: "https://www.prisma.io" },
+        { node: <SiPostgresql />, title: "PostgreSQL", href: "https://www.postgresql.org/" },
+        { node: <SiMysql />, title: "MySQL", href: "https://www.mysql.com/" },
+        { node: <SiSqlite />, title: "SQLite", href: "https://sqlite.org/" },
+        { node: <SiExpress />, title: "Express", href: "https://expressjs.com/" },
+        { node: <SiDocker />, title: "Docker", href: "https://www.docker.com" },
+        { node: <SiCss3 />, title: "CSS", href: "https://en.wikipedia.org/wiki/CSS" },
+        { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+        { node: <SiShadcnui />, title: "Shadcn", href: "https://ui.shadcn.com" },
+        { node: <SiClerk />, title: "Clerk", href: "https://clerk.com/" },
+        { node: <SiGit />, title: "Git", href: "https://git-scm.com/" },
+        { node: <SiGithub />, title: "GitHub", href: "https://github.com/" },
+        {
+            node: <SiGithubpages />,
+            title: "GitHub Pages",
+            href: "https://docs.github.com/en/pages/",
+        },
     ];
-    const { theme } = useTheme();
-    const [scaleClass, setScaleClass] = useState("scale-0");
+    const skills = [
+        "Attention to Detail",
+        "Intuition",
+        "Problem Solving",
+        "Active Listening",
+        "Competitive Mindset",
+        "Analytical Thinking",
+        "Perseverance",
+        "Leadership",
+        "Teamwork",
+    ];
+    const interests = [
+        "Gym",
+        "Calisthenics",
+        "Crypto and Blockchain",
+        "Violin",
+        "Music Production",
+        "Maths",
+        "Chemistry",
+        "Blitz Chess",
+    ];
+
+    const [rerender, setRerender] = useState(false);
 
     useEffect(() => {
-        setTimeout(() => {
-            setScaleClass("scale-100");
-        }, 100);
+        const timer = setTimeout(() => setRerender(true), 200);
+        return () => clearTimeout(timer);
     }, []);
+
+    const [scaleTextClass, setScaleTextClass] = useState("scale-100");
+    const [scaleCardClass, setScaleCardClass] = useState("scale-100");
+
+    const textFallDuration = 200;
+    const cardScaleDuration = 150;
+
+    const handleMouseLeave = () => {
+        setTimeout(() => {
+            setScaleTextClass("scale-100");
+        });
+
+        setTimeout(() => {
+            setScaleCardClass("scale-99");
+        }, textFallDuration);
+
+        setTimeout(() => {
+            setScaleCardClass("scale-100");
+        }, textFallDuration + cardScaleDuration);
+    };
+
+    const handleMouseEnter = () => {
+        setScaleTextClass("scale-105");
+        setScaleCardClass("scale-100");
+    };
+
     return (
-        <ClickSpark
-            sparkColor="#00ff00"
-            sparkSize={100}
-            sparkRadius={150}
-            sparkCount={1}
-            duration={500}
-            easing="ease-out"
-            extraScale={10}
-        >
-            <div className="relative overflow-hidden w-screen h-screen">
-                {theme == "light" ? (
-                    <div className="relative overflow-hidden w-screen h-screen">
-                        <div className="fixed inset-0 invert blur-sm">
-                            <FaultyTerminal
-                                scale={1.5}
-                                gridMul={[1, 1]}
-                                digitSize={1.2}
-                                timeScale={0.05}
-                                pause={false}
-                                scanlineIntensity={0.5}
-                                glitchAmount={2}
-                                flickerAmount={1}
-                                noiseAmp={1}
-                                chromaticAberration={0}
-                                dither={1}
-                                curvature={7}
-                                tint="#e982e0"
-                                mouseReact={true}
-                                mouseStrength={0.5}
-                                pageLoadAnimation={false}
-                                brightness={1}
-                            />
-                        </div>
-                        <div
-                            className="absolute w-[35rem] h-[30rem] lg:w-[50rem] lg:h-[50rem] bg-green-950
-                rounded-full blur-[100px] opacity-40 top-3/5 left-1/2 
-                -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
-                        />
-                    </div>
-                ) : (
-                    <div className="relative overflow-hidden w-screen h-screen">
-                        <LightRays
-                            raysOrigin="top-center"
-                            raysColor="#f4e99b"
-                            raysSpeed={0.4}
-                            lightSpread={0.2}
-                            rayLength={1.2}
-                            followMouse={true}
-                            mouseInfluence={0.025}
-                            noiseAmount={0.1}
-                            distortion={0.05}
-                        />
-                    </div>
-                )}
-                <div
-                    className={`absolute inset-0 flex flex-col items-center justify-center z-20 gap-6 pointer-events-none select-none ${scaleClass} transition-transform duration-500 ease-in-out`}
-                >
-                    <GlassSurface
-                        width={250}
-                        height={250}
-                        borderRadius={360}
-                        displace={0.8}
-                        saturation={0.8}
-                        borderWidth={0.3}
-                        mixBlendMode="difference"
+        <div className="relative overflow-auto w-screen h-screen">
+            <div className="max-w-5xl mx-auto mb-12 lg:border-x-2 border-dashed bg-accent/10">
+                <div className="relative w-full h-64 md:h-96 lg:h-[300px] flex items-center justify-center overflow-hidden invert dark:invert-0">
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[150px] bg-white/20 dark:bg-white/10 blur-3xl rounded-full" />
+                    <ASCIIText
+                        key={rerender ? "rerendered" : "initial"}
+                        text="About Me"
+                        enableWaves={false}
+                        asciiFontSize={8}
+                    />
+                </div>
+
+                <div className="flex flex-col gap-6 px-12">
+                    <Card
+                        className={`shadow-md mt-16 transition-transform duration-${cardScaleDuration} ${scaleCardClass}`}
                     >
-                        <div className="relative flex items-center justify-center text-muted-foreground">
-                            <CircularText
-                                text={"<> </> <> </> <> </> <> </> "}
-                                onHover="slowDown"
-                                spinDuration={300}
-                                className="font-mono scale-125 text-zinc-500 opacity-50"
-                            />
-                            <img
-                                src={"/portfolio/images/me.jpg"}
-                                className="absolute w-40 h-40 rounded-full"
-                            />
-                        </div>
-                    </GlassSurface>
-                    <div>
-                        <Card className="m-4 shadow-2xl">
-                            <CardHeader>
-                                <div>
-                                    <GradientText
-                                        colors={
-                                            theme == "light"
-                                                ? [
-                                                      "#06a600",
-                                                      "#03999c",
-                                                      "#00782c",
-                                                      "#03999c",
-                                                      "#06a600",
-                                                  ]
-                                                : ["#0dff00", "#40ffaa", "#40ffb6", "#0dff00"]
-                                        }
-                                        animationSpeed={10}
-                                        showBorder={false}
-                                        className="text-3xl lg:text-5xl px-2"
-                                    >
-                                        Tammam Al Bahri
-                                    </GradientText>
-                                </div>
-                                <div className="text-left ml-12 text-muted-foreground font-mono text-sm lg:text-2xl">
-                                    <span>{"> "}</span>
-                                    <TextType
-                                        text={text}
-                                        typingSpeed={60}
-                                        pauseDuration={2000}
-                                        showCursor={true}
-                                        cursorCharacter="|"
-                                    />
-                                </div>
-                            </CardHeader>
-                            <CardContent className="max-w-lg mt-4 px-16 text-center text-sm text-muted-foreground leading-relaxed lg:text-2xl">
-                                <div>
-                                    <ShinyText
-                                        text="Software Engineering"
-                                        disabled={false}
-                                        speed={4}
-                                        className="invert dark:invert-0 font-bold"
-                                    />{" "}
-                                    student at Sheffield Hallam University.
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <div className="flex justify-between w-full max-w-lg px-4 lg:px-0 mx-auto mt-4 pb-8 pointer-events-auto">
-                            <ThemeToggle />
-                            <NavButtons />
-                        </div>
+                        <CardHeader>
+                            <CardTitle>Technologies I've used</CardTitle>
+                            <CardDescription>I'm still learning.</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                                <LogoLoop
+                                    logos={techLogos}
+                                    speed={25}
+                                    direction="right"
+                                    logoHeight={40}
+                                    gap={50}
+                                    pauseOnHover
+                                    scaleOnHover
+                                    ariaLabel="Technology Stack"
+                                    className={`border-x-1 border-dashed ${scaleTextClass} transition-transform duration-${textFallDuration} ease-in`}
+                                />
+                            </div>
+                            <Accordion type="multiple">
+                                <AccordionItem value="item-1" className="border-dashed">
+                                    <AccordionTrigger>
+                                        <div className="flex gap-2 items-center">
+                                            <List size={16} />
+                                        </div>
+                                    </AccordionTrigger>
+                                    <AccordionContent>
+                                        <div className="flex flex-wrap gap-2">
+                                            {techLogos.map((item) => (
+                                                <a
+                                                    key={item.title}
+                                                    href={item.href}
+                                                    target="_blank"
+                                                    className={`px-3 py-1 border rounded-lg text-xs bg-accent hover:scale-105 select-none`}
+                                                >
+                                                    {item.title}
+                                                </a>
+                                            ))}
+                                        </div>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
+                        </CardContent>
+                    </Card>
+                    <Card className="shadow-md hover:scale-101">
+                        <CardHeader>
+                            <CardTitle>Personal Skills</CardTitle>
+                            <CardDescription>What I'm like.</CardDescription>
+                        </CardHeader>
+                        <CardContent className="flex flex-wrap gap-2">
+                            {skills.map((skill) => (
+                                <span
+                                    key={skill}
+                                    className="px-3 py-1 border rounded-lg text-sm bg-accent hover:scale-105 select-none"
+                                >
+                                    {skill}
+                                </span>
+                            ))}
+                        </CardContent>
+                    </Card>
+                    <Card className="shadow-md hover:scale-101">
+                        <CardHeader>
+                            <CardTitle>Interests</CardTitle>
+                            <CardDescription>Some of my hobbies.</CardDescription>
+                        </CardHeader>
+                        <CardContent className="flex flex-wrap gap-2">
+                            {interests.map((item) => (
+                                <span
+                                    key={item}
+                                    className="px-3 py-1 border rounded-lg text-sm bg-accent hover:scale-105 select-none"
+                                >
+                                    {item}
+                                </span>
+                            ))}
+                        </CardContent>
+                    </Card>
+                    <div className="flex justify-between w-full max-w-5xl mx-auto mt-4 pt-4 pb-8">
+                        <NavButtons />
                     </div>
                 </div>
             </div>
-        </ClickSpark>
+        </div>
     );
 }
