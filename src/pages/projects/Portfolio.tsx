@@ -9,7 +9,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, FileText, Flag } from "lucide-react";
+import { ExternalLink, Flag } from "lucide-react";
 import { useState, useEffect } from "react";
 import NavButtons from "@/components/NavButtons";
 
@@ -97,17 +97,6 @@ export default function Portfolio() {
                         </ElectricBorder>
                     </div>
                     <Accordion type="multiple">
-                        <AccordionItem value="item-1" className="px-8 border-dashed">
-                            <AccordionTrigger>
-                                <div className="flex gap-2 items-center font-bold">
-                                    <FileText size={16} />
-                                    Overview
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent className="px-6 text-lg text-card-foreground">
-                                <p>My cool portfolio website. Making it was actually quite fun.</p>
-                            </AccordionContent>
-                        </AccordionItem>
                         <AccordionItem value="item-2" className="px-8 border-dashed">
                             <AccordionTrigger>
                                 <div className="flex gap-2 items-center font-bold">
