@@ -94,8 +94,8 @@ export default function Me() {
                     className={`absolute inset-0 flex flex-col items-center justify-center z-20 gap-6 pointer-events-none select-none ${scaleClass} transition-transform duration-500 ease-in-out`}
                 >
                     <GlassSurface
-                        width={250}
-                        height={250}
+                        width={300}
+                        height={300}
                         borderRadius={360}
                         displace={0.8}
                         saturation={0.8}
@@ -107,11 +107,11 @@ export default function Me() {
                                 text={"<> </> <> </> <> </> <> </> "}
                                 onHover="slowDown"
                                 spinDuration={300}
-                                className="font-mono scale-125 text-zinc-500 opacity-50"
+                                className="font-mono scale-150 text-zinc-500 opacity-50"
                             />
                             <img
                                 src={"/portfolio/images/me.jpg"}
-                                className="absolute w-40 h-40 rounded-full"
+                                className="absolute w-50 h-50 rounded-full"
                             />
                         </div>
                     </GlassSurface>
