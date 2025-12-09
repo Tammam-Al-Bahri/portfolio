@@ -14,6 +14,8 @@ import uniRecipeManager1 from "/images/projects/university-projects/recipe-manag
 import uniRecipeManager2 from "/images/projects/university-projects/recipe-manager-2.jpg";
 import uniCrud1 from "/images/projects/university-projects/shuber-1.jpg";
 import uniCrud2 from "/images/projects/university-projects/shuber-2.jpg";
+import uniConsole1 from "/images/projects/university-projects/console-app-main.jpg";
+import uniConsole2 from "/images/projects/university-projects/console-app-tasks.jpg";
 import NavButtons from "@/components/NavButtons";
 
 export default function UniversityProjects() {
@@ -22,6 +24,7 @@ export default function UniversityProjects() {
         { id: 1, img: uniTsk1 },
         { id: 2, img: uniTsk2 },
     ];
+
     const ccImages = [
         { id: 3, img: uniCc3 },
         { id: 2, img: uniCc2 },
@@ -38,10 +41,17 @@ export default function UniversityProjects() {
         { id: 2, img: uniRecipeManager2 },
         { id: 1, img: uniRecipeManager1 },
     ];
+
     const crudImages = [
         { id: 2, img: uniCrud2 },
         { id: 1, img: uniCrud1 },
     ];
+
+    const consoleImages = [
+        { id: 2, img: uniConsole2 },
+        { id: 1, img: uniConsole1 },
+    ];
+
     const [rerender, setRerender] = useState(false);
 
     useEffect(() => {
@@ -120,6 +130,18 @@ export default function UniversityProjects() {
                                 sendToBackOnClick={true}
                                 cardDimensions={{ width: 500, height: 500 }}
                                 cardsData={crudImages}
+                            />
+                        </div>
+                    </div>
+                    <div className="text-center text-xl font-bold pt-8">Console App</div>
+                    <div className="flex justify-center">
+                        <div className="scale-60 lg:scale-100">
+                            <Stack
+                                randomRotation={false}
+                                sensitivity={180}
+                                sendToBackOnClick={true}
+                                cardDimensions={{ width: 500, height: 500 }}
+                                cardsData={consoleImages}
                             />
                         </div>
                     </div>

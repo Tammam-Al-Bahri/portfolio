@@ -30,6 +30,8 @@ import uniRecipeManager1 from "/images/projects/university-projects/recipe-manag
 import uniRecipeManager2 from "/images/projects/university-projects/recipe-manager-2.jpg";
 import uniCrud1 from "/images/projects/university-projects/shuber-1.jpg";
 import uniCrud2 from "/images/projects/university-projects/shuber-2.jpg";
+import uniConsole1 from "/images/projects/university-projects/console-app-main.jpg";
+import uniConsole2 from "/images/projects/university-projects/console-app-tasks.jpg";
 import {
     SiDotnet,
     SiJavascript,
@@ -117,6 +119,8 @@ export default function Projects() {
             variant: 2,
             icon: University,
             images: [
+                { id: 15, img: uniConsole2 },
+                { id: 14, img: uniConsole1 },
                 { id: 12, img: uniCrud2 },
                 { id: 13, img: uniCrud1 },
                 { id: 10, img: uniRecipeManager2 },
